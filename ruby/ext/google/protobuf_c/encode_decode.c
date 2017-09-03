@@ -54,7 +54,7 @@ VALUE noleak_rb_str_cat(VALUE rb_str, const char *str, long len) {
 static const void* newhandlerdata(upb_handlers* h, uint32_t ofs) {
   size_t* hd_ofs = ALLOC(size_t);
   *hd_ofs = ofs;
-  upb_handlers_addcleanup(h, hd_ofs, free);
+  upb_handlers_addcleanup(h, hd_ofs, xfree);
   return hd_ofs;
 }
 
@@ -69,7 +69,7 @@ static const void *newsubmsghandlerdata(upb_handlers* h, uint32_t ofs,
   submsg_handlerdata_t *hd = ALLOC(submsg_handlerdata_t);
   hd->ofs = ofs;
   hd->md = upb_fielddef_msgsubdef(f);
-  upb_handlers_addcleanup(h, hd, free);
+  upb_handlers_addcleanup(h, hd, xfree);
   return hd;
 }
 
@@ -99,7 +99,7 @@ static const void *newoneofhandlerdata(upb_handlers *h,
   } else {
     hd->md = NULL;
   }
-  upb_handlers_addcleanup(h, hd, free);
+  upb_handlers_addcleanup(h, hd, xfree);
   return hd;
 }
 
@@ -135,7 +135,7 @@ static void* appendstr_handler(void *closure,
   VALUE ary = (VALUE)closure;
   VALUE str = rb_str_new2("");
   rb_enc_associate(str, kRubyStringUtf8Encoding);
-  RepeatedField_push(ary, str);
+  RepeatedField_push_native(ary, &str);
   return (void*)str;
 }
 
@@ -146,7 +146,7 @@ static void* appendbytes_handler(void *closure,
   VALUE ary = (VALUE)closure;
   VALUE str = rb_str_new2("");
   rb_enc_associate(str, kRubyString8bitEncoding);
-  RepeatedField_push(ary, str);
+  RepeatedField_push_native(ary, &str);
   return (void*)str;
 }
 
@@ -180,6 +180,23 @@ static size_t stringdata_handler(void* closure, const void* hd,
   VALUE rb_str = (VALUE)closure;
   noleak_rb_str_cat(rb_str, str, len);
   return len;
+}
+
+static bool stringdata_end_handler(void* closure, const void* hd) {
+  MessageHeader* msg = closure;
+  const size_t *ofs = hd;
+  VALUE rb_str = DEREF(msg, *ofs, VALUE);
+  rb_obj_freeze(rb_str);
+  return true;
+}
+
+static bool appendstring_end_handler(void* closure, const void* hd) {
+  VALUE ary = (VALUE)closure;
+  int size = RepeatedField_size(ary);
+  VALUE* last = RepeatedField_index_native(ary, size - 1);
+  VALUE rb_str = *last;
+  rb_obj_freeze(rb_str);
+  return true;
 }
 
 // Appends a submessage to a repeated field (a regular Ruby array for now).
@@ -238,9 +255,44 @@ typedef struct {
 // value into the map.
 typedef struct {
   VALUE map;
+  const map_handlerdata_t* handlerdata;
   char key_storage[NATIVE_SLOT_MAX_SIZE];
   char value_storage[NATIVE_SLOT_MAX_SIZE];
 } map_parse_frame_t;
+
+static void MapParseFrame_mark(void* _self) {
+  map_parse_frame_t* frame = _self;
+
+  // This shouldn't strictly be necessary since this should be rooted by the
+  // message itself, but it can't hurt.
+  rb_gc_mark(frame->map);
+
+  native_slot_mark(frame->handlerdata->key_field_type, &frame->key_storage);
+  native_slot_mark(frame->handlerdata->value_field_type, &frame->value_storage);
+}
+
+void MapParseFrame_free(void* self) {
+  xfree(self);
+}
+
+rb_data_type_t MapParseFrame_type = {
+  "MapParseFrame",
+  { MapParseFrame_mark, MapParseFrame_free, NULL },
+};
+
+static map_parse_frame_t* map_push_frame(VALUE map,
+                                         const map_handlerdata_t* handlerdata) {
+  map_parse_frame_t* frame = ALLOC(map_parse_frame_t);
+  frame->handlerdata = handlerdata;
+  frame->map = map;
+  native_slot_init(handlerdata->key_field_type, &frame->key_storage);
+  native_slot_init(handlerdata->value_field_type, &frame->value_storage);
+
+  Map_set_frame(map,
+              TypedData_Wrap_Struct(rb_cObject, &MapParseFrame_type, frame));
+
+  return frame;
+}
 
 // Handler to begin a map entry: allocates a temporary frame. This is the
 // 'startsubmsg' handler on the msgdef that contains the map field.
@@ -249,13 +301,7 @@ static void *startmapentry_handler(void *closure, const void *hd) {
   const map_handlerdata_t* mapdata = hd;
   VALUE map_rb = DEREF(msg, mapdata->ofs, VALUE);
 
-  map_parse_frame_t* frame = ALLOC(map_parse_frame_t);
-  frame->map = map_rb;
-
-  native_slot_init(mapdata->key_field_type, &frame->key_storage);
-  native_slot_init(mapdata->value_field_type, &frame->value_storage);
-
-  return frame;
+  return map_push_frame(map_rb, mapdata);
 }
 
 // Handler to end a map entry: inserts the value defined during the message into
@@ -281,7 +327,7 @@ static bool endmap_handler(void *closure, const void *hd, upb_status* s) {
       &frame->value_storage);
 
   Map_index_set(frame->map, key, value);
-  free(frame);
+  Map_set_frame(frame->map, Qnil);
 
   return true;
 }
@@ -360,6 +406,13 @@ static void *oneofbytes_handler(void *closure,
   return (void*)str;
 }
 
+static bool oneofstring_end_handler(void* closure, const void* hd) {
+  MessageHeader* msg = closure;
+  const oneof_handlerdata_t *oneofdata = hd;
+  rb_obj_freeze(DEREF(msg, oneofdata->ofs, VALUE));
+  return true;
+}
+
 // Handler for a submessage field in a oneof.
 static void *oneofsubmsg_handler(void *closure,
                                  const void *hd) {
@@ -426,6 +479,7 @@ static void add_handlers_for_repeated_field(upb_handlers *h,
                                appendbytes_handler : appendstr_handler,
                                NULL);
       upb_handlers_setstring(h, f, stringdata_handler, NULL);
+      upb_handlers_setendstr(h, f, appendstring_end_handler, NULL);
       break;
     }
     case UPB_TYPE_MESSAGE: {
@@ -451,7 +505,7 @@ static void add_handlers_for_singular_field(upb_handlers *h,
     case UPB_TYPE_INT64:
     case UPB_TYPE_UINT64:
     case UPB_TYPE_DOUBLE:
-      upb_shim_set(h, f, offset, -1);
+      upb_msg_setscalarhandler(h, f, offset, -1);
       break;
     case UPB_TYPE_STRING:
     case UPB_TYPE_BYTES: {
@@ -462,6 +516,7 @@ static void add_handlers_for_singular_field(upb_handlers *h,
                                is_bytes ? bytes_handler : str_handler,
                                &attr);
       upb_handlers_setstring(h, f, stringdata_handler, &attr);
+      upb_handlers_setendstr(h, f, stringdata_end_handler, &attr);
       upb_handlerattr_uninit(&attr);
       break;
     }
@@ -484,7 +539,7 @@ static void add_handlers_for_mapfield(upb_handlers* h,
   map_handlerdata_t* hd = new_map_handlerdata(offset, map_msgdef, desc);
   upb_handlerattr attr = UPB_HANDLERATTR_INITIALIZER;
 
-  upb_handlers_addcleanup(h, hd, free);
+  upb_handlers_addcleanup(h, hd, xfree);
   upb_handlerattr_sethandlerdata(&attr, hd);
   upb_handlers_setstartsubmsg(h, fielddef, startmapentry_handler, &attr);
   upb_handlerattr_uninit(&attr);
@@ -499,7 +554,7 @@ static void add_handlers_for_mapentry(const upb_msgdef* msgdef,
   map_handlerdata_t* hd = new_map_handlerdata(0, msgdef, desc);
   upb_handlerattr attr = UPB_HANDLERATTR_INITIALIZER;
 
-  upb_handlers_addcleanup(h, hd, free);
+  upb_handlers_addcleanup(h, hd, xfree);
   upb_handlerattr_sethandlerdata(&attr, hd);
   upb_handlers_setendmsg(h, endmap_handler, &attr);
 
@@ -546,6 +601,7 @@ static void add_handlers_for_oneof_field(upb_handlers *h,
                                oneofbytes_handler : oneofstr_handler,
                                &attr);
       upb_handlers_setstring(h, f, stringdata_handler, NULL);
+      upb_handlers_setendstr(h, f, oneofstring_end_handler, &attr);
       break;
     }
     case UPB_TYPE_MESSAGE: {
@@ -640,6 +696,14 @@ static const upb_pbdecodermethod *msgdef_decodermethod(Descriptor* desc) {
   return desc->fill_method;
 }
 
+static const upb_json_parsermethod *msgdef_jsonparsermethod(Descriptor* desc) {
+  if (desc->json_fill_method == NULL) {
+    desc->json_fill_method =
+        upb_json_parsermethod_new(desc->msgdef, &desc->json_fill_method);
+  }
+  return desc->json_fill_method;
+}
+
 
 // Stack-allocated context during an encode/decode operation. Contains the upb
 // environment and its stack-based allocator, an initial buffer for allocations
@@ -648,7 +712,6 @@ static const upb_pbdecodermethod *msgdef_decodermethod(Descriptor* desc) {
 #define STACK_ENV_STACKBYTES 4096
 typedef struct {
   upb_env env;
-  upb_seededalloc alloc;
   const char* ruby_error_template;
   char allocbuf[STACK_ENV_STACKBYTES];
 } stackenv;
@@ -673,16 +736,12 @@ static bool env_error_func(void* ud, const upb_status* status) {
 
 static void stackenv_init(stackenv* se, const char* errmsg) {
   se->ruby_error_template = errmsg;
-  upb_env_init(&se->env);
-  upb_seededalloc_init(&se->alloc, &se->allocbuf, STACK_ENV_STACKBYTES);
-  upb_env_setallocfunc(
-      &se->env, upb_seededalloc_getallocfunc(&se->alloc), &se->alloc);
+  upb_env_init2(&se->env, se->allocbuf, sizeof(se->allocbuf), NULL);
   upb_env_seterrorfunc(&se->env, env_error_func, se);
 }
 
 static void stackenv_uninit(stackenv* se) {
   upb_env_uninit(&se->env);
-  upb_seededalloc_uninit(&se->alloc);
 }
 
 /*
@@ -752,13 +811,14 @@ VALUE Message_decode_json(VALUE klass, VALUE data) {
   TypedData_Get_Struct(msg_rb, MessageHeader, &Message_type, msg);
 
   {
+    const upb_json_parsermethod* method = msgdef_jsonparsermethod(desc);
     stackenv se;
     upb_sink sink;
     upb_json_parser* parser;
     stackenv_init(&se, "Error occurred during parsing: %s");
 
     upb_sink_reset(&sink, get_fill_handlers(desc), msg);
-    parser = upb_json_parser_create(&se.env, &sink);
+    parser = upb_json_parser_create(&se.env, method, &sink);
     upb_bufsrc_putbuf(RSTRING_PTR(data), RSTRING_LEN(data),
                       upb_json_parser_input(parser));
 
@@ -837,18 +897,14 @@ void stringsink_uninit(stringsink *sink) {
 // semantics, which means that we have true field presence, we will want to
 // modify msgvisitor so that it emits all present fields rather than all
 // non-default-value fields.
-//
-// Likewise, when implementing JSON serialization, we may need to have a
-// 'verbose' mode that outputs all fields and a 'concise' mode that outputs only
-// those with non-default values.
 
 static void putmsg(VALUE msg, const Descriptor* desc,
-                   upb_sink *sink, int depth);
+                   upb_sink *sink, int depth, bool emit_defaults);
 
 static upb_selector_t getsel(const upb_fielddef *f, upb_handlertype_t type) {
   upb_selector_t ret;
   bool ok = upb_handlers_getselector(f, type, &ret);
-  UPB_ASSERT_VAR(ok, ok);
+  UPB_ASSERT(ok);
   return ret;
 }
 
@@ -859,9 +915,13 @@ static void putstr(VALUE str, const upb_fielddef *f, upb_sink *sink) {
 
   assert(BUILTIN_TYPE(str) == RUBY_T_STRING);
 
-  // Ensure that the string has the correct encoding. We also check at field-set
-  // time, but the user may have mutated the string object since then.
-  native_slot_validate_string_encoding(upb_fielddef_type(f), str);
+  // We should be guaranteed that the string has the correct encoding because
+  // we ensured this at assignment time and then froze the string.
+  if (upb_fielddef_type(f) == UPB_TYPE_STRING) {
+    assert(rb_enc_from_index(ENCODING_GET(str)) == kRubyStringUtf8Encoding);
+  } else {
+    assert(rb_enc_from_index(ENCODING_GET(str)) == kRubyString8bitEncoding);
+  }
 
   upb_sink_startstr(sink, getsel(f, UPB_HANDLER_STARTSTR), RSTRING_LEN(str),
                     &subsink);
@@ -871,7 +931,7 @@ static void putstr(VALUE str, const upb_fielddef *f, upb_sink *sink) {
 }
 
 static void putsubmsg(VALUE submsg, const upb_fielddef *f, upb_sink *sink,
-                      int depth) {
+                      int depth, bool emit_defaults) {
   upb_sink subsink;
   VALUE descriptor;
   Descriptor* subdesc;
@@ -882,12 +942,12 @@ static void putsubmsg(VALUE submsg, const upb_fielddef *f, upb_sink *sink,
   subdesc = ruby_to_Descriptor(descriptor);
 
   upb_sink_startsubmsg(sink, getsel(f, UPB_HANDLER_STARTSUBMSG), &subsink);
-  putmsg(submsg, subdesc, &subsink, depth + 1);
+  putmsg(submsg, subdesc, &subsink, depth + 1, emit_defaults);
   upb_sink_endsubmsg(sink, getsel(f, UPB_HANDLER_ENDSUBMSG));
 }
 
 static void putary(VALUE ary, const upb_fielddef *f, upb_sink *sink,
-                   int depth) {
+                   int depth, bool emit_defaults) {
   upb_sink subsink;
   upb_fieldtype_t type = upb_fielddef_type(f);
   upb_selector_t sel = 0;
@@ -924,7 +984,7 @@ static void putary(VALUE ary, const upb_fielddef *f, upb_sink *sink,
         putstr(*((VALUE *)memory), f, &subsink);
         break;
       case UPB_TYPE_MESSAGE:
-        putsubmsg(*((VALUE *)memory), f, &subsink, depth);
+        putsubmsg(*((VALUE *)memory), f, &subsink, depth, emit_defaults);
         break;
 
 #undef T
@@ -938,7 +998,8 @@ static void put_ruby_value(VALUE value,
                            const upb_fielddef *f,
                            VALUE type_class,
                            int depth,
-                           upb_sink *sink) {
+                           upb_sink *sink,
+                           bool emit_defaults) {
   upb_selector_t sel = 0;
   if (upb_fielddef_isprimitive(f)) {
     sel = getsel(f, upb_handlers_getprimitivehandlertype(f));
@@ -978,12 +1039,12 @@ static void put_ruby_value(VALUE value,
       putstr(value, f, sink);
       break;
     case UPB_TYPE_MESSAGE:
-      putsubmsg(value, f, sink, depth);
+      putsubmsg(value, f, sink, depth, emit_defaults);
   }
 }
 
 static void putmap(VALUE map, const upb_fielddef *f, upb_sink *sink,
-                   int depth) {
+                   int depth, bool emit_defaults) {
   Map* self;
   upb_sink subsink;
   const upb_fielddef* key_field;
@@ -1009,9 +1070,9 @@ static void putmap(VALUE map, const upb_fielddef *f, upb_sink *sink,
                          &entry_sink);
     upb_sink_startmsg(&entry_sink);
 
-    put_ruby_value(key, key_field, Qnil, depth + 1, &entry_sink);
+    put_ruby_value(key, key_field, Qnil, depth + 1, &entry_sink, emit_defaults);
     put_ruby_value(value, value_field, self->value_type_class, depth + 1,
-                   &entry_sink);
+                   &entry_sink, emit_defaults);
 
     upb_sink_endmsg(&entry_sink, &status);
     upb_sink_endsubmsg(&subsink, getsel(f, UPB_HANDLER_ENDSUBMSG));
@@ -1021,7 +1082,7 @@ static void putmap(VALUE map, const upb_fielddef *f, upb_sink *sink,
 }
 
 static void putmsg(VALUE msg_rb, const Descriptor* desc,
-                   upb_sink *sink, int depth) {
+                   upb_sink *sink, int depth, bool emit_defaults) {
   MessageHeader* msg;
   upb_msg_field_iter i;
   upb_status status;
@@ -1041,6 +1102,7 @@ static void putmsg(VALUE msg_rb, const Descriptor* desc,
        !upb_msg_field_done(&i);
        upb_msg_field_next(&i)) {
     upb_fielddef *f = upb_msg_iter_field(&i);
+    bool is_matching_oneof = false;
     uint32_t offset =
         desc->layout->fields[upb_fielddef_index(f)].offset +
         sizeof(MessageHeader);
@@ -1057,35 +1119,36 @@ static void putmsg(VALUE msg_rb, const Descriptor* desc,
       }
       // Otherwise, fall through to the appropriate singular-field handler
       // below.
+      is_matching_oneof = true;
     }
 
     if (is_map_field(f)) {
       VALUE map = DEREF(msg, offset, VALUE);
-      if (map != Qnil) {
-        putmap(map, f, sink, depth);
+      if (map != Qnil || emit_defaults) {
+        putmap(map, f, sink, depth, emit_defaults);
       }
     } else if (upb_fielddef_isseq(f)) {
       VALUE ary = DEREF(msg, offset, VALUE);
       if (ary != Qnil) {
-        putary(ary, f, sink, depth);
+        putary(ary, f, sink, depth, emit_defaults);
       }
     } else if (upb_fielddef_isstring(f)) {
       VALUE str = DEREF(msg, offset, VALUE);
-      if (RSTRING_LEN(str) > 0) {
+      if (is_matching_oneof || emit_defaults || RSTRING_LEN(str) > 0) {
         putstr(str, f, sink);
       }
     } else if (upb_fielddef_issubmsg(f)) {
-      putsubmsg(DEREF(msg, offset, VALUE), f, sink, depth);
+      putsubmsg(DEREF(msg, offset, VALUE), f, sink, depth, emit_defaults);
     } else {
       upb_selector_t sel = getsel(f, upb_handlers_getprimitivehandlertype(f));
 
-#define T(upbtypeconst, upbtype, ctype, default_value)                \
-  case upbtypeconst: {                                                \
-      ctype value = DEREF(msg, offset, ctype);                        \
-      if (value != default_value) {                                   \
-        upb_sink_put##upbtype(sink, sel, value);                      \
-      }                                                               \
-    }                                                                 \
+#define T(upbtypeconst, upbtype, ctype, default_value)                    \
+  case upbtypeconst: {                                                    \
+      ctype value = DEREF(msg, offset, ctype);                            \
+      if (is_matching_oneof || emit_defaults || value != default_value) { \
+        upb_sink_put##upbtype(sink, sel, value);                          \
+      }                                                                   \
+    }                                                                     \
     break;
 
       switch (upb_fielddef_type(f)) {
@@ -1119,13 +1182,23 @@ static const upb_handlers* msgdef_pb_serialize_handlers(Descriptor* desc) {
   return desc->pb_serialize_handlers;
 }
 
-static const upb_handlers* msgdef_json_serialize_handlers(Descriptor* desc) {
-  if (desc->json_serialize_handlers == NULL) {
-    desc->json_serialize_handlers =
-        upb_json_printer_newhandlers(
-            desc->msgdef, &desc->json_serialize_handlers);
+static const upb_handlers* msgdef_json_serialize_handlers(
+    Descriptor* desc, bool preserve_proto_fieldnames) {
+  if (preserve_proto_fieldnames) {
+    if (desc->json_serialize_handlers == NULL) {
+      desc->json_serialize_handlers =
+          upb_json_printer_newhandlers(
+              desc->msgdef, true, &desc->json_serialize_handlers);
+    }
+    return desc->json_serialize_handlers;
+  } else {
+    if (desc->json_serialize_handlers_preserve == NULL) {
+      desc->json_serialize_handlers_preserve =
+          upb_json_printer_newhandlers(
+              desc->msgdef, false, &desc->json_serialize_handlers_preserve);
+    }
+    return desc->json_serialize_handlers_preserve;
   }
-  return desc->json_serialize_handlers;
 }
 
 /*
@@ -1153,7 +1226,7 @@ VALUE Message_encode(VALUE klass, VALUE msg_rb) {
     stackenv_init(&se, "Error occurred during encoding: %s");
     encoder = upb_pb_encoder_create(&se.env, serialize_handlers, &sink.sink);
 
-    putmsg(msg_rb, desc, upb_pb_encoder_input(encoder), 0);
+    putmsg(msg_rb, desc, upb_pb_encoder_input(encoder), 0, false);
 
     ret = rb_str_new(sink.ptr, sink.len);
 
@@ -1170,16 +1243,37 @@ VALUE Message_encode(VALUE klass, VALUE msg_rb) {
  *
  * Encodes the given message object into its serialized JSON representation.
  */
-VALUE Message_encode_json(VALUE klass, VALUE msg_rb) {
+VALUE Message_encode_json(int argc, VALUE* argv, VALUE klass) {
   VALUE descriptor = rb_ivar_get(klass, descriptor_instancevar_interned);
   Descriptor* desc = ruby_to_Descriptor(descriptor);
-
+  VALUE msg_rb;
+  VALUE preserve_proto_fieldnames = Qfalse;
+  VALUE emit_defaults = Qfalse;
   stringsink sink;
+
+  if (argc < 1 || argc > 2) {
+    rb_raise(rb_eArgError, "Expected 1 or 2 arguments.");
+  }
+
+  msg_rb = argv[0];
+
+  if (argc == 2) {
+    VALUE hash_args = argv[1];
+    if (TYPE(hash_args) != T_HASH) {
+      rb_raise(rb_eArgError, "Expected hash arguments.");
+    }
+    preserve_proto_fieldnames = rb_hash_lookup2(
+        hash_args, ID2SYM(rb_intern("preserve_proto_fieldnames")), Qfalse);
+
+    emit_defaults = rb_hash_lookup2(
+        hash_args, ID2SYM(rb_intern("emit_defaults")), Qfalse);
+  }
+
   stringsink_init(&sink);
 
   {
     const upb_handlers* serialize_handlers =
-        msgdef_json_serialize_handlers(desc);
+        msgdef_json_serialize_handlers(desc, RTEST(preserve_proto_fieldnames));
     upb_json_printer* printer;
     stackenv se;
     VALUE ret;
@@ -1187,9 +1281,9 @@ VALUE Message_encode_json(VALUE klass, VALUE msg_rb) {
     stackenv_init(&se, "Error occurred during encoding: %s");
     printer = upb_json_printer_create(&se.env, serialize_handlers, &sink.sink);
 
-    putmsg(msg_rb, desc, upb_json_printer_input(printer), 0);
+    putmsg(msg_rb, desc, upb_json_printer_input(printer), 0, RTEST(emit_defaults));
 
-    ret = rb_str_new(sink.ptr, sink.len);
+    ret = rb_enc_str_new(sink.ptr, sink.len, rb_utf8_encoding());
 
     stackenv_uninit(&se);
     stringsink_uninit(&sink);

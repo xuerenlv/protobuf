@@ -33,22 +33,21 @@ package com.google.protobuf;
 import com.google.protobuf.UnittestLite.TestAllTypesLite;
 import com.google.protobuf.UnittestLite.TestPackedExtensionsLite;
 import com.google.protobuf.UnittestLite.TestParsingMergeLite;
+import protobuf_unittest.UnittestOptimizeFor;
 import protobuf_unittest.UnittestOptimizeFor.TestOptimizedForSize;
 import protobuf_unittest.UnittestOptimizeFor.TestRequiredOptimizedForSize;
-import protobuf_unittest.UnittestOptimizeFor;
+import protobuf_unittest.UnittestProto;
 import protobuf_unittest.UnittestProto.ForeignMessage;
 import protobuf_unittest.UnittestProto.TestAllTypes;
 import protobuf_unittest.UnittestProto.TestEmptyMessage;
 import protobuf_unittest.UnittestProto.TestParsingMerge;
 import protobuf_unittest.UnittestProto.TestRequired;
-import protobuf_unittest.UnittestProto;
-
-import junit.framework.TestCase;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InterruptedIOException;
+import junit.framework.TestCase;
 
 /**
  * Unit test for {@link Parser}.
@@ -80,6 +79,8 @@ public class ParserTest extends TestCase {
         new ByteArrayInputStream(data), registry));
     assertMessageEquals(message, parser.parseFrom(
         CodedInputStream.newInstance(data), registry));
+    assertMessageEquals(
+        message, parser.parseFrom(message.toByteString().asReadOnlyByteBuffer(), registry));
   }
 
   @SuppressWarnings("unchecked")
@@ -100,6 +101,7 @@ public class ParserTest extends TestCase {
         new ByteArrayInputStream(data)));
     assertMessageEquals(message, parser.parseFrom(
         CodedInputStream.newInstance(data)));
+    assertMessageEquals(message, parser.parseFrom(message.toByteString().asReadOnlyByteBuffer()));
   }
 
   private void assertMessageEquals(
@@ -179,16 +181,22 @@ public class ParserTest extends TestCase {
   public void testParseExtensions() throws Exception {
     assertRoundTripEquals(TestUtil.getAllExtensionsSet(),
                           TestUtil.getExtensionRegistry());
-    assertRoundTripEquals(TestUtil.getAllLiteExtensionsSet(),
-                          TestUtil.getExtensionRegistryLite());
+  }
+
+  public void testParseExtensionsLite() throws Exception {
+    assertRoundTripEquals(
+        TestUtilLite.getAllLiteExtensionsSet(), TestUtilLite.getExtensionRegistryLite());
   }
 
   public void testParsePacked() throws Exception {
     assertRoundTripEquals(TestUtil.getPackedSet());
     assertRoundTripEquals(TestUtil.getPackedExtensionsSet(),
                           TestUtil.getExtensionRegistry());
-    assertRoundTripEquals(TestUtil.getLitePackedExtensionsSet(),
-                          TestUtil.getExtensionRegistryLite());
+  }
+
+  public void testParsePackedLite() throws Exception {
+    assertRoundTripEquals(
+        TestUtilLite.getLitePackedExtensionsSet(), TestUtilLite.getExtensionRegistryLite());
   }
 
   public void testParseDelimitedTo() throws Exception {
@@ -196,20 +204,31 @@ public class ParserTest extends TestCase {
     TestAllTypes normalMessage = TestUtil.getAllSet();
     ByteArrayOutputStream output = new ByteArrayOutputStream();
     normalMessage.writeDelimitedTo(output);
+    normalMessage.writeDelimitedTo(output);
 
+    InputStream input = new ByteArrayInputStream(output.toByteArray());
+    assertMessageEquals(normalMessage, normalMessage.getParserForType().parseDelimitedFrom(input));
+    assertMessageEquals(normalMessage, normalMessage.getParserForType().parseDelimitedFrom(input));
+  }
+
+  public void testParseDelimitedToLite() throws Exception {
     // Write MessageLite with packed extension fields.
-    TestPackedExtensionsLite packedMessage =
-        TestUtil.getLitePackedExtensionsSet();
+    TestPackedExtensionsLite packedMessage = TestUtilLite.getLitePackedExtensionsSet();
+    ByteArrayOutputStream output = new ByteArrayOutputStream();
+    packedMessage.writeDelimitedTo(output);
     packedMessage.writeDelimitedTo(output);
 
     InputStream input = new ByteArrayInputStream(output.toByteArray());
     assertMessageEquals(
-        normalMessage,
-        normalMessage.getParserForType().parseDelimitedFrom(input));
+        packedMessage,
+        packedMessage
+            .getParserForType()
+            .parseDelimitedFrom(input, TestUtilLite.getExtensionRegistryLite()));
     assertMessageEquals(
         packedMessage,
-        packedMessage.getParserForType().parseDelimitedFrom(
-            input, TestUtil.getExtensionRegistryLite()));
+        packedMessage
+            .getParserForType()
+            .parseDelimitedFrom(input, TestUtilLite.getExtensionRegistryLite()));
   }
 
   public void testParseUnknownFields() throws Exception {
@@ -315,8 +334,7 @@ public class ParserTest extends TestCase {
 
   public void testParsingMergeLite() throws Exception {
     // Build messages.
-    TestAllTypesLite.Builder builder =
-        TestAllTypesLite.newBuilder();
+    TestAllTypesLite.Builder builder = TestAllTypesLite.newBuilder();
     TestAllTypesLite msg1 = builder.setOptionalInt32(1).build();
     builder.clear();
     TestAllTypesLite msg2 = builder.setOptionalInt64(2).build();
@@ -373,5 +391,44 @@ public class ParserTest extends TestCase {
     assertEquals(3, parsingMerge.getRepeatedGroupCount());
     assertEquals(3, parsingMerge.getExtensionCount(
         TestParsingMergeLite.repeatedExt));
+  }
+
+  public void testParseDelimitedFrom_firstByteInterrupted_preservesCause() {
+    try {
+      TestUtil.getAllSet().parseDelimitedFrom(
+          new InputStream() {
+            @Override
+            public int read() throws IOException {
+              throw new InterruptedIOException();
+            }
+          });
+      fail("Expected InterruptedIOException");
+    } catch (Exception e) {
+      assertEquals(InterruptedIOException.class, e.getClass());
+    }
+  }
+
+  public void testParseDelimitedFrom_secondByteInterrupted_preservesCause() {
+    try {
+      TestUtil.getAllSet().parseDelimitedFrom(
+          new InputStream() {
+            private int i;
+
+            @Override
+            public int read() throws IOException {
+              switch (i++) {
+                case 0:
+                  return 1;
+                case 1:
+                  throw new InterruptedIOException();
+                default:
+                  throw new AssertionError();
+              }
+            }
+          });
+      fail("Expected InterruptedIOException");
+    } catch (Exception e) {
+      assertEquals(InterruptedIOException.class, e.getClass());
+    }
   }
 }

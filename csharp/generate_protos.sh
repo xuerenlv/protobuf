@@ -6,7 +6,7 @@
 set -ex
 
 # cd to repository root
-cd $(dirname $0)/..
+pushd $(dirname $0)/..
 
 # Protocol buffer compiler to use. If the PROTOC variable is set,
 # use that. Otherwise, probe for expected locations under both
@@ -50,9 +50,15 @@ $PROTOC -Isrc --csharp_out=csharp/src/Google.Protobuf.Test \
     src/google/protobuf/unittest_well_known_types.proto
 
 # Different base namespace to the protos above
-$PROTOC -Icsharp/protos --csharp_out=csharp/src/Google.Protobuf.Test \
+$PROTOC -Isrc -Icsharp/protos --csharp_out=csharp/src/Google.Protobuf.Test \
     --csharp_opt=base_namespace=UnitTest.Issues \
-    csharp/protos/unittest_issues.proto
+    csharp/protos/unittest_issues.proto \
+    csharp/protos/unittest_custom_options_proto3.proto
+
+# Don't specify a base namespace at all; we just want to make sure the
+# results end up in TestProtos.
+$PROTOC -Isrc --csharp_out=csharp/src/Google.Protobuf.Test/TestProtos \
+    src/google/protobuf/test_messages_proto3.proto
 
 # AddressBook sample protos
 $PROTOC -Iexamples --csharp_out=csharp/src/AddressBook \

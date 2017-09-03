@@ -30,8 +30,9 @@
 
 package com.google.protobuf;
 
-import com.google.protobuf.LazyField.LazyIterator;
+import static com.google.protobuf.Internal.checkNotNull;
 
+import com.google.protobuf.LazyField.LazyIterator;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -121,6 +122,25 @@ final class FieldSet<FieldDescriptorType extends
     return isImmutable;
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+
+    if (!(o instanceof FieldSet)) {
+      return false;
+    }
+
+    FieldSet<?> other = (FieldSet<?>) o;
+    return fields.equals(other.fields);
+  }
+
+  @Override
+  public int hashCode() {
+    return fields.hashCode();
+  }
+
   /**
    * Clones the FieldSet. The returned FieldSet will be mutable even if the
    * original FieldSet was immutable.
@@ -200,6 +220,7 @@ final class FieldSet<FieldDescriptorType extends
     }
     return fields.entrySet().iterator();
   }
+
 
   /**
    * Useful for implementing
@@ -365,9 +386,7 @@ final class FieldSet<FieldDescriptorType extends
    */
   private static void verifyType(final WireFormat.FieldType type,
                                  final Object value) {
-    if (value == null) {
-      throw new NullPointerException();
-    }
+    checkNotNull(value);
 
     boolean isValid = false;
     switch (type.getJavaType()) {
@@ -474,7 +493,7 @@ final class FieldSet<FieldDescriptorType extends
   }
 
   /**
-   * Like {@link Message.Builder#mergeFrom(Message)}, but merges from another 
+   * Like {@link Message.Builder#mergeFrom(Message)}, but merges from another
    * {@link FieldSet}.
    */
   public void mergeFrom(final FieldSet<FieldDescriptorType> other) {
@@ -619,10 +638,11 @@ final class FieldSet<FieldDescriptorType extends
    *               {@link Message#getField(Descriptors.FieldDescriptor)} for
    *               this field.
    */
-  private static void writeElement(final CodedOutputStream output,
-                                   final WireFormat.FieldType type,
-                                   final int number,
-                                   final Object value) throws IOException {
+  static void writeElement(
+      final CodedOutputStream output,
+      final WireFormat.FieldType type,
+      final int number,
+      final Object value) throws IOException {
     // Special case for groups, which need a start and end tag; other fields
     // can just use writeTag() and writeFieldNoTag().
     if (type == WireFormat.FieldType.GROUP) {
@@ -785,9 +805,8 @@ final class FieldSet<FieldDescriptorType extends
    *               {@link Message#getField(Descriptors.FieldDescriptor)} for
    *               this field.
    */
-  private static int computeElementSize(
-      final WireFormat.FieldType type,
-      final int number, final Object value) {
+  static int computeElementSize(
+      final WireFormat.FieldType type, final int number, final Object value) {
     int tagSize = CodedOutputStream.computeTagSize(number);
     if (type == WireFormat.FieldType.GROUP) {
       // Only count the end group tag for proto2 messages as for proto1 the end

@@ -53,21 +53,31 @@ import six
 import sys
 
 try:
-  import unittest2 as unittest
+  import unittest2 as unittest  # PY26
 except ImportError:
   import unittest
-from google.protobuf.internal import _parameterized
+try:
+  cmp                                   # Python 2
+except NameError:
+  cmp = lambda x, y: (x > y) - (x < y)  # Python 3
+
 from google.protobuf import map_unittest_pb2
 from google.protobuf import unittest_pb2
 from google.protobuf import unittest_proto3_arena_pb2
-from google.protobuf.internal import any_test_pb2
+from google.protobuf import descriptor_pb2
+from google.protobuf import descriptor_pool
+from google.protobuf import message_factory
+from google.protobuf import text_format
 from google.protobuf.internal import api_implementation
 from google.protobuf.internal import packed_field_test_pb2
 from google.protobuf.internal import test_util
+from google.protobuf.internal import testing_refleaks
 from google.protobuf import message
+from google.protobuf.internal import _parameterized
 
 if six.PY3:
   long = int
+
 
 # Python pre-2.6 does not have isinf() or isnan() functions, so we have
 # to provide our own.
@@ -83,10 +93,13 @@ def IsNegInf(val):
   return isinf(val) and (val < 0)
 
 
-@_parameterized.Parameters(
-    (unittest_pb2),
-    (unittest_proto3_arena_pb2))
-class MessageTest(unittest.TestCase):
+BaseTestCase = testing_refleaks.BaseTestCase
+
+
+@_parameterized.NamedParameters(
+    ('_proto2', unittest_pb2),
+    ('_proto3', unittest_proto3_arena_pb2))
+class MessageTest(BaseTestCase):
 
   def testBadUtf8String(self, message_module):
     if api_implementation.Type() != 'python':
@@ -126,6 +139,42 @@ class MessageTest(unittest.TestCase):
     self.assertEqual(golden_data, all_set.SerializeToString())
     golden_copy = copy.deepcopy(golden_message)
     self.assertEqual(golden_data, golden_copy.SerializeToString())
+
+  def testDeterminismParameters(self, message_module):
+    # This message is always deterministically serialized, even if determinism
+    # is disabled, so we can use it to verify that all the determinism
+    # parameters work correctly.
+    golden_data = (b'\xe2\x02\nOne string'
+                   b'\xe2\x02\nTwo string'
+                   b'\xe2\x02\nRed string'
+                   b'\xe2\x02\x0bBlue string')
+    golden_message = message_module.TestAllTypes()
+    golden_message.repeated_string.extend([
+        'One string',
+        'Two string',
+        'Red string',
+        'Blue string',
+    ])
+    self.assertEqual(golden_data,
+                     golden_message.SerializeToString(deterministic=None))
+    self.assertEqual(golden_data,
+                     golden_message.SerializeToString(deterministic=False))
+    self.assertEqual(golden_data,
+                     golden_message.SerializeToString(deterministic=True))
+
+    class BadArgError(Exception):
+      pass
+
+    class BadArg(object):
+
+      def __nonzero__(self):
+        raise BadArgError()
+
+      def __bool__(self):
+        raise BadArgError()
+
+    with self.assertRaises(BadArgError):
+      golden_message.SerializeToString(deterministic=BadArg())
 
   def testPickleSupport(self, message_module):
     golden_data = test_util.GoldenFileData('golden_message')
@@ -368,6 +417,7 @@ class MessageTest(unittest.TestCase):
     self.assertEqual(message.repeated_int32[0], 1)
     self.assertEqual(message.repeated_int32[1], 2)
     self.assertEqual(message.repeated_int32[2], 3)
+    self.assertEqual(str(message.repeated_int32), str([1, 2, 3]))
 
     message.repeated_float.append(1.1)
     message.repeated_float.append(1.3)
@@ -384,6 +434,7 @@ class MessageTest(unittest.TestCase):
     self.assertEqual(message.repeated_string[0], 'a')
     self.assertEqual(message.repeated_string[1], 'b')
     self.assertEqual(message.repeated_string[2], 'c')
+    self.assertEqual(str(message.repeated_string), str([u'a', u'b', u'c']))
 
     message.repeated_bytes.append(b'a')
     message.repeated_bytes.append(b'c')
@@ -392,6 +443,7 @@ class MessageTest(unittest.TestCase):
     self.assertEqual(message.repeated_bytes[0], b'a')
     self.assertEqual(message.repeated_bytes[1], b'b')
     self.assertEqual(message.repeated_bytes[2], b'c')
+    self.assertEqual(str(message.repeated_bytes), str([b'a', b'b', b'c']))
 
   def testSortingRepeatedScalarFieldsCustomComparator(self, message_module):
     """Check some different types with custom comparator."""
@@ -430,6 +482,8 @@ class MessageTest(unittest.TestCase):
     self.assertEqual(message.repeated_nested_message[3].bb, 4)
     self.assertEqual(message.repeated_nested_message[4].bb, 5)
     self.assertEqual(message.repeated_nested_message[5].bb, 6)
+    self.assertEqual(str(message.repeated_nested_message),
+                     '[bb: 1\n, bb: 2\n, bb: 3\n, bb: 4\n, bb: 5\n, bb: 6\n]')
 
   def testSortingRepeatedCompositeFieldsStable(self, message_module):
     """Check passing a custom comparator to sort a repeated composite field."""
@@ -554,6 +608,11 @@ class MessageTest(unittest.TestCase):
     self.assertIsInstance(m.repeated_int32, collections.MutableSequence)
     self.assertIsInstance(m.repeated_nested_message,
                           collections.MutableSequence)
+
+  def testRepeatedFieldInsideNestedMessage(self, message_module):
+    m = message_module.NestedTestAllTypes()
+    m.payload.repeated_int32.extend([])
+    self.assertTrue(m.HasField('payload'))
 
   def ensureNestedMessageExists(self, msg, attribute):
     """Make sure that a nested message object exists.
@@ -952,7 +1011,7 @@ class MessageTest(unittest.TestCase):
 
 
 # Class to test proto2-only features (required, extensions, etc.)
-class Proto2Test(unittest.TestCase):
+class Proto2Test(BaseTestCase):
 
   def testFieldPresence(self):
     message = unittest_pb2.TestAllTypes()
@@ -1108,6 +1167,7 @@ class Proto2Test(unittest.TestCase):
         optional_bytes=b'x',
         optionalgroup={'a': 400},
         optional_nested_message={'bb': 500},
+        optional_foreign_message={},
         optional_nested_enum='BAZ',
         repeatedgroup=[{'a': 600},
                        {'a': 700}],
@@ -1120,8 +1180,12 @@ class Proto2Test(unittest.TestCase):
     self.assertEqual(300.5, message.optional_float)
     self.assertEqual(b'x', message.optional_bytes)
     self.assertEqual(400, message.optionalgroup.a)
-    self.assertIsInstance(message.optional_nested_message, unittest_pb2.TestAllTypes.NestedMessage)
+    self.assertIsInstance(message.optional_nested_message,
+                          unittest_pb2.TestAllTypes.NestedMessage)
     self.assertEqual(500, message.optional_nested_message.bb)
+    self.assertTrue(message.HasField('optional_foreign_message'))
+    self.assertEqual(message.optional_foreign_message,
+                     unittest_pb2.ForeignMessage())
     self.assertEqual(unittest_pb2.TestAllTypes.BAZ,
                      message.optional_nested_enum)
     self.assertEqual(2, len(message.repeatedgroup))
@@ -1157,8 +1221,9 @@ class Proto2Test(unittest.TestCase):
       unittest_pb2.TestAllTypes(repeated_nested_enum='FOO')
 
 
+
 # Class to test proto3-only features/behavior (updated field presence & enums)
-class Proto3Test(unittest.TestCase):
+class Proto3Test(BaseTestCase):
 
   # Utility method for comparing equality with a map.
   def assertMapIterEquals(self, map_iter, dict_value):
@@ -1246,6 +1311,14 @@ class Proto3Test(unittest.TestCase):
     self.assertEqual(1234567, m2.optional_nested_enum)
     self.assertEqual(7654321, m2.repeated_nested_enum[0])
 
+    # ParseFromString in Proto2 should accept unknown enums too.
+    m3 = unittest_pb2.TestAllTypes()
+    m3.ParseFromString(serialized)
+    m2.Clear()
+    m2.ParseFromString(m3.SerializeToString())
+    self.assertEqual(1234567, m2.optional_nested_enum)
+    self.assertEqual(7654321, m2.repeated_nested_enum[0])
+
   # Map isn't really a proto3-only feature. But there is no proto2 equivalent
   # of google/protobuf/map_unittest.proto right now, so it's not easy to
   # test both with the same test like we do for the other proto2/proto3 tests.
@@ -1259,7 +1332,10 @@ class Proto3Test(unittest.TestCase):
     self.assertFalse(-2**33 in msg.map_int64_int64)
     self.assertFalse(123 in msg.map_uint32_uint32)
     self.assertFalse(2**33 in msg.map_uint64_uint64)
+    self.assertFalse(123 in msg.map_int32_double)
+    self.assertFalse(False in msg.map_bool_bool)
     self.assertFalse('abc' in msg.map_string_string)
+    self.assertFalse(111 in msg.map_int32_bytes)
     self.assertFalse(888 in msg.map_int32_enum)
 
     # Accessing an unset key returns the default.
@@ -1267,7 +1343,12 @@ class Proto3Test(unittest.TestCase):
     self.assertEqual(0, msg.map_int64_int64[-2**33])
     self.assertEqual(0, msg.map_uint32_uint32[123])
     self.assertEqual(0, msg.map_uint64_uint64[2**33])
+    self.assertEqual(0.0, msg.map_int32_double[123])
+    self.assertTrue(isinstance(msg.map_int32_double[123], float))
+    self.assertEqual(False, msg.map_bool_bool[False])
+    self.assertTrue(isinstance(msg.map_bool_bool[False], bool))
     self.assertEqual('', msg.map_string_string['abc'])
+    self.assertEqual(b'', msg.map_int32_bytes[111])
     self.assertEqual(0, msg.map_int32_enum[888])
 
     # It also sets the value in the map
@@ -1275,7 +1356,10 @@ class Proto3Test(unittest.TestCase):
     self.assertTrue(-2**33 in msg.map_int64_int64)
     self.assertTrue(123 in msg.map_uint32_uint32)
     self.assertTrue(2**33 in msg.map_uint64_uint64)
+    self.assertTrue(123 in msg.map_int32_double)
+    self.assertTrue(False in msg.map_bool_bool)
     self.assertTrue('abc' in msg.map_string_string)
+    self.assertTrue(111 in msg.map_int32_bytes)
     self.assertTrue(888 in msg.map_int32_enum)
 
     self.assertIsInstance(msg.map_string_string['abc'], six.text_type)
@@ -1406,6 +1490,35 @@ class Proto3Test(unittest.TestCase):
     self.assertIn(-456, msg2.map_int32_foreign_message)
     self.assertEqual(2, len(msg2.map_int32_foreign_message))
 
+  def testNestedMessageMapItemDelete(self):
+    msg = map_unittest_pb2.TestMap()
+    msg.map_int32_all_types[1].optional_nested_message.bb = 1
+    del msg.map_int32_all_types[1]
+    msg.map_int32_all_types[2].optional_nested_message.bb = 2
+    self.assertEqual(1, len(msg.map_int32_all_types))
+    msg.map_int32_all_types[1].optional_nested_message.bb = 1
+    self.assertEqual(2, len(msg.map_int32_all_types))
+
+    serialized = msg.SerializeToString()
+    msg2 = map_unittest_pb2.TestMap()
+    msg2.ParseFromString(serialized)
+    keys = [1, 2]
+    # The loop triggers PyErr_Occurred() in c extension.
+    for key in keys:
+      del msg2.map_int32_all_types[key]
+
+  def testMapByteSize(self):
+    msg = map_unittest_pb2.TestMap()
+    msg.map_int32_int32[1] = 1
+    size = msg.ByteSize()
+    msg.map_int32_int32[1] = 128
+    self.assertEqual(msg.ByteSize(), size + 1)
+
+    msg.map_int32_foreign_message[19].c = 1
+    size = msg.ByteSize()
+    msg.map_int32_foreign_message[19].c = 128
+    self.assertEqual(msg.ByteSize(), size + 1)
+
   def testMergeFrom(self):
     msg = map_unittest_pb2.TestMap()
     msg.map_int32_int32[12] = 34
@@ -1418,6 +1531,8 @@ class Proto3Test(unittest.TestCase):
     msg2.map_int32_int32[12] = 55
     msg2.map_int64_int64[88] = 99
     msg2.map_int32_foreign_message[222].c = 15
+    msg2.map_int32_foreign_message[222].d = 20
+    old_map_value = msg2.map_int32_foreign_message[222]
 
     msg2.MergeFrom(msg)
 
@@ -1427,6 +1542,16 @@ class Proto3Test(unittest.TestCase):
     self.assertEqual(99, msg2.map_int64_int64[88])
     self.assertEqual(5, msg2.map_int32_foreign_message[111].c)
     self.assertEqual(10, msg2.map_int32_foreign_message[222].c)
+    self.assertFalse(msg2.map_int32_foreign_message[222].HasField('d'))
+    if api_implementation.Type() != 'cpp':
+      # During the call to MergeFrom(), the C++ implementation will have
+      # deallocated the underlying message, but this is very difficult to detect
+      # properly. The line below is likely to cause a segmentation fault.
+      # With the Python implementation, old_map_value is just 'detached' from
+      # the main message. Using it will not crash of course, but since it still
+      # have a reference to the parent message I'm sure we can find interesting
+      # ways to cause inconsistencies.
+      self.assertEqual(15, old_map_value.c)
 
     # Verify that there is only one entry per key, even though the MergeFrom
     # may have internally created multiple entries for a single key in the
@@ -1447,6 +1572,22 @@ class Proto3Test(unittest.TestCase):
 
     del msg2.map_int32_foreign_message[222]
     self.assertFalse(222 in msg2.map_int32_foreign_message)
+
+  def testMergeFromBadType(self):
+    msg = map_unittest_pb2.TestMap()
+    with self.assertRaisesRegexp(
+        TypeError,
+        r'Parameter to MergeFrom\(\) must be instance of same class: expected '
+        r'.*TestMap got int\.'):
+      msg.MergeFrom(1)
+
+  def testCopyFromBadType(self):
+    msg = map_unittest_pb2.TestMap()
+    with self.assertRaisesRegexp(
+        TypeError,
+        r'Parameter to [A-Za-z]*From\(\) must be instance of same class: '
+        r'expected .*TestMap got int\.'):
+      msg.CopyFrom(1)
 
   def testIntegerMapWithLongs(self):
     msg = map_unittest_pb2.TestMap()
@@ -1565,6 +1706,50 @@ class Proto3Test(unittest.TestCase):
     matching_dict = {2: 4, 3: 6, 4: 8}
     self.assertMapIterEquals(msg.map_int32_int32.items(), matching_dict)
 
+  def testMapItems(self):
+    # Map items used to have strange behaviors when use c extension. Because
+    # [] may reorder the map and invalidate any exsting iterators.
+    # TODO(jieluo): Check if [] reordering the map is a bug or intended
+    # behavior.
+    msg = map_unittest_pb2.TestMap()
+    msg.map_string_string['local_init_op'] = ''
+    msg.map_string_string['trainable_variables'] = ''
+    msg.map_string_string['variables'] = ''
+    msg.map_string_string['init_op'] = ''
+    msg.map_string_string['summaries'] = ''
+    items1 = msg.map_string_string.items()
+    items2 = msg.map_string_string.items()
+    self.assertEqual(items1, items2)
+
+  def testMapDeterministicSerialization(self):
+    golden_data = (b'r\x0c\n\x07init_op\x12\x01d'
+                   b'r\n\n\x05item1\x12\x01e'
+                   b'r\n\n\x05item2\x12\x01f'
+                   b'r\n\n\x05item3\x12\x01g'
+                   b'r\x0b\n\x05item4\x12\x02QQ'
+                   b'r\x12\n\rlocal_init_op\x12\x01a'
+                   b'r\x0e\n\tsummaries\x12\x01e'
+                   b'r\x18\n\x13trainable_variables\x12\x01b'
+                   b'r\x0e\n\tvariables\x12\x01c')
+    msg = map_unittest_pb2.TestMap()
+    msg.map_string_string['local_init_op'] = 'a'
+    msg.map_string_string['trainable_variables'] = 'b'
+    msg.map_string_string['variables'] = 'c'
+    msg.map_string_string['init_op'] = 'd'
+    msg.map_string_string['summaries'] = 'e'
+    msg.map_string_string['item1'] = 'e'
+    msg.map_string_string['item2'] = 'f'
+    msg.map_string_string['item3'] = 'g'
+    msg.map_string_string['item4'] = 'QQ'
+
+    # If deterministic serialization is not working correctly, this will be
+    # "flaky" depending on the exact python dict hash seed.
+    #
+    # Fortunately, there are enough items in this map that it is extremely
+    # unlikely to ever hit the "right" in-order combination, so the test
+    # itself should fail reliably.
+    self.assertEqual(golden_data, msg.SerializeToString(deterministic=True))
+
   def testMapIterationClearMessage(self):
     # Iterator needs to work even if message and map are deleted.
     msg = map_unittest_pb2.TestMap()
@@ -1666,40 +1851,9 @@ class Proto3Test(unittest.TestCase):
     msg.map_string_foreign_message['foo'].c = 5
     self.assertEqual(0, len(msg.FindInitializationErrors()))
 
-  def testAnyMessage(self):
-    # Creates and sets message.
-    msg = any_test_pb2.TestAny()
-    msg_descriptor = msg.DESCRIPTOR
-    all_types = unittest_pb2.TestAllTypes()
-    all_descriptor = all_types.DESCRIPTOR
-    all_types.repeated_string.append(u'\u00fc\ua71f')
-    # Packs to Any.
-    msg.value.Pack(all_types)
-    self.assertEqual(msg.value.type_url,
-                     'type.googleapis.com/%s' % all_descriptor.full_name)
-    self.assertEqual(msg.value.value,
-                     all_types.SerializeToString())
-    # Tests Is() method.
-    self.assertTrue(msg.value.Is(all_descriptor))
-    self.assertFalse(msg.value.Is(msg_descriptor))
-    # Unpacks Any.
-    unpacked_message = unittest_pb2.TestAllTypes()
-    self.assertTrue(msg.value.Unpack(unpacked_message))
-    self.assertEqual(all_types, unpacked_message)
-    # Unpacks to different type.
-    self.assertFalse(msg.value.Unpack(msg))
-    # Only Any messages have Pack method.
-    try:
-      msg.Pack(all_types)
-    except AttributeError:
-      pass
-    else:
-      raise AttributeError('%s should not have Pack method.' %
-                           msg_descriptor.full_name)
 
 
-
-class ValidTypeNamesTest(unittest.TestCase):
+class ValidTypeNamesTest(BaseTestCase):
 
   def assertImportFromName(self, msg, base_name):
     # Parse <type 'module.class_name'> to extra 'some.name' as a string.
@@ -1720,7 +1874,7 @@ class ValidTypeNamesTest(unittest.TestCase):
     self.assertImportFromName(pb.repeated_int32, 'Scalar')
     self.assertImportFromName(pb.repeated_nested_message, 'Composite')
 
-class PackedFieldTest(unittest.TestCase):
+class PackedFieldTest(BaseTestCase):
 
   def setMessage(self, message):
     message.repeated_int32.append(1)
@@ -1775,6 +1929,68 @@ class PackedFieldTest(unittest.TestCase):
                    b'\x68\x01'
                    b'\x70\x01')
     self.assertEqual(golden_data, message.SerializeToString())
+
+
+@unittest.skipIf(api_implementation.Type() != 'cpp' or
+                 sys.version_info < (2, 7),
+                 'explicit tests of the C++ implementation for PY27 and above')
+class OversizeProtosTest(BaseTestCase):
+
+  @classmethod
+  def setUpClass(cls):
+    # At the moment, reference cycles between DescriptorPool and Message classes
+    # are not detected and these objects are never freed.
+    # To avoid errors with ReferenceLeakChecker, we create the class only once.
+    file_desc = """
+      name: "f/f.msg2"
+      package: "f"
+      message_type {
+        name: "msg1"
+        field {
+          name: "payload"
+          number: 1
+          label: LABEL_OPTIONAL
+          type: TYPE_STRING
+        }
+      }
+      message_type {
+        name: "msg2"
+        field {
+          name: "field"
+          number: 1
+          label: LABEL_OPTIONAL
+          type: TYPE_MESSAGE
+          type_name: "msg1"
+        }
+      }
+    """
+    pool = descriptor_pool.DescriptorPool()
+    desc = descriptor_pb2.FileDescriptorProto()
+    text_format.Parse(file_desc, desc)
+    pool.Add(desc)
+    cls.proto_cls = message_factory.MessageFactory(pool).GetPrototype(
+        pool.FindMessageTypeByName('f.msg2'))
+
+  def setUp(self):
+    self.p = self.proto_cls()
+    self.p.field.payload = 'c' * (1024 * 1024 * 64 + 1)
+    self.p_serialized = self.p.SerializeToString()
+
+  def testAssertOversizeProto(self):
+    from google.protobuf.pyext._message import SetAllowOversizeProtos
+    SetAllowOversizeProtos(False)
+    q = self.proto_cls()
+    try:
+      q.ParseFromString(self.p_serialized)
+    except message.DecodeError as e:
+      self.assertEqual(str(e), 'Error parsing message')
+
+  def testSucceedOversizeProto(self):
+    from google.protobuf.pyext._message import SetAllowOversizeProtos
+    SetAllowOversizeProtos(True)
+    q = self.proto_cls()
+    q.ParseFromString(self.p_serialized)
+    self.assertEqual(self.p.field.payload, q.field.payload)
 
 if __name__ == '__main__':
   unittest.main()

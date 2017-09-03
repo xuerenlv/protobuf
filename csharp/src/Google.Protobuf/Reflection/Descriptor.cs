@@ -10,7 +10,6 @@ using scg = global::System.Collections.Generic;
 namespace Google.Protobuf.Reflection {
 
   /// <summary>Holder for reflection information generated from google/protobuf/descriptor.proto</summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   internal static partial class DescriptorReflection {
 
     #region Descriptor
@@ -36,7 +35,7 @@ namespace Google.Protobuf.Reflection {
             "LnByb3RvYnVmLkZpZWxkRGVzY3JpcHRvclByb3RvEi0KB29wdGlvbnMYCCAB",
             "KAsyHC5nb29nbGUucHJvdG9idWYuRmlsZU9wdGlvbnMSOQoQc291cmNlX2Nv",
             "ZGVfaW5mbxgJIAEoCzIfLmdvb2dsZS5wcm90b2J1Zi5Tb3VyY2VDb2RlSW5m",
-            "bxIOCgZzeW50YXgYDCABKAki8AQKD0Rlc2NyaXB0b3JQcm90bxIMCgRuYW1l",
+            "bxIOCgZzeW50YXgYDCABKAkiqQUKD0Rlc2NyaXB0b3JQcm90bxIMCgRuYW1l",
             "GAEgASgJEjQKBWZpZWxkGAIgAygLMiUuZ29vZ2xlLnByb3RvYnVmLkZpZWxk",
             "RGVzY3JpcHRvclByb3RvEjgKCWV4dGVuc2lvbhgGIAMoCzIlLmdvb2dsZS5w",
             "cm90b2J1Zi5GaWVsZERlc2NyaXB0b3JQcm90bxI1CgtuZXN0ZWRfdHlwZRgD",
@@ -48,117 +47,133 @@ namespace Google.Protobuf.Reflection {
             "b3RvEjAKB29wdGlvbnMYByABKAsyHy5nb29nbGUucHJvdG9idWYuTWVzc2Fn",
             "ZU9wdGlvbnMSRgoOcmVzZXJ2ZWRfcmFuZ2UYCSADKAsyLi5nb29nbGUucHJv",
             "dG9idWYuRGVzY3JpcHRvclByb3RvLlJlc2VydmVkUmFuZ2USFQoNcmVzZXJ2",
-            "ZWRfbmFtZRgKIAMoCRosCg5FeHRlbnNpb25SYW5nZRINCgVzdGFydBgBIAEo",
-            "BRILCgNlbmQYAiABKAUaKwoNUmVzZXJ2ZWRSYW5nZRINCgVzdGFydBgBIAEo",
-            "BRILCgNlbmQYAiABKAUivAUKFEZpZWxkRGVzY3JpcHRvclByb3RvEgwKBG5h",
-            "bWUYASABKAkSDgoGbnVtYmVyGAMgASgFEjoKBWxhYmVsGAQgASgOMisuZ29v",
-            "Z2xlLnByb3RvYnVmLkZpZWxkRGVzY3JpcHRvclByb3RvLkxhYmVsEjgKBHR5",
-            "cGUYBSABKA4yKi5nb29nbGUucHJvdG9idWYuRmllbGREZXNjcmlwdG9yUHJv",
-            "dG8uVHlwZRIRCgl0eXBlX25hbWUYBiABKAkSEAoIZXh0ZW5kZWUYAiABKAkS",
-            "FQoNZGVmYXVsdF92YWx1ZRgHIAEoCRITCgtvbmVvZl9pbmRleBgJIAEoBRIR",
-            "Cglqc29uX25hbWUYCiABKAkSLgoHb3B0aW9ucxgIIAEoCzIdLmdvb2dsZS5w",
-            "cm90b2J1Zi5GaWVsZE9wdGlvbnMitgIKBFR5cGUSDwoLVFlQRV9ET1VCTEUQ",
-            "ARIOCgpUWVBFX0ZMT0FUEAISDgoKVFlQRV9JTlQ2NBADEg8KC1RZUEVfVUlO",
-            "VDY0EAQSDgoKVFlQRV9JTlQzMhAFEhAKDFRZUEVfRklYRUQ2NBAGEhAKDFRZ",
-            "UEVfRklYRUQzMhAHEg0KCVRZUEVfQk9PTBAIEg8KC1RZUEVfU1RSSU5HEAkS",
-            "DgoKVFlQRV9HUk9VUBAKEhAKDFRZUEVfTUVTU0FHRRALEg4KClRZUEVfQllU",
-            "RVMQDBIPCgtUWVBFX1VJTlQzMhANEg0KCVRZUEVfRU5VTRAOEhEKDVRZUEVf",
-            "U0ZJWEVEMzIQDxIRCg1UWVBFX1NGSVhFRDY0EBASDwoLVFlQRV9TSU5UMzIQ",
-            "ERIPCgtUWVBFX1NJTlQ2NBASIkMKBUxhYmVsEhIKDkxBQkVMX09QVElPTkFM",
-            "EAESEgoOTEFCRUxfUkVRVUlSRUQQAhISCg5MQUJFTF9SRVBFQVRFRBADIiQK",
-            "FE9uZW9mRGVzY3JpcHRvclByb3RvEgwKBG5hbWUYASABKAkijAEKE0VudW1E",
-            "ZXNjcmlwdG9yUHJvdG8SDAoEbmFtZRgBIAEoCRI4CgV2YWx1ZRgCIAMoCzIp",
-            "Lmdvb2dsZS5wcm90b2J1Zi5FbnVtVmFsdWVEZXNjcmlwdG9yUHJvdG8SLQoH",
-            "b3B0aW9ucxgDIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5FbnVtT3B0aW9ucyJs",
-            "ChhFbnVtVmFsdWVEZXNjcmlwdG9yUHJvdG8SDAoEbmFtZRgBIAEoCRIOCgZu",
-            "dW1iZXIYAiABKAUSMgoHb3B0aW9ucxgDIAEoCzIhLmdvb2dsZS5wcm90b2J1",
-            "Zi5FbnVtVmFsdWVPcHRpb25zIpABChZTZXJ2aWNlRGVzY3JpcHRvclByb3Rv",
-            "EgwKBG5hbWUYASABKAkSNgoGbWV0aG9kGAIgAygLMiYuZ29vZ2xlLnByb3Rv",
-            "YnVmLk1ldGhvZERlc2NyaXB0b3JQcm90bxIwCgdvcHRpb25zGAMgASgLMh8u",
-            "Z29vZ2xlLnByb3RvYnVmLlNlcnZpY2VPcHRpb25zIsEBChVNZXRob2REZXNj",
-            "cmlwdG9yUHJvdG8SDAoEbmFtZRgBIAEoCRISCgppbnB1dF90eXBlGAIgASgJ",
-            "EhMKC291dHB1dF90eXBlGAMgASgJEi8KB29wdGlvbnMYBCABKAsyHi5nb29n",
-            "bGUucHJvdG9idWYuTWV0aG9kT3B0aW9ucxIfChBjbGllbnRfc3RyZWFtaW5n",
-            "GAUgASgIOgVmYWxzZRIfChBzZXJ2ZXJfc3RyZWFtaW5nGAYgASgIOgVmYWxz",
-            "ZSKuBQoLRmlsZU9wdGlvbnMSFAoMamF2YV9wYWNrYWdlGAEgASgJEhwKFGph",
-            "dmFfb3V0ZXJfY2xhc3NuYW1lGAggASgJEiIKE2phdmFfbXVsdGlwbGVfZmls",
-            "ZXMYCiABKAg6BWZhbHNlEiwKHWphdmFfZ2VuZXJhdGVfZXF1YWxzX2FuZF9o",
-            "YXNoGBQgASgIOgVmYWxzZRIlChZqYXZhX3N0cmluZ19jaGVja191dGY4GBsg",
-            "ASgIOgVmYWxzZRJGCgxvcHRpbWl6ZV9mb3IYCSABKA4yKS5nb29nbGUucHJv",
-            "dG9idWYuRmlsZU9wdGlvbnMuT3B0aW1pemVNb2RlOgVTUEVFRBISCgpnb19w",
-            "YWNrYWdlGAsgASgJEiIKE2NjX2dlbmVyaWNfc2VydmljZXMYECABKAg6BWZh",
-            "bHNlEiQKFWphdmFfZ2VuZXJpY19zZXJ2aWNlcxgRIAEoCDoFZmFsc2USIgoT",
-            "cHlfZ2VuZXJpY19zZXJ2aWNlcxgSIAEoCDoFZmFsc2USGQoKZGVwcmVjYXRl",
-            "ZBgXIAEoCDoFZmFsc2USHwoQY2NfZW5hYmxlX2FyZW5hcxgfIAEoCDoFZmFs",
-            "c2USGQoRb2JqY19jbGFzc19wcmVmaXgYJCABKAkSGAoQY3NoYXJwX25hbWVz",
-            "cGFjZRglIAEoCRIrCh9qYXZhbmFub191c2VfZGVwcmVjYXRlZF9wYWNrYWdl",
-            "GCYgASgIQgIYARJDChR1bmludGVycHJldGVkX29wdGlvbhjnByADKAsyJC5n",
+            "ZWRfbmFtZRgKIAMoCRplCg5FeHRlbnNpb25SYW5nZRINCgVzdGFydBgBIAEo",
+            "BRILCgNlbmQYAiABKAUSNwoHb3B0aW9ucxgDIAEoCzImLmdvb2dsZS5wcm90",
+            "b2J1Zi5FeHRlbnNpb25SYW5nZU9wdGlvbnMaKwoNUmVzZXJ2ZWRSYW5nZRIN",
+            "CgVzdGFydBgBIAEoBRILCgNlbmQYAiABKAUiZwoVRXh0ZW5zaW9uUmFuZ2VP",
+            "cHRpb25zEkMKFHVuaW50ZXJwcmV0ZWRfb3B0aW9uGOcHIAMoCzIkLmdvb2ds",
+            "ZS5wcm90b2J1Zi5VbmludGVycHJldGVkT3B0aW9uKgkI6AcQgICAgAIivAUK",
+            "FEZpZWxkRGVzY3JpcHRvclByb3RvEgwKBG5hbWUYASABKAkSDgoGbnVtYmVy",
+            "GAMgASgFEjoKBWxhYmVsGAQgASgOMisuZ29vZ2xlLnByb3RvYnVmLkZpZWxk",
+            "RGVzY3JpcHRvclByb3RvLkxhYmVsEjgKBHR5cGUYBSABKA4yKi5nb29nbGUu",
+            "cHJvdG9idWYuRmllbGREZXNjcmlwdG9yUHJvdG8uVHlwZRIRCgl0eXBlX25h",
+            "bWUYBiABKAkSEAoIZXh0ZW5kZWUYAiABKAkSFQoNZGVmYXVsdF92YWx1ZRgH",
+            "IAEoCRITCgtvbmVvZl9pbmRleBgJIAEoBRIRCglqc29uX25hbWUYCiABKAkS",
+            "LgoHb3B0aW9ucxgIIAEoCzIdLmdvb2dsZS5wcm90b2J1Zi5GaWVsZE9wdGlv",
+            "bnMitgIKBFR5cGUSDwoLVFlQRV9ET1VCTEUQARIOCgpUWVBFX0ZMT0FUEAIS",
+            "DgoKVFlQRV9JTlQ2NBADEg8KC1RZUEVfVUlOVDY0EAQSDgoKVFlQRV9JTlQz",
+            "MhAFEhAKDFRZUEVfRklYRUQ2NBAGEhAKDFRZUEVfRklYRUQzMhAHEg0KCVRZ",
+            "UEVfQk9PTBAIEg8KC1RZUEVfU1RSSU5HEAkSDgoKVFlQRV9HUk9VUBAKEhAK",
+            "DFRZUEVfTUVTU0FHRRALEg4KClRZUEVfQllURVMQDBIPCgtUWVBFX1VJTlQz",
+            "MhANEg0KCVRZUEVfRU5VTRAOEhEKDVRZUEVfU0ZJWEVEMzIQDxIRCg1UWVBF",
+            "X1NGSVhFRDY0EBASDwoLVFlQRV9TSU5UMzIQERIPCgtUWVBFX1NJTlQ2NBAS",
+            "IkMKBUxhYmVsEhIKDkxBQkVMX09QVElPTkFMEAESEgoOTEFCRUxfUkVRVUlS",
+            "RUQQAhISCg5MQUJFTF9SRVBFQVRFRBADIlQKFE9uZW9mRGVzY3JpcHRvclBy",
+            "b3RvEgwKBG5hbWUYASABKAkSLgoHb3B0aW9ucxgCIAEoCzIdLmdvb2dsZS5w",
+            "cm90b2J1Zi5PbmVvZk9wdGlvbnMijAEKE0VudW1EZXNjcmlwdG9yUHJvdG8S",
+            "DAoEbmFtZRgBIAEoCRI4CgV2YWx1ZRgCIAMoCzIpLmdvb2dsZS5wcm90b2J1",
+            "Zi5FbnVtVmFsdWVEZXNjcmlwdG9yUHJvdG8SLQoHb3B0aW9ucxgDIAEoCzIc",
+            "Lmdvb2dsZS5wcm90b2J1Zi5FbnVtT3B0aW9ucyJsChhFbnVtVmFsdWVEZXNj",
+            "cmlwdG9yUHJvdG8SDAoEbmFtZRgBIAEoCRIOCgZudW1iZXIYAiABKAUSMgoH",
+            "b3B0aW9ucxgDIAEoCzIhLmdvb2dsZS5wcm90b2J1Zi5FbnVtVmFsdWVPcHRp",
+            "b25zIpABChZTZXJ2aWNlRGVzY3JpcHRvclByb3RvEgwKBG5hbWUYASABKAkS",
+            "NgoGbWV0aG9kGAIgAygLMiYuZ29vZ2xlLnByb3RvYnVmLk1ldGhvZERlc2Ny",
+            "aXB0b3JQcm90bxIwCgdvcHRpb25zGAMgASgLMh8uZ29vZ2xlLnByb3RvYnVm",
+            "LlNlcnZpY2VPcHRpb25zIsEBChVNZXRob2REZXNjcmlwdG9yUHJvdG8SDAoE",
+            "bmFtZRgBIAEoCRISCgppbnB1dF90eXBlGAIgASgJEhMKC291dHB1dF90eXBl",
+            "GAMgASgJEi8KB29wdGlvbnMYBCABKAsyHi5nb29nbGUucHJvdG9idWYuTWV0",
+            "aG9kT3B0aW9ucxIfChBjbGllbnRfc3RyZWFtaW5nGAUgASgIOgVmYWxzZRIf",
+            "ChBzZXJ2ZXJfc3RyZWFtaW5nGAYgASgIOgVmYWxzZSLwBQoLRmlsZU9wdGlv",
+            "bnMSFAoMamF2YV9wYWNrYWdlGAEgASgJEhwKFGphdmFfb3V0ZXJfY2xhc3Nu",
+            "YW1lGAggASgJEiIKE2phdmFfbXVsdGlwbGVfZmlsZXMYCiABKAg6BWZhbHNl",
+            "EikKHWphdmFfZ2VuZXJhdGVfZXF1YWxzX2FuZF9oYXNoGBQgASgIQgIYARIl",
+            "ChZqYXZhX3N0cmluZ19jaGVja191dGY4GBsgASgIOgVmYWxzZRJGCgxvcHRp",
+            "bWl6ZV9mb3IYCSABKA4yKS5nb29nbGUucHJvdG9idWYuRmlsZU9wdGlvbnMu",
+            "T3B0aW1pemVNb2RlOgVTUEVFRBISCgpnb19wYWNrYWdlGAsgASgJEiIKE2Nj",
+            "X2dlbmVyaWNfc2VydmljZXMYECABKAg6BWZhbHNlEiQKFWphdmFfZ2VuZXJp",
+            "Y19zZXJ2aWNlcxgRIAEoCDoFZmFsc2USIgoTcHlfZ2VuZXJpY19zZXJ2aWNl",
+            "cxgSIAEoCDoFZmFsc2USIwoUcGhwX2dlbmVyaWNfc2VydmljZXMYEyABKAg6",
+            "BWZhbHNlEhkKCmRlcHJlY2F0ZWQYFyABKAg6BWZhbHNlEh8KEGNjX2VuYWJs",
+            "ZV9hcmVuYXMYHyABKAg6BWZhbHNlEhkKEW9iamNfY2xhc3NfcHJlZml4GCQg",
+            "ASgJEhgKEGNzaGFycF9uYW1lc3BhY2UYJSABKAkSFAoMc3dpZnRfcHJlZml4",
+            "GCcgASgJEhgKEHBocF9jbGFzc19wcmVmaXgYKCABKAkSFQoNcGhwX25hbWVz",
+            "cGFjZRgpIAEoCRJDChR1bmludGVycHJldGVkX29wdGlvbhjnByADKAsyJC5n",
             "b29nbGUucHJvdG9idWYuVW5pbnRlcnByZXRlZE9wdGlvbiI6CgxPcHRpbWl6",
             "ZU1vZGUSCQoFU1BFRUQQARINCglDT0RFX1NJWkUQAhIQCgxMSVRFX1JVTlRJ",
-            "TUUQAyoJCOgHEICAgIACIuYBCg5NZXNzYWdlT3B0aW9ucxImChdtZXNzYWdl",
-            "X3NldF93aXJlX2Zvcm1hdBgBIAEoCDoFZmFsc2USLgofbm9fc3RhbmRhcmRf",
-            "ZGVzY3JpcHRvcl9hY2Nlc3NvchgCIAEoCDoFZmFsc2USGQoKZGVwcmVjYXRl",
-            "ZBgDIAEoCDoFZmFsc2USEQoJbWFwX2VudHJ5GAcgASgIEkMKFHVuaW50ZXJw",
+            "TUUQAyoJCOgHEICAgIACSgQIJhAnIvIBCg5NZXNzYWdlT3B0aW9ucxImChdt",
+            "ZXNzYWdlX3NldF93aXJlX2Zvcm1hdBgBIAEoCDoFZmFsc2USLgofbm9fc3Rh",
+            "bmRhcmRfZGVzY3JpcHRvcl9hY2Nlc3NvchgCIAEoCDoFZmFsc2USGQoKZGVw",
+            "cmVjYXRlZBgDIAEoCDoFZmFsc2USEQoJbWFwX2VudHJ5GAcgASgIEkMKFHVu",
+            "aW50ZXJwcmV0ZWRfb3B0aW9uGOcHIAMoCzIkLmdvb2dsZS5wcm90b2J1Zi5V",
+            "bmludGVycHJldGVkT3B0aW9uKgkI6AcQgICAgAJKBAgIEAlKBAgJEAoingMK",
+            "DEZpZWxkT3B0aW9ucxI6CgVjdHlwZRgBIAEoDjIjLmdvb2dsZS5wcm90b2J1",
+            "Zi5GaWVsZE9wdGlvbnMuQ1R5cGU6BlNUUklORxIOCgZwYWNrZWQYAiABKAgS",
+            "PwoGanN0eXBlGAYgASgOMiQuZ29vZ2xlLnByb3RvYnVmLkZpZWxkT3B0aW9u",
+            "cy5KU1R5cGU6CUpTX05PUk1BTBITCgRsYXp5GAUgASgIOgVmYWxzZRIZCgpk",
+            "ZXByZWNhdGVkGAMgASgIOgVmYWxzZRITCgR3ZWFrGAogASgIOgVmYWxzZRJD",
+            "ChR1bmludGVycHJldGVkX29wdGlvbhjnByADKAsyJC5nb29nbGUucHJvdG9i",
+            "dWYuVW5pbnRlcnByZXRlZE9wdGlvbiIvCgVDVHlwZRIKCgZTVFJJTkcQABII",
+            "CgRDT1JEEAESEAoMU1RSSU5HX1BJRUNFEAIiNQoGSlNUeXBlEg0KCUpTX05P",
+            "Uk1BTBAAEg0KCUpTX1NUUklORxABEg0KCUpTX05VTUJFUhACKgkI6AcQgICA",
+            "gAJKBAgEEAUiXgoMT25lb2ZPcHRpb25zEkMKFHVuaW50ZXJwcmV0ZWRfb3B0",
+            "aW9uGOcHIAMoCzIkLmdvb2dsZS5wcm90b2J1Zi5VbmludGVycHJldGVkT3B0",
+            "aW9uKgkI6AcQgICAgAIikwEKC0VudW1PcHRpb25zEhMKC2FsbG93X2FsaWFz",
+            "GAIgASgIEhkKCmRlcHJlY2F0ZWQYAyABKAg6BWZhbHNlEkMKFHVuaW50ZXJw",
             "cmV0ZWRfb3B0aW9uGOcHIAMoCzIkLmdvb2dsZS5wcm90b2J1Zi5VbmludGVy",
-            "cHJldGVkT3B0aW9uKgkI6AcQgICAgAIimAMKDEZpZWxkT3B0aW9ucxI6CgVj",
-            "dHlwZRgBIAEoDjIjLmdvb2dsZS5wcm90b2J1Zi5GaWVsZE9wdGlvbnMuQ1R5",
-            "cGU6BlNUUklORxIOCgZwYWNrZWQYAiABKAgSPwoGanN0eXBlGAYgASgOMiQu",
-            "Z29vZ2xlLnByb3RvYnVmLkZpZWxkT3B0aW9ucy5KU1R5cGU6CUpTX05PUk1B",
-            "TBITCgRsYXp5GAUgASgIOgVmYWxzZRIZCgpkZXByZWNhdGVkGAMgASgIOgVm",
-            "YWxzZRITCgR3ZWFrGAogASgIOgVmYWxzZRJDChR1bmludGVycHJldGVkX29w",
-            "dGlvbhjnByADKAsyJC5nb29nbGUucHJvdG9idWYuVW5pbnRlcnByZXRlZE9w",
-            "dGlvbiIvCgVDVHlwZRIKCgZTVFJJTkcQABIICgRDT1JEEAESEAoMU1RSSU5H",
-            "X1BJRUNFEAIiNQoGSlNUeXBlEg0KCUpTX05PUk1BTBAAEg0KCUpTX1NUUklO",
-            "RxABEg0KCUpTX05VTUJFUhACKgkI6AcQgICAgAIijQEKC0VudW1PcHRpb25z",
-            "EhMKC2FsbG93X2FsaWFzGAIgASgIEhkKCmRlcHJlY2F0ZWQYAyABKAg6BWZh",
-            "bHNlEkMKFHVuaW50ZXJwcmV0ZWRfb3B0aW9uGOcHIAMoCzIkLmdvb2dsZS5w",
-            "cm90b2J1Zi5VbmludGVycHJldGVkT3B0aW9uKgkI6AcQgICAgAIifQoQRW51",
-            "bVZhbHVlT3B0aW9ucxIZCgpkZXByZWNhdGVkGAEgASgIOgVmYWxzZRJDChR1",
-            "bmludGVycHJldGVkX29wdGlvbhjnByADKAsyJC5nb29nbGUucHJvdG9idWYu",
-            "VW5pbnRlcnByZXRlZE9wdGlvbioJCOgHEICAgIACInsKDlNlcnZpY2VPcHRp",
-            "b25zEhkKCmRlcHJlY2F0ZWQYISABKAg6BWZhbHNlEkMKFHVuaW50ZXJwcmV0",
-            "ZWRfb3B0aW9uGOcHIAMoCzIkLmdvb2dsZS5wcm90b2J1Zi5VbmludGVycHJl",
-            "dGVkT3B0aW9uKgkI6AcQgICAgAIiegoNTWV0aG9kT3B0aW9ucxIZCgpkZXBy",
-            "ZWNhdGVkGCEgASgIOgVmYWxzZRJDChR1bmludGVycHJldGVkX29wdGlvbhjn",
-            "ByADKAsyJC5nb29nbGUucHJvdG9idWYuVW5pbnRlcnByZXRlZE9wdGlvbioJ",
-            "COgHEICAgIACIp4CChNVbmludGVycHJldGVkT3B0aW9uEjsKBG5hbWUYAiAD",
-            "KAsyLS5nb29nbGUucHJvdG9idWYuVW5pbnRlcnByZXRlZE9wdGlvbi5OYW1l",
-            "UGFydBIYChBpZGVudGlmaWVyX3ZhbHVlGAMgASgJEhoKEnBvc2l0aXZlX2lu",
-            "dF92YWx1ZRgEIAEoBBIaChJuZWdhdGl2ZV9pbnRfdmFsdWUYBSABKAMSFAoM",
-            "ZG91YmxlX3ZhbHVlGAYgASgBEhQKDHN0cmluZ192YWx1ZRgHIAEoDBIXCg9h",
-            "Z2dyZWdhdGVfdmFsdWUYCCABKAkaMwoITmFtZVBhcnQSEQoJbmFtZV9wYXJ0",
-            "GAEgAigJEhQKDGlzX2V4dGVuc2lvbhgCIAIoCCLVAQoOU291cmNlQ29kZUlu",
-            "Zm8SOgoIbG9jYXRpb24YASADKAsyKC5nb29nbGUucHJvdG9idWYuU291cmNl",
-            "Q29kZUluZm8uTG9jYXRpb24ahgEKCExvY2F0aW9uEhAKBHBhdGgYASADKAVC",
-            "AhABEhAKBHNwYW4YAiADKAVCAhABEhgKEGxlYWRpbmdfY29tbWVudHMYAyAB",
-            "KAkSGQoRdHJhaWxpbmdfY29tbWVudHMYBCABKAkSIQoZbGVhZGluZ19kZXRh",
-            "Y2hlZF9jb21tZW50cxgGIAMoCSKnAQoRR2VuZXJhdGVkQ29kZUluZm8SQQoK",
-            "YW5ub3RhdGlvbhgBIAMoCzItLmdvb2dsZS5wcm90b2J1Zi5HZW5lcmF0ZWRD",
-            "b2RlSW5mby5Bbm5vdGF0aW9uGk8KCkFubm90YXRpb24SEAoEcGF0aBgBIAMo",
-            "BUICEAESEwoLc291cmNlX2ZpbGUYAiABKAkSDQoFYmVnaW4YAyABKAUSCwoD",
-            "ZW5kGAQgASgFQlgKE2NvbS5nb29nbGUucHJvdG9idWZCEERlc2NyaXB0b3JQ",
-            "cm90b3NIAVoKZGVzY3JpcHRvcqICA0dQQqoCGkdvb2dsZS5Qcm90b2J1Zi5S",
-            "ZWZsZWN0aW9u"));
+            "cHJldGVkT3B0aW9uKgkI6AcQgICAgAJKBAgFEAYifQoQRW51bVZhbHVlT3B0",
+            "aW9ucxIZCgpkZXByZWNhdGVkGAEgASgIOgVmYWxzZRJDChR1bmludGVycHJl",
+            "dGVkX29wdGlvbhjnByADKAsyJC5nb29nbGUucHJvdG9idWYuVW5pbnRlcnBy",
+            "ZXRlZE9wdGlvbioJCOgHEICAgIACInsKDlNlcnZpY2VPcHRpb25zEhkKCmRl",
+            "cHJlY2F0ZWQYISABKAg6BWZhbHNlEkMKFHVuaW50ZXJwcmV0ZWRfb3B0aW9u",
+            "GOcHIAMoCzIkLmdvb2dsZS5wcm90b2J1Zi5VbmludGVycHJldGVkT3B0aW9u",
+            "KgkI6AcQgICAgAIirQIKDU1ldGhvZE9wdGlvbnMSGQoKZGVwcmVjYXRlZBgh",
+            "IAEoCDoFZmFsc2USXwoRaWRlbXBvdGVuY3lfbGV2ZWwYIiABKA4yLy5nb29n",
+            "bGUucHJvdG9idWYuTWV0aG9kT3B0aW9ucy5JZGVtcG90ZW5jeUxldmVsOhNJ",
+            "REVNUE9URU5DWV9VTktOT1dOEkMKFHVuaW50ZXJwcmV0ZWRfb3B0aW9uGOcH",
+            "IAMoCzIkLmdvb2dsZS5wcm90b2J1Zi5VbmludGVycHJldGVkT3B0aW9uIlAK",
+            "EElkZW1wb3RlbmN5TGV2ZWwSFwoTSURFTVBPVEVOQ1lfVU5LTk9XThAAEhMK",
+            "D05PX1NJREVfRUZGRUNUUxABEg4KCklERU1QT1RFTlQQAioJCOgHEICAgIAC",
+            "Ip4CChNVbmludGVycHJldGVkT3B0aW9uEjsKBG5hbWUYAiADKAsyLS5nb29n",
+            "bGUucHJvdG9idWYuVW5pbnRlcnByZXRlZE9wdGlvbi5OYW1lUGFydBIYChBp",
+            "ZGVudGlmaWVyX3ZhbHVlGAMgASgJEhoKEnBvc2l0aXZlX2ludF92YWx1ZRgE",
+            "IAEoBBIaChJuZWdhdGl2ZV9pbnRfdmFsdWUYBSABKAMSFAoMZG91YmxlX3Zh",
+            "bHVlGAYgASgBEhQKDHN0cmluZ192YWx1ZRgHIAEoDBIXCg9hZ2dyZWdhdGVf",
+            "dmFsdWUYCCABKAkaMwoITmFtZVBhcnQSEQoJbmFtZV9wYXJ0GAEgAigJEhQK",
+            "DGlzX2V4dGVuc2lvbhgCIAIoCCLVAQoOU291cmNlQ29kZUluZm8SOgoIbG9j",
+            "YXRpb24YASADKAsyKC5nb29nbGUucHJvdG9idWYuU291cmNlQ29kZUluZm8u",
+            "TG9jYXRpb24ahgEKCExvY2F0aW9uEhAKBHBhdGgYASADKAVCAhABEhAKBHNw",
+            "YW4YAiADKAVCAhABEhgKEGxlYWRpbmdfY29tbWVudHMYAyABKAkSGQoRdHJh",
+            "aWxpbmdfY29tbWVudHMYBCABKAkSIQoZbGVhZGluZ19kZXRhY2hlZF9jb21t",
+            "ZW50cxgGIAMoCSKnAQoRR2VuZXJhdGVkQ29kZUluZm8SQQoKYW5ub3RhdGlv",
+            "bhgBIAMoCzItLmdvb2dsZS5wcm90b2J1Zi5HZW5lcmF0ZWRDb2RlSW5mby5B",
+            "bm5vdGF0aW9uGk8KCkFubm90YXRpb24SEAoEcGF0aBgBIAMoBUICEAESEwoL",
+            "c291cmNlX2ZpbGUYAiABKAkSDQoFYmVnaW4YAyABKAUSCwoDZW5kGAQgASgF",
+            "QowBChNjb20uZ29vZ2xlLnByb3RvYnVmQhBEZXNjcmlwdG9yUHJvdG9zSAFa",
+            "PmdpdGh1Yi5jb20vZ29sYW5nL3Byb3RvYnVmL3Byb3RvYy1nZW4tZ28vZGVz",
+            "Y3JpcHRvcjtkZXNjcmlwdG9yogIDR1BCqgIaR29vZ2xlLlByb3RvYnVmLlJl",
+            "ZmxlY3Rpb24="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.FileDescriptorSet), global::Google.Protobuf.Reflection.FileDescriptorSet.Parser, new[]{ "File" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.FileDescriptorProto), global::Google.Protobuf.Reflection.FileDescriptorProto.Parser, new[]{ "Name", "Package", "Dependency", "PublicDependency", "WeakDependency", "MessageType", "EnumType", "Service", "Extension", "Options", "SourceCodeInfo", "Syntax" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.DescriptorProto), global::Google.Protobuf.Reflection.DescriptorProto.Parser, new[]{ "Name", "Field", "Extension", "NestedType", "EnumType", "ExtensionRange", "OneofDecl", "Options", "ReservedRange", "ReservedName" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.DescriptorProto.Types.ExtensionRange), global::Google.Protobuf.Reflection.DescriptorProto.Types.ExtensionRange.Parser, new[]{ "Start", "End" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.DescriptorProto), global::Google.Protobuf.Reflection.DescriptorProto.Parser, new[]{ "Name", "Field", "Extension", "NestedType", "EnumType", "ExtensionRange", "OneofDecl", "Options", "ReservedRange", "ReservedName" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.DescriptorProto.Types.ExtensionRange), global::Google.Protobuf.Reflection.DescriptorProto.Types.ExtensionRange.Parser, new[]{ "Start", "End", "Options" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.DescriptorProto.Types.ReservedRange), global::Google.Protobuf.Reflection.DescriptorProto.Types.ReservedRange.Parser, new[]{ "Start", "End" }, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.ExtensionRangeOptions), global::Google.Protobuf.Reflection.ExtensionRangeOptions.Parser, new[]{ "UninterpretedOption" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.FieldDescriptorProto), global::Google.Protobuf.Reflection.FieldDescriptorProto.Parser, new[]{ "Name", "Number", "Label", "Type", "TypeName", "Extendee", "DefaultValue", "OneofIndex", "JsonName", "Options" }, null, new[]{ typeof(global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type), typeof(global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Label) }, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.OneofDescriptorProto), global::Google.Protobuf.Reflection.OneofDescriptorProto.Parser, new[]{ "Name" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.OneofDescriptorProto), global::Google.Protobuf.Reflection.OneofDescriptorProto.Parser, new[]{ "Name", "Options" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.EnumDescriptorProto), global::Google.Protobuf.Reflection.EnumDescriptorProto.Parser, new[]{ "Name", "Value", "Options" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.EnumValueDescriptorProto), global::Google.Protobuf.Reflection.EnumValueDescriptorProto.Parser, new[]{ "Name", "Number", "Options" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.ServiceDescriptorProto), global::Google.Protobuf.Reflection.ServiceDescriptorProto.Parser, new[]{ "Name", "Method", "Options" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.MethodDescriptorProto), global::Google.Protobuf.Reflection.MethodDescriptorProto.Parser, new[]{ "Name", "InputType", "OutputType", "Options", "ClientStreaming", "ServerStreaming" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.FileOptions), global::Google.Protobuf.Reflection.FileOptions.Parser, new[]{ "JavaPackage", "JavaOuterClassname", "JavaMultipleFiles", "JavaGenerateEqualsAndHash", "JavaStringCheckUtf8", "OptimizeFor", "GoPackage", "CcGenericServices", "JavaGenericServices", "PyGenericServices", "Deprecated", "CcEnableArenas", "ObjcClassPrefix", "CsharpNamespace", "JavananoUseDeprecatedPackage", "UninterpretedOption" }, null, new[]{ typeof(global::Google.Protobuf.Reflection.FileOptions.Types.OptimizeMode) }, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.FileOptions), global::Google.Protobuf.Reflection.FileOptions.Parser, new[]{ "JavaPackage", "JavaOuterClassname", "JavaMultipleFiles", "JavaGenerateEqualsAndHash", "JavaStringCheckUtf8", "OptimizeFor", "GoPackage", "CcGenericServices", "JavaGenericServices", "PyGenericServices", "PhpGenericServices", "Deprecated", "CcEnableArenas", "ObjcClassPrefix", "CsharpNamespace", "SwiftPrefix", "PhpClassPrefix", "PhpNamespace", "UninterpretedOption" }, null, new[]{ typeof(global::Google.Protobuf.Reflection.FileOptions.Types.OptimizeMode) }, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.MessageOptions), global::Google.Protobuf.Reflection.MessageOptions.Parser, new[]{ "MessageSetWireFormat", "NoStandardDescriptorAccessor", "Deprecated", "MapEntry", "UninterpretedOption" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.FieldOptions), global::Google.Protobuf.Reflection.FieldOptions.Parser, new[]{ "Ctype", "Packed", "Jstype", "Lazy", "Deprecated", "Weak", "UninterpretedOption" }, null, new[]{ typeof(global::Google.Protobuf.Reflection.FieldOptions.Types.CType), typeof(global::Google.Protobuf.Reflection.FieldOptions.Types.JSType) }, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.OneofOptions), global::Google.Protobuf.Reflection.OneofOptions.Parser, new[]{ "UninterpretedOption" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.EnumOptions), global::Google.Protobuf.Reflection.EnumOptions.Parser, new[]{ "AllowAlias", "Deprecated", "UninterpretedOption" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.EnumValueOptions), global::Google.Protobuf.Reflection.EnumValueOptions.Parser, new[]{ "Deprecated", "UninterpretedOption" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.ServiceOptions), global::Google.Protobuf.Reflection.ServiceOptions.Parser, new[]{ "Deprecated", "UninterpretedOption" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.MethodOptions), global::Google.Protobuf.Reflection.MethodOptions.Parser, new[]{ "Deprecated", "UninterpretedOption" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.MethodOptions), global::Google.Protobuf.Reflection.MethodOptions.Parser, new[]{ "Deprecated", "IdempotencyLevel", "UninterpretedOption" }, null, new[]{ typeof(global::Google.Protobuf.Reflection.MethodOptions.Types.IdempotencyLevel) }, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.UninterpretedOption), global::Google.Protobuf.Reflection.UninterpretedOption.Parser, new[]{ "Name", "IdentifierValue", "PositiveIntValue", "NegativeIntValue", "DoubleValue", "StringValue", "AggregateValue" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.UninterpretedOption.Types.NamePart), global::Google.Protobuf.Reflection.UninterpretedOption.Types.NamePart.Parser, new[]{ "NamePart_", "IsExtension" }, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.SourceCodeInfo), global::Google.Protobuf.Reflection.SourceCodeInfo.Parser, new[]{ "Location" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.SourceCodeInfo.Types.Location), global::Google.Protobuf.Reflection.SourceCodeInfo.Types.Location.Parser, new[]{ "Path", "Span", "LeadingComments", "TrailingComments", "LeadingDetachedComments" }, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.GeneratedCodeInfo), global::Google.Protobuf.Reflection.GeneratedCodeInfo.Parser, new[]{ "Annotation" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Protobuf.Reflection.GeneratedCodeInfo.Types.Annotation), global::Google.Protobuf.Reflection.GeneratedCodeInfo.Types.Annotation.Parser, new[]{ "Path", "SourceFile", "Begin", "End" }, null, null, null)})
@@ -169,32 +184,37 @@ namespace Google.Protobuf.Reflection {
   }
   #region Messages
   /// <summary>
-  ///  The protocol compiler can output a FileDescriptorSet containing the .proto
-  ///  files it parses.
+  /// The protocol compiler can output a FileDescriptorSet containing the .proto
+  /// files it parses.
   /// </summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   internal sealed partial class FileDescriptorSet : pb::IMessage<FileDescriptorSet> {
     private static readonly pb::MessageParser<FileDescriptorSet> _parser = new pb::MessageParser<FileDescriptorSet>(() => new FileDescriptorSet());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<FileDescriptorSet> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[0]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FileDescriptorSet() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FileDescriptorSet(FileDescriptorSet other) : this() {
       file_ = other.file_.Clone();
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FileDescriptorSet Clone() {
       return new FileDescriptorSet(this);
     }
@@ -204,14 +224,17 @@ namespace Google.Protobuf.Reflection {
     private static readonly pb::FieldCodec<global::Google.Protobuf.Reflection.FileDescriptorProto> _repeated_file_codec
         = pb::FieldCodec.ForMessage(10, global::Google.Protobuf.Reflection.FileDescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.FileDescriptorProto> file_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.FileDescriptorProto>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.FileDescriptorProto> File {
       get { return file_; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as FileDescriptorSet);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(FileDescriptorSet other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -223,26 +246,31 @@ namespace Google.Protobuf.Reflection {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= file_.GetHashCode();
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       file_.WriteTo(output, _repeated_file_codec);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       size += file_.CalculateSize(_repeated_file_codec);
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(FileDescriptorSet other) {
       if (other == null) {
         return;
@@ -250,6 +278,7 @@ namespace Google.Protobuf.Reflection {
       file_.Add(other.file_);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -268,27 +297,31 @@ namespace Google.Protobuf.Reflection {
   }
 
   /// <summary>
-  ///  Describes a complete .proto file.
+  /// Describes a complete .proto file.
   /// </summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   internal sealed partial class FileDescriptorProto : pb::IMessage<FileDescriptorProto> {
     private static readonly pb::MessageParser<FileDescriptorProto> _parser = new pb::MessageParser<FileDescriptorProto>(() => new FileDescriptorProto());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<FileDescriptorProto> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[1]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FileDescriptorProto() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FileDescriptorProto(FileDescriptorProto other) : this() {
       name_ = other.name_;
       package_ = other.package_;
@@ -304,6 +337,7 @@ namespace Google.Protobuf.Reflection {
       syntax_ = other.syntax_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FileDescriptorProto Clone() {
       return new FileDescriptorProto(this);
     }
@@ -312,8 +346,9 @@ namespace Google.Protobuf.Reflection {
     public const int NameFieldNumber = 1;
     private string name_ = "";
     /// <summary>
-    ///  file name, relative to root of source tree
+    /// file name, relative to root of source tree
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
       get { return name_; }
       set {
@@ -325,8 +360,9 @@ namespace Google.Protobuf.Reflection {
     public const int PackageFieldNumber = 2;
     private string package_ = "";
     /// <summary>
-    ///  e.g. "foo", "foo.bar", etc.
+    /// e.g. "foo", "foo.bar", etc.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Package {
       get { return package_; }
       set {
@@ -340,8 +376,9 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForString(26);
     private readonly pbc::RepeatedField<string> dependency_ = new pbc::RepeatedField<string>();
     /// <summary>
-    ///  Names of files imported by this file.
+    /// Names of files imported by this file.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<string> Dependency {
       get { return dependency_; }
     }
@@ -352,8 +389,9 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForInt32(80);
     private readonly pbc::RepeatedField<int> publicDependency_ = new pbc::RepeatedField<int>();
     /// <summary>
-    ///  Indexes of the public imported files in the dependency list above.
+    /// Indexes of the public imported files in the dependency list above.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<int> PublicDependency {
       get { return publicDependency_; }
     }
@@ -364,9 +402,10 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForInt32(88);
     private readonly pbc::RepeatedField<int> weakDependency_ = new pbc::RepeatedField<int>();
     /// <summary>
-    ///  Indexes of the weak imported files in the dependency list.
-    ///  For Google-internal migration only. Do not use.
+    /// Indexes of the weak imported files in the dependency list.
+    /// For Google-internal migration only. Do not use.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<int> WeakDependency {
       get { return weakDependency_; }
     }
@@ -377,8 +416,9 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(34, global::Google.Protobuf.Reflection.DescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto> messageType_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto>();
     /// <summary>
-    ///  All top-level definitions in this file.
+    /// All top-level definitions in this file.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto> MessageType {
       get { return messageType_; }
     }
@@ -388,6 +428,7 @@ namespace Google.Protobuf.Reflection {
     private static readonly pb::FieldCodec<global::Google.Protobuf.Reflection.EnumDescriptorProto> _repeated_enumType_codec
         = pb::FieldCodec.ForMessage(42, global::Google.Protobuf.Reflection.EnumDescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.EnumDescriptorProto> enumType_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.EnumDescriptorProto>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.EnumDescriptorProto> EnumType {
       get { return enumType_; }
     }
@@ -397,6 +438,7 @@ namespace Google.Protobuf.Reflection {
     private static readonly pb::FieldCodec<global::Google.Protobuf.Reflection.ServiceDescriptorProto> _repeated_service_codec
         = pb::FieldCodec.ForMessage(50, global::Google.Protobuf.Reflection.ServiceDescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.ServiceDescriptorProto> service_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.ServiceDescriptorProto>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.ServiceDescriptorProto> Service {
       get { return service_; }
     }
@@ -406,6 +448,7 @@ namespace Google.Protobuf.Reflection {
     private static readonly pb::FieldCodec<global::Google.Protobuf.Reflection.FieldDescriptorProto> _repeated_extension_codec
         = pb::FieldCodec.ForMessage(58, global::Google.Protobuf.Reflection.FieldDescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.FieldDescriptorProto> extension_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.FieldDescriptorProto>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.FieldDescriptorProto> Extension {
       get { return extension_; }
     }
@@ -413,6 +456,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "options" field.</summary>
     public const int OptionsFieldNumber = 8;
     private global::Google.Protobuf.Reflection.FileOptions options_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.Reflection.FileOptions Options {
       get { return options_; }
       set {
@@ -424,11 +468,12 @@ namespace Google.Protobuf.Reflection {
     public const int SourceCodeInfoFieldNumber = 9;
     private global::Google.Protobuf.Reflection.SourceCodeInfo sourceCodeInfo_;
     /// <summary>
-    ///  This field contains optional information about the original source code.
-    ///  You may safely remove this entire field without harming runtime
-    ///  functionality of the descriptors -- the information is needed only by
-    ///  development tools.
+    /// This field contains optional information about the original source code.
+    /// You may safely remove this entire field without harming runtime
+    /// functionality of the descriptors -- the information is needed only by
+    /// development tools.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.Reflection.SourceCodeInfo SourceCodeInfo {
       get { return sourceCodeInfo_; }
       set {
@@ -440,9 +485,10 @@ namespace Google.Protobuf.Reflection {
     public const int SyntaxFieldNumber = 12;
     private string syntax_ = "";
     /// <summary>
-    ///  The syntax of the proto file.
-    ///  The supported values are "proto2" and "proto3".
+    /// The syntax of the proto file.
+    /// The supported values are "proto2" and "proto3".
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Syntax {
       get { return syntax_; }
       set {
@@ -450,10 +496,12 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as FileDescriptorProto);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(FileDescriptorProto other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -476,6 +524,7 @@ namespace Google.Protobuf.Reflection {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
@@ -493,10 +542,12 @@ namespace Google.Protobuf.Reflection {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Name.Length != 0) {
         output.WriteRawTag(10);
@@ -527,6 +578,7 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Name.Length != 0) {
@@ -554,6 +606,7 @@ namespace Google.Protobuf.Reflection {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(FileDescriptorProto other) {
       if (other == null) {
         return;
@@ -588,6 +641,7 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -658,27 +712,31 @@ namespace Google.Protobuf.Reflection {
   }
 
   /// <summary>
-  ///  Describes a message type.
+  /// Describes a message type.
   /// </summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   internal sealed partial class DescriptorProto : pb::IMessage<DescriptorProto> {
     private static readonly pb::MessageParser<DescriptorProto> _parser = new pb::MessageParser<DescriptorProto>(() => new DescriptorProto());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<DescriptorProto> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[2]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DescriptorProto() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DescriptorProto(DescriptorProto other) : this() {
       name_ = other.name_;
       field_ = other.field_.Clone();
@@ -692,6 +750,7 @@ namespace Google.Protobuf.Reflection {
       reservedName_ = other.reservedName_.Clone();
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DescriptorProto Clone() {
       return new DescriptorProto(this);
     }
@@ -699,6 +758,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
     private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
       get { return name_; }
       set {
@@ -711,6 +771,7 @@ namespace Google.Protobuf.Reflection {
     private static readonly pb::FieldCodec<global::Google.Protobuf.Reflection.FieldDescriptorProto> _repeated_field_codec
         = pb::FieldCodec.ForMessage(18, global::Google.Protobuf.Reflection.FieldDescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.FieldDescriptorProto> field_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.FieldDescriptorProto>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.FieldDescriptorProto> Field {
       get { return field_; }
     }
@@ -720,6 +781,7 @@ namespace Google.Protobuf.Reflection {
     private static readonly pb::FieldCodec<global::Google.Protobuf.Reflection.FieldDescriptorProto> _repeated_extension_codec
         = pb::FieldCodec.ForMessage(50, global::Google.Protobuf.Reflection.FieldDescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.FieldDescriptorProto> extension_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.FieldDescriptorProto>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.FieldDescriptorProto> Extension {
       get { return extension_; }
     }
@@ -729,6 +791,7 @@ namespace Google.Protobuf.Reflection {
     private static readonly pb::FieldCodec<global::Google.Protobuf.Reflection.DescriptorProto> _repeated_nestedType_codec
         = pb::FieldCodec.ForMessage(26, global::Google.Protobuf.Reflection.DescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto> nestedType_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto> NestedType {
       get { return nestedType_; }
     }
@@ -738,6 +801,7 @@ namespace Google.Protobuf.Reflection {
     private static readonly pb::FieldCodec<global::Google.Protobuf.Reflection.EnumDescriptorProto> _repeated_enumType_codec
         = pb::FieldCodec.ForMessage(34, global::Google.Protobuf.Reflection.EnumDescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.EnumDescriptorProto> enumType_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.EnumDescriptorProto>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.EnumDescriptorProto> EnumType {
       get { return enumType_; }
     }
@@ -747,6 +811,7 @@ namespace Google.Protobuf.Reflection {
     private static readonly pb::FieldCodec<global::Google.Protobuf.Reflection.DescriptorProto.Types.ExtensionRange> _repeated_extensionRange_codec
         = pb::FieldCodec.ForMessage(42, global::Google.Protobuf.Reflection.DescriptorProto.Types.ExtensionRange.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto.Types.ExtensionRange> extensionRange_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto.Types.ExtensionRange>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto.Types.ExtensionRange> ExtensionRange {
       get { return extensionRange_; }
     }
@@ -756,6 +821,7 @@ namespace Google.Protobuf.Reflection {
     private static readonly pb::FieldCodec<global::Google.Protobuf.Reflection.OneofDescriptorProto> _repeated_oneofDecl_codec
         = pb::FieldCodec.ForMessage(66, global::Google.Protobuf.Reflection.OneofDescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.OneofDescriptorProto> oneofDecl_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.OneofDescriptorProto>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.OneofDescriptorProto> OneofDecl {
       get { return oneofDecl_; }
     }
@@ -763,6 +829,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "options" field.</summary>
     public const int OptionsFieldNumber = 7;
     private global::Google.Protobuf.Reflection.MessageOptions options_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.Reflection.MessageOptions Options {
       get { return options_; }
       set {
@@ -775,6 +842,7 @@ namespace Google.Protobuf.Reflection {
     private static readonly pb::FieldCodec<global::Google.Protobuf.Reflection.DescriptorProto.Types.ReservedRange> _repeated_reservedRange_codec
         = pb::FieldCodec.ForMessage(74, global::Google.Protobuf.Reflection.DescriptorProto.Types.ReservedRange.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto.Types.ReservedRange> reservedRange_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto.Types.ReservedRange>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.DescriptorProto.Types.ReservedRange> ReservedRange {
       get { return reservedRange_; }
     }
@@ -785,17 +853,20 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForString(82);
     private readonly pbc::RepeatedField<string> reservedName_ = new pbc::RepeatedField<string>();
     /// <summary>
-    ///  Reserved field names, which may not be used by fields in the same message.
-    ///  A given name may only be reserved once.
+    /// Reserved field names, which may not be used by fields in the same message.
+    /// A given name may only be reserved once.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<string> ReservedName {
       get { return reservedName_; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as DescriptorProto);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(DescriptorProto other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -816,6 +887,7 @@ namespace Google.Protobuf.Reflection {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
@@ -831,10 +903,12 @@ namespace Google.Protobuf.Reflection {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Name.Length != 0) {
         output.WriteRawTag(10);
@@ -854,6 +928,7 @@ namespace Google.Protobuf.Reflection {
       reservedName_.WriteTo(output, _repeated_reservedName_codec);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Name.Length != 0) {
@@ -873,6 +948,7 @@ namespace Google.Protobuf.Reflection {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(DescriptorProto other) {
       if (other == null) {
         return;
@@ -896,6 +972,7 @@ namespace Google.Protobuf.Reflection {
       reservedName_.Add(other.reservedName_);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -952,32 +1029,38 @@ namespace Google.Protobuf.Reflection {
 
     #region Nested types
     /// <summary>Container for nested types declared in the DescriptorProto message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
       internal sealed partial class ExtensionRange : pb::IMessage<ExtensionRange> {
         private static readonly pb::MessageParser<ExtensionRange> _parser = new pb::MessageParser<ExtensionRange>(() => new ExtensionRange());
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pb::MessageParser<ExtensionRange> Parser { get { return _parser; } }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Protobuf.Reflection.DescriptorProto.Descriptor.NestedTypes[0]; }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public ExtensionRange() {
           OnConstruction();
         }
 
         partial void OnConstruction();
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public ExtensionRange(ExtensionRange other) : this() {
           start_ = other.start_;
           end_ = other.end_;
+          Options = other.options_ != null ? other.Options.Clone() : null;
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public ExtensionRange Clone() {
           return new ExtensionRange(this);
         }
@@ -985,6 +1068,7 @@ namespace Google.Protobuf.Reflection {
         /// <summary>Field number for the "start" field.</summary>
         public const int StartFieldNumber = 1;
         private int start_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int Start {
           get { return start_; }
           set {
@@ -995,6 +1079,7 @@ namespace Google.Protobuf.Reflection {
         /// <summary>Field number for the "end" field.</summary>
         public const int EndFieldNumber = 2;
         private int end_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int End {
           get { return end_; }
           set {
@@ -1002,10 +1087,23 @@ namespace Google.Protobuf.Reflection {
           }
         }
 
+        /// <summary>Field number for the "options" field.</summary>
+        public const int OptionsFieldNumber = 3;
+        private global::Google.Protobuf.Reflection.ExtensionRangeOptions options_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public global::Google.Protobuf.Reflection.ExtensionRangeOptions Options {
+          get { return options_; }
+          set {
+            options_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
           return Equals(other as ExtensionRange);
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool Equals(ExtensionRange other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -1015,20 +1113,25 @@ namespace Google.Protobuf.Reflection {
           }
           if (Start != other.Start) return false;
           if (End != other.End) return false;
+          if (!object.Equals(Options, other.Options)) return false;
           return true;
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
           if (Start != 0) hash ^= Start.GetHashCode();
           if (End != 0) hash ^= End.GetHashCode();
+          if (options_ != null) hash ^= Options.GetHashCode();
           return hash;
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
           if (Start != 0) {
             output.WriteRawTag(8);
@@ -1038,8 +1141,13 @@ namespace Google.Protobuf.Reflection {
             output.WriteRawTag(16);
             output.WriteInt32(End);
           }
+          if (options_ != null) {
+            output.WriteRawTag(26);
+            output.WriteMessage(Options);
+          }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
           int size = 0;
           if (Start != 0) {
@@ -1048,9 +1156,13 @@ namespace Google.Protobuf.Reflection {
           if (End != 0) {
             size += 1 + pb::CodedOutputStream.ComputeInt32Size(End);
           }
+          if (options_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Options);
+          }
           return size;
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(ExtensionRange other) {
           if (other == null) {
             return;
@@ -1061,8 +1173,15 @@ namespace Google.Protobuf.Reflection {
           if (other.End != 0) {
             End = other.End;
           }
+          if (other.options_ != null) {
+            if (options_ == null) {
+              options_ = new global::Google.Protobuf.Reflection.ExtensionRangeOptions();
+            }
+            Options.MergeFrom(other.Options);
+          }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -1078,6 +1197,13 @@ namespace Google.Protobuf.Reflection {
                 End = input.ReadInt32();
                 break;
               }
+              case 26: {
+                if (options_ == null) {
+                  options_ = new global::Google.Protobuf.Reflection.ExtensionRangeOptions();
+                }
+                input.ReadMessage(options_);
+                break;
+              }
             }
           }
         }
@@ -1085,34 +1211,39 @@ namespace Google.Protobuf.Reflection {
       }
 
       /// <summary>
-      ///  Range of reserved tag numbers. Reserved tag numbers may not be used by
-      ///  fields or extension ranges in the same message. Reserved ranges may
-      ///  not overlap.
+      /// Range of reserved tag numbers. Reserved tag numbers may not be used by
+      /// fields or extension ranges in the same message. Reserved ranges may
+      /// not overlap.
       /// </summary>
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
       internal sealed partial class ReservedRange : pb::IMessage<ReservedRange> {
         private static readonly pb::MessageParser<ReservedRange> _parser = new pb::MessageParser<ReservedRange>(() => new ReservedRange());
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pb::MessageParser<ReservedRange> Parser { get { return _parser; } }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Protobuf.Reflection.DescriptorProto.Descriptor.NestedTypes[1]; }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public ReservedRange() {
           OnConstruction();
         }
 
         partial void OnConstruction();
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public ReservedRange(ReservedRange other) : this() {
           start_ = other.start_;
           end_ = other.end_;
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public ReservedRange Clone() {
           return new ReservedRange(this);
         }
@@ -1121,8 +1252,9 @@ namespace Google.Protobuf.Reflection {
         public const int StartFieldNumber = 1;
         private int start_;
         /// <summary>
-        ///  Inclusive.
+        /// Inclusive.
         /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int Start {
           get { return start_; }
           set {
@@ -1134,8 +1266,9 @@ namespace Google.Protobuf.Reflection {
         public const int EndFieldNumber = 2;
         private int end_;
         /// <summary>
-        ///  Exclusive.
+        /// Exclusive.
         /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int End {
           get { return end_; }
           set {
@@ -1143,10 +1276,12 @@ namespace Google.Protobuf.Reflection {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
           return Equals(other as ReservedRange);
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool Equals(ReservedRange other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -1159,6 +1294,7 @@ namespace Google.Protobuf.Reflection {
           return true;
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
           if (Start != 0) hash ^= Start.GetHashCode();
@@ -1166,10 +1302,12 @@ namespace Google.Protobuf.Reflection {
           return hash;
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
           if (Start != 0) {
             output.WriteRawTag(8);
@@ -1181,6 +1319,7 @@ namespace Google.Protobuf.Reflection {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
           int size = 0;
           if (Start != 0) {
@@ -1192,6 +1331,7 @@ namespace Google.Protobuf.Reflection {
           return size;
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(ReservedRange other) {
           if (other == null) {
             return;
@@ -1204,6 +1344,7 @@ namespace Google.Protobuf.Reflection {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -1230,28 +1371,144 @@ namespace Google.Protobuf.Reflection {
 
   }
 
-  /// <summary>
-  ///  Describes a field within a message.
-  /// </summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  internal sealed partial class FieldDescriptorProto : pb::IMessage<FieldDescriptorProto> {
-    private static readonly pb::MessageParser<FieldDescriptorProto> _parser = new pb::MessageParser<FieldDescriptorProto>(() => new FieldDescriptorProto());
-    public static pb::MessageParser<FieldDescriptorProto> Parser { get { return _parser; } }
+  internal sealed partial class ExtensionRangeOptions : pb::IMessage<ExtensionRangeOptions> {
+    private static readonly pb::MessageParser<ExtensionRangeOptions> _parser = new pb::MessageParser<ExtensionRangeOptions>(() => new ExtensionRangeOptions());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ExtensionRangeOptions> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
       get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[3]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ExtensionRangeOptions() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ExtensionRangeOptions(ExtensionRangeOptions other) : this() {
+      uninterpretedOption_ = other.uninterpretedOption_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ExtensionRangeOptions Clone() {
+      return new ExtensionRangeOptions(this);
+    }
+
+    /// <summary>Field number for the "uninterpreted_option" field.</summary>
+    public const int UninterpretedOptionFieldNumber = 999;
+    private static readonly pb::FieldCodec<global::Google.Protobuf.Reflection.UninterpretedOption> _repeated_uninterpretedOption_codec
+        = pb::FieldCodec.ForMessage(7994, global::Google.Protobuf.Reflection.UninterpretedOption.Parser);
+    private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> uninterpretedOption_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption>();
+    /// <summary>
+    /// The parser stores options it doesn't recognize here. See above.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> UninterpretedOption {
+      get { return uninterpretedOption_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ExtensionRangeOptions);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ExtensionRangeOptions other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!uninterpretedOption_.Equals(other.uninterpretedOption_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= uninterpretedOption_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      uninterpretedOption_.WriteTo(output, _repeated_uninterpretedOption_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += uninterpretedOption_.CalculateSize(_repeated_uninterpretedOption_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ExtensionRangeOptions other) {
+      if (other == null) {
+        return;
+      }
+      uninterpretedOption_.Add(other.uninterpretedOption_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 7994: {
+            uninterpretedOption_.AddEntriesFrom(input, _repeated_uninterpretedOption_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  /// <summary>
+  /// Describes a field within a message.
+  /// </summary>
+  internal sealed partial class FieldDescriptorProto : pb::IMessage<FieldDescriptorProto> {
+    private static readonly pb::MessageParser<FieldDescriptorProto> _parser = new pb::MessageParser<FieldDescriptorProto>(() => new FieldDescriptorProto());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<FieldDescriptorProto> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FieldDescriptorProto() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FieldDescriptorProto(FieldDescriptorProto other) : this() {
       name_ = other.name_;
       number_ = other.number_;
@@ -1265,6 +1522,7 @@ namespace Google.Protobuf.Reflection {
       Options = other.options_ != null ? other.Options.Clone() : null;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FieldDescriptorProto Clone() {
       return new FieldDescriptorProto(this);
     }
@@ -1272,6 +1530,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
     private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
       get { return name_; }
       set {
@@ -1282,6 +1541,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "number" field.</summary>
     public const int NumberFieldNumber = 3;
     private int number_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Number {
       get { return number_; }
       set {
@@ -1291,7 +1551,8 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "label" field.</summary>
     public const int LabelFieldNumber = 4;
-    private global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Label label_ = global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Label.LABEL_OPTIONAL;
+    private global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Label label_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Label Label {
       get { return label_; }
       set {
@@ -1301,11 +1562,12 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "type" field.</summary>
     public const int TypeFieldNumber = 5;
-    private global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type type_ = global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type.TYPE_DOUBLE;
+    private global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type type_ = 0;
     /// <summary>
-    ///  If type_name is set, this need not be set.  If both this and type_name
-    ///  are set, this must be one of TYPE_ENUM, TYPE_MESSAGE or TYPE_GROUP.
+    /// If type_name is set, this need not be set.  If both this and type_name
+    /// are set, this must be one of TYPE_ENUM, TYPE_MESSAGE or TYPE_GROUP.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type Type {
       get { return type_; }
       set {
@@ -1317,12 +1579,13 @@ namespace Google.Protobuf.Reflection {
     public const int TypeNameFieldNumber = 6;
     private string typeName_ = "";
     /// <summary>
-    ///  For message and enum types, this is the name of the type.  If the name
-    ///  starts with a '.', it is fully-qualified.  Otherwise, C++-like scoping
-    ///  rules are used to find the type (i.e. first the nested types within this
-    ///  message are searched, then within the parent, on up to the root
-    ///  namespace).
+    /// For message and enum types, this is the name of the type.  If the name
+    /// starts with a '.', it is fully-qualified.  Otherwise, C++-like scoping
+    /// rules are used to find the type (i.e. first the nested types within this
+    /// message are searched, then within the parent, on up to the root
+    /// namespace).
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string TypeName {
       get { return typeName_; }
       set {
@@ -1334,9 +1597,10 @@ namespace Google.Protobuf.Reflection {
     public const int ExtendeeFieldNumber = 2;
     private string extendee_ = "";
     /// <summary>
-    ///  For extensions, this is the name of the type being extended.  It is
-    ///  resolved in the same manner as type_name.
+    /// For extensions, this is the name of the type being extended.  It is
+    /// resolved in the same manner as type_name.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Extendee {
       get { return extendee_; }
       set {
@@ -1348,12 +1612,13 @@ namespace Google.Protobuf.Reflection {
     public const int DefaultValueFieldNumber = 7;
     private string defaultValue_ = "";
     /// <summary>
-    ///  For numeric types, contains the original text representation of the value.
-    ///  For booleans, "true" or "false".
-    ///  For strings, contains the default text contents (not escaped in any way).
-    ///  For bytes, contains the C escaped value.  All bytes >= 128 are escaped.
-    ///  TODO(kenton):  Base-64 encode?
+    /// For numeric types, contains the original text representation of the value.
+    /// For booleans, "true" or "false".
+    /// For strings, contains the default text contents (not escaped in any way).
+    /// For bytes, contains the C escaped value.  All bytes >= 128 are escaped.
+    /// TODO(kenton):  Base-64 encode?
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string DefaultValue {
       get { return defaultValue_; }
       set {
@@ -1365,9 +1630,10 @@ namespace Google.Protobuf.Reflection {
     public const int OneofIndexFieldNumber = 9;
     private int oneofIndex_;
     /// <summary>
-    ///  If set, gives the index of a oneof in the containing type's oneof_decl
-    ///  list.  This field is a member of that oneof.
+    /// If set, gives the index of a oneof in the containing type's oneof_decl
+    /// list.  This field is a member of that oneof.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int OneofIndex {
       get { return oneofIndex_; }
       set {
@@ -1379,11 +1645,12 @@ namespace Google.Protobuf.Reflection {
     public const int JsonNameFieldNumber = 10;
     private string jsonName_ = "";
     /// <summary>
-    ///  JSON name of this field. The value is set by protocol compiler. If the
-    ///  user has set a "json_name" option on this field, that option's value
-    ///  will be used. Otherwise, it's deduced from the field's name by converting
-    ///  it to camelCase.
+    /// JSON name of this field. The value is set by protocol compiler. If the
+    /// user has set a "json_name" option on this field, that option's value
+    /// will be used. Otherwise, it's deduced from the field's name by converting
+    /// it to camelCase.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string JsonName {
       get { return jsonName_; }
       set {
@@ -1394,6 +1661,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "options" field.</summary>
     public const int OptionsFieldNumber = 8;
     private global::Google.Protobuf.Reflection.FieldOptions options_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.Reflection.FieldOptions Options {
       get { return options_; }
       set {
@@ -1401,10 +1669,12 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as FieldDescriptorProto);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(FieldDescriptorProto other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1425,12 +1695,13 @@ namespace Google.Protobuf.Reflection {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (Number != 0) hash ^= Number.GetHashCode();
-      if (Label != global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Label.LABEL_OPTIONAL) hash ^= Label.GetHashCode();
-      if (Type != global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type.TYPE_DOUBLE) hash ^= Type.GetHashCode();
+      if (Label != 0) hash ^= Label.GetHashCode();
+      if (Type != 0) hash ^= Type.GetHashCode();
       if (TypeName.Length != 0) hash ^= TypeName.GetHashCode();
       if (Extendee.Length != 0) hash ^= Extendee.GetHashCode();
       if (DefaultValue.Length != 0) hash ^= DefaultValue.GetHashCode();
@@ -1440,10 +1711,12 @@ namespace Google.Protobuf.Reflection {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Name.Length != 0) {
         output.WriteRawTag(10);
@@ -1457,11 +1730,11 @@ namespace Google.Protobuf.Reflection {
         output.WriteRawTag(24);
         output.WriteInt32(Number);
       }
-      if (Label != global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Label.LABEL_OPTIONAL) {
+      if (Label != 0) {
         output.WriteRawTag(32);
         output.WriteEnum((int) Label);
       }
-      if (Type != global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type.TYPE_DOUBLE) {
+      if (Type != 0) {
         output.WriteRawTag(40);
         output.WriteEnum((int) Type);
       }
@@ -1487,6 +1760,7 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Name.Length != 0) {
@@ -1495,10 +1769,10 @@ namespace Google.Protobuf.Reflection {
       if (Number != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(Number);
       }
-      if (Label != global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Label.LABEL_OPTIONAL) {
+      if (Label != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Label);
       }
-      if (Type != global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type.TYPE_DOUBLE) {
+      if (Type != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Type);
       }
       if (TypeName.Length != 0) {
@@ -1522,6 +1796,7 @@ namespace Google.Protobuf.Reflection {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(FieldDescriptorProto other) {
       if (other == null) {
         return;
@@ -1532,10 +1807,10 @@ namespace Google.Protobuf.Reflection {
       if (other.Number != 0) {
         Number = other.Number;
       }
-      if (other.Label != global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Label.LABEL_OPTIONAL) {
+      if (other.Label != 0) {
         Label = other.Label;
       }
-      if (other.Type != global::Google.Protobuf.Reflection.FieldDescriptorProto.Types.Type.TYPE_DOUBLE) {
+      if (other.Type != 0) {
         Type = other.Type;
       }
       if (other.TypeName.Length != 0) {
@@ -1561,6 +1836,7 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1617,66 +1893,66 @@ namespace Google.Protobuf.Reflection {
 
     #region Nested types
     /// <summary>Container for nested types declared in the FieldDescriptorProto message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
       internal enum Type {
         /// <summary>
-        ///  0 is reserved for errors.
-        ///  Order is weird for historical reasons.
+        /// 0 is reserved for errors.
+        /// Order is weird for historical reasons.
         /// </summary>
-        TYPE_DOUBLE = 1,
-        TYPE_FLOAT = 2,
+        [pbr::OriginalName("TYPE_DOUBLE")] Double = 1,
+        [pbr::OriginalName("TYPE_FLOAT")] Float = 2,
         /// <summary>
-        ///  Not ZigZag encoded.  Negative numbers take 10 bytes.  Use TYPE_SINT64 if
-        ///  negative values are likely.
+        /// Not ZigZag encoded.  Negative numbers take 10 bytes.  Use TYPE_SINT64 if
+        /// negative values are likely.
         /// </summary>
-        TYPE_INT64 = 3,
-        TYPE_UINT64 = 4,
+        [pbr::OriginalName("TYPE_INT64")] Int64 = 3,
+        [pbr::OriginalName("TYPE_UINT64")] Uint64 = 4,
         /// <summary>
-        ///  Not ZigZag encoded.  Negative numbers take 10 bytes.  Use TYPE_SINT32 if
-        ///  negative values are likely.
+        /// Not ZigZag encoded.  Negative numbers take 10 bytes.  Use TYPE_SINT32 if
+        /// negative values are likely.
         /// </summary>
-        TYPE_INT32 = 5,
-        TYPE_FIXED64 = 6,
-        TYPE_FIXED32 = 7,
-        TYPE_BOOL = 8,
-        TYPE_STRING = 9,
+        [pbr::OriginalName("TYPE_INT32")] Int32 = 5,
+        [pbr::OriginalName("TYPE_FIXED64")] Fixed64 = 6,
+        [pbr::OriginalName("TYPE_FIXED32")] Fixed32 = 7,
+        [pbr::OriginalName("TYPE_BOOL")] Bool = 8,
+        [pbr::OriginalName("TYPE_STRING")] String = 9,
         /// <summary>
-        ///  Tag-delimited aggregate.
+        /// Tag-delimited aggregate.
+        /// Group type is deprecated and not supported in proto3. However, Proto3
+        /// implementations should still be able to parse the group wire format and
+        /// treat group fields as unknown fields.
         /// </summary>
-        TYPE_GROUP = 10,
+        [pbr::OriginalName("TYPE_GROUP")] Group = 10,
         /// <summary>
-        ///  Length-delimited aggregate.
+        /// Length-delimited aggregate.
         /// </summary>
-        TYPE_MESSAGE = 11,
+        [pbr::OriginalName("TYPE_MESSAGE")] Message = 11,
         /// <summary>
-        ///  New in version 2.
+        /// New in version 2.
         /// </summary>
-        TYPE_BYTES = 12,
-        TYPE_UINT32 = 13,
-        TYPE_ENUM = 14,
-        TYPE_SFIXED32 = 15,
-        TYPE_SFIXED64 = 16,
+        [pbr::OriginalName("TYPE_BYTES")] Bytes = 12,
+        [pbr::OriginalName("TYPE_UINT32")] Uint32 = 13,
+        [pbr::OriginalName("TYPE_ENUM")] Enum = 14,
+        [pbr::OriginalName("TYPE_SFIXED32")] Sfixed32 = 15,
+        [pbr::OriginalName("TYPE_SFIXED64")] Sfixed64 = 16,
         /// <summary>
-        ///  Uses ZigZag encoding.
+        /// Uses ZigZag encoding.
         /// </summary>
-        TYPE_SINT32 = 17,
+        [pbr::OriginalName("TYPE_SINT32")] Sint32 = 17,
         /// <summary>
-        ///  Uses ZigZag encoding.
+        /// Uses ZigZag encoding.
         /// </summary>
-        TYPE_SINT64 = 18,
+        [pbr::OriginalName("TYPE_SINT64")] Sint64 = 18,
       }
 
       internal enum Label {
         /// <summary>
-        ///  0 is reserved for errors
+        /// 0 is reserved for errors
         /// </summary>
-        LABEL_OPTIONAL = 1,
-        LABEL_REQUIRED = 2,
-        /// <summary>
-        ///  TODO(sanjay): Should we add LABEL_MAP?
-        /// </summary>
-        LABEL_REPEATED = 3,
+        [pbr::OriginalName("LABEL_OPTIONAL")] Optional = 1,
+        [pbr::OriginalName("LABEL_REQUIRED")] Required = 2,
+        [pbr::OriginalName("LABEL_REPEATED")] Repeated = 3,
       }
 
     }
@@ -1685,31 +1961,37 @@ namespace Google.Protobuf.Reflection {
   }
 
   /// <summary>
-  ///  Describes a oneof.
+  /// Describes a oneof.
   /// </summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   internal sealed partial class OneofDescriptorProto : pb::IMessage<OneofDescriptorProto> {
     private static readonly pb::MessageParser<OneofDescriptorProto> _parser = new pb::MessageParser<OneofDescriptorProto>(() => new OneofDescriptorProto());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<OneofDescriptorProto> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[4]; }
+      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[5]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public OneofDescriptorProto() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public OneofDescriptorProto(OneofDescriptorProto other) : this() {
       name_ = other.name_;
+      Options = other.options_ != null ? other.Options.Clone() : null;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public OneofDescriptorProto Clone() {
       return new OneofDescriptorProto(this);
     }
@@ -1717,6 +1999,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
     private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
       get { return name_; }
       set {
@@ -1724,10 +2007,23 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    /// <summary>Field number for the "options" field.</summary>
+    public const int OptionsFieldNumber = 2;
+    private global::Google.Protobuf.Reflection.OneofOptions options_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.Reflection.OneofOptions Options {
+      get { return options_; }
+      set {
+        options_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as OneofDescriptorProto);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(OneofDescriptorProto other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1736,34 +2032,48 @@ namespace Google.Protobuf.Reflection {
         return true;
       }
       if (Name != other.Name) return false;
+      if (!object.Equals(Options, other.Options)) return false;
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (options_ != null) hash ^= Options.GetHashCode();
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Name.Length != 0) {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
+      if (options_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(Options);
+      }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
+      if (options_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Options);
+      }
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(OneofDescriptorProto other) {
       if (other == null) {
         return;
@@ -1771,8 +2081,15 @@ namespace Google.Protobuf.Reflection {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
+      if (other.options_ != null) {
+        if (options_ == null) {
+          options_ = new global::Google.Protobuf.Reflection.OneofOptions();
+        }
+        Options.MergeFrom(other.Options);
+      }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1784,6 +2101,13 @@ namespace Google.Protobuf.Reflection {
             Name = input.ReadString();
             break;
           }
+          case 18: {
+            if (options_ == null) {
+              options_ = new global::Google.Protobuf.Reflection.OneofOptions();
+            }
+            input.ReadMessage(options_);
+            break;
+          }
         }
       }
     }
@@ -1791,33 +2115,38 @@ namespace Google.Protobuf.Reflection {
   }
 
   /// <summary>
-  ///  Describes an enum type.
+  /// Describes an enum type.
   /// </summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   internal sealed partial class EnumDescriptorProto : pb::IMessage<EnumDescriptorProto> {
     private static readonly pb::MessageParser<EnumDescriptorProto> _parser = new pb::MessageParser<EnumDescriptorProto>(() => new EnumDescriptorProto());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<EnumDescriptorProto> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[5]; }
+      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[6]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EnumDescriptorProto() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EnumDescriptorProto(EnumDescriptorProto other) : this() {
       name_ = other.name_;
       value_ = other.value_.Clone();
       Options = other.options_ != null ? other.Options.Clone() : null;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EnumDescriptorProto Clone() {
       return new EnumDescriptorProto(this);
     }
@@ -1825,6 +2154,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
     private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
       get { return name_; }
       set {
@@ -1837,6 +2167,7 @@ namespace Google.Protobuf.Reflection {
     private static readonly pb::FieldCodec<global::Google.Protobuf.Reflection.EnumValueDescriptorProto> _repeated_value_codec
         = pb::FieldCodec.ForMessage(18, global::Google.Protobuf.Reflection.EnumValueDescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.EnumValueDescriptorProto> value_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.EnumValueDescriptorProto>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.EnumValueDescriptorProto> Value {
       get { return value_; }
     }
@@ -1844,6 +2175,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "options" field.</summary>
     public const int OptionsFieldNumber = 3;
     private global::Google.Protobuf.Reflection.EnumOptions options_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.Reflection.EnumOptions Options {
       get { return options_; }
       set {
@@ -1851,10 +2183,12 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EnumDescriptorProto);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(EnumDescriptorProto other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -1868,6 +2202,7 @@ namespace Google.Protobuf.Reflection {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
@@ -1876,10 +2211,12 @@ namespace Google.Protobuf.Reflection {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Name.Length != 0) {
         output.WriteRawTag(10);
@@ -1892,6 +2229,7 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Name.Length != 0) {
@@ -1904,6 +2242,7 @@ namespace Google.Protobuf.Reflection {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(EnumDescriptorProto other) {
       if (other == null) {
         return;
@@ -1920,6 +2259,7 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -1949,33 +2289,38 @@ namespace Google.Protobuf.Reflection {
   }
 
   /// <summary>
-  ///  Describes a value within an enum.
+  /// Describes a value within an enum.
   /// </summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   internal sealed partial class EnumValueDescriptorProto : pb::IMessage<EnumValueDescriptorProto> {
     private static readonly pb::MessageParser<EnumValueDescriptorProto> _parser = new pb::MessageParser<EnumValueDescriptorProto>(() => new EnumValueDescriptorProto());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<EnumValueDescriptorProto> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[7]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EnumValueDescriptorProto() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EnumValueDescriptorProto(EnumValueDescriptorProto other) : this() {
       name_ = other.name_;
       number_ = other.number_;
       Options = other.options_ != null ? other.Options.Clone() : null;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EnumValueDescriptorProto Clone() {
       return new EnumValueDescriptorProto(this);
     }
@@ -1983,6 +2328,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
     private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
       get { return name_; }
       set {
@@ -1993,6 +2339,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "number" field.</summary>
     public const int NumberFieldNumber = 2;
     private int number_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int Number {
       get { return number_; }
       set {
@@ -2003,6 +2350,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "options" field.</summary>
     public const int OptionsFieldNumber = 3;
     private global::Google.Protobuf.Reflection.EnumValueOptions options_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.Reflection.EnumValueOptions Options {
       get { return options_; }
       set {
@@ -2010,10 +2358,12 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EnumValueDescriptorProto);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(EnumValueDescriptorProto other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2027,6 +2377,7 @@ namespace Google.Protobuf.Reflection {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
@@ -2035,10 +2386,12 @@ namespace Google.Protobuf.Reflection {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Name.Length != 0) {
         output.WriteRawTag(10);
@@ -2054,6 +2407,7 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Name.Length != 0) {
@@ -2068,6 +2422,7 @@ namespace Google.Protobuf.Reflection {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(EnumValueDescriptorProto other) {
       if (other == null) {
         return;
@@ -2086,6 +2441,7 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2115,33 +2471,38 @@ namespace Google.Protobuf.Reflection {
   }
 
   /// <summary>
-  ///  Describes a service.
+  /// Describes a service.
   /// </summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   internal sealed partial class ServiceDescriptorProto : pb::IMessage<ServiceDescriptorProto> {
     private static readonly pb::MessageParser<ServiceDescriptorProto> _parser = new pb::MessageParser<ServiceDescriptorProto>(() => new ServiceDescriptorProto());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<ServiceDescriptorProto> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[8]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ServiceDescriptorProto() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ServiceDescriptorProto(ServiceDescriptorProto other) : this() {
       name_ = other.name_;
       method_ = other.method_.Clone();
       Options = other.options_ != null ? other.Options.Clone() : null;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ServiceDescriptorProto Clone() {
       return new ServiceDescriptorProto(this);
     }
@@ -2149,6 +2510,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
     private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
       get { return name_; }
       set {
@@ -2161,6 +2523,7 @@ namespace Google.Protobuf.Reflection {
     private static readonly pb::FieldCodec<global::Google.Protobuf.Reflection.MethodDescriptorProto> _repeated_method_codec
         = pb::FieldCodec.ForMessage(18, global::Google.Protobuf.Reflection.MethodDescriptorProto.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.MethodDescriptorProto> method_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.MethodDescriptorProto>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.MethodDescriptorProto> Method {
       get { return method_; }
     }
@@ -2168,6 +2531,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "options" field.</summary>
     public const int OptionsFieldNumber = 3;
     private global::Google.Protobuf.Reflection.ServiceOptions options_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.Reflection.ServiceOptions Options {
       get { return options_; }
       set {
@@ -2175,10 +2539,12 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as ServiceDescriptorProto);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(ServiceDescriptorProto other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2192,6 +2558,7 @@ namespace Google.Protobuf.Reflection {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
@@ -2200,10 +2567,12 @@ namespace Google.Protobuf.Reflection {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Name.Length != 0) {
         output.WriteRawTag(10);
@@ -2216,6 +2585,7 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Name.Length != 0) {
@@ -2228,6 +2598,7 @@ namespace Google.Protobuf.Reflection {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(ServiceDescriptorProto other) {
       if (other == null) {
         return;
@@ -2244,6 +2615,7 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2273,27 +2645,31 @@ namespace Google.Protobuf.Reflection {
   }
 
   /// <summary>
-  ///  Describes a method of a service.
+  /// Describes a method of a service.
   /// </summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   internal sealed partial class MethodDescriptorProto : pb::IMessage<MethodDescriptorProto> {
     private static readonly pb::MessageParser<MethodDescriptorProto> _parser = new pb::MessageParser<MethodDescriptorProto>(() => new MethodDescriptorProto());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<MethodDescriptorProto> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[8]; }
+      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[9]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MethodDescriptorProto() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MethodDescriptorProto(MethodDescriptorProto other) : this() {
       name_ = other.name_;
       inputType_ = other.inputType_;
@@ -2303,6 +2679,7 @@ namespace Google.Protobuf.Reflection {
       serverStreaming_ = other.serverStreaming_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MethodDescriptorProto Clone() {
       return new MethodDescriptorProto(this);
     }
@@ -2310,6 +2687,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "name" field.</summary>
     public const int NameFieldNumber = 1;
     private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
       get { return name_; }
       set {
@@ -2321,9 +2699,10 @@ namespace Google.Protobuf.Reflection {
     public const int InputTypeFieldNumber = 2;
     private string inputType_ = "";
     /// <summary>
-    ///  Input and output type names.  These are resolved in the same way as
-    ///  FieldDescriptorProto.type_name, but must refer to a message type.
+    /// Input and output type names.  These are resolved in the same way as
+    /// FieldDescriptorProto.type_name, but must refer to a message type.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string InputType {
       get { return inputType_; }
       set {
@@ -2334,6 +2713,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "output_type" field.</summary>
     public const int OutputTypeFieldNumber = 3;
     private string outputType_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string OutputType {
       get { return outputType_; }
       set {
@@ -2344,6 +2724,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "options" field.</summary>
     public const int OptionsFieldNumber = 4;
     private global::Google.Protobuf.Reflection.MethodOptions options_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.Reflection.MethodOptions Options {
       get { return options_; }
       set {
@@ -2355,8 +2736,9 @@ namespace Google.Protobuf.Reflection {
     public const int ClientStreamingFieldNumber = 5;
     private bool clientStreaming_;
     /// <summary>
-    ///  Identifies if client streams multiple client messages
+    /// Identifies if client streams multiple client messages
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool ClientStreaming {
       get { return clientStreaming_; }
       set {
@@ -2368,8 +2750,9 @@ namespace Google.Protobuf.Reflection {
     public const int ServerStreamingFieldNumber = 6;
     private bool serverStreaming_;
     /// <summary>
-    ///  Identifies if server streams multiple server messages
+    /// Identifies if server streams multiple server messages
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool ServerStreaming {
       get { return serverStreaming_; }
       set {
@@ -2377,10 +2760,12 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as MethodDescriptorProto);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(MethodDescriptorProto other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2397,6 +2782,7 @@ namespace Google.Protobuf.Reflection {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
@@ -2408,10 +2794,12 @@ namespace Google.Protobuf.Reflection {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Name.Length != 0) {
         output.WriteRawTag(10);
@@ -2439,6 +2827,7 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Name.Length != 0) {
@@ -2462,6 +2851,7 @@ namespace Google.Protobuf.Reflection {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(MethodDescriptorProto other) {
       if (other == null) {
         return;
@@ -2489,6 +2879,7 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -2529,25 +2920,31 @@ namespace Google.Protobuf.Reflection {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   internal sealed partial class FileOptions : pb::IMessage<FileOptions> {
     private static readonly pb::MessageParser<FileOptions> _parser = new pb::MessageParser<FileOptions>(() => new FileOptions());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<FileOptions> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[9]; }
+      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[10]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    internal CustomOptions CustomOptions{ get; private set; } = CustomOptions.Empty;
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FileOptions() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FileOptions(FileOptions other) : this() {
       javaPackage_ = other.javaPackage_;
       javaOuterClassname_ = other.javaOuterClassname_;
@@ -2559,14 +2956,18 @@ namespace Google.Protobuf.Reflection {
       ccGenericServices_ = other.ccGenericServices_;
       javaGenericServices_ = other.javaGenericServices_;
       pyGenericServices_ = other.pyGenericServices_;
+      phpGenericServices_ = other.phpGenericServices_;
       deprecated_ = other.deprecated_;
       ccEnableArenas_ = other.ccEnableArenas_;
       objcClassPrefix_ = other.objcClassPrefix_;
       csharpNamespace_ = other.csharpNamespace_;
-      javananoUseDeprecatedPackage_ = other.javananoUseDeprecatedPackage_;
+      swiftPrefix_ = other.swiftPrefix_;
+      phpClassPrefix_ = other.phpClassPrefix_;
+      phpNamespace_ = other.phpNamespace_;
       uninterpretedOption_ = other.uninterpretedOption_.Clone();
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FileOptions Clone() {
       return new FileOptions(this);
     }
@@ -2575,11 +2976,12 @@ namespace Google.Protobuf.Reflection {
     public const int JavaPackageFieldNumber = 1;
     private string javaPackage_ = "";
     /// <summary>
-    ///  Sets the Java package where classes generated from this .proto will be
-    ///  placed.  By default, the proto package is used, but this is often
-    ///  inappropriate because proto packages do not normally start with backwards
-    ///  domain names.
+    /// Sets the Java package where classes generated from this .proto will be
+    /// placed.  By default, the proto package is used, but this is often
+    /// inappropriate because proto packages do not normally start with backwards
+    /// domain names.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string JavaPackage {
       get { return javaPackage_; }
       set {
@@ -2591,12 +2993,13 @@ namespace Google.Protobuf.Reflection {
     public const int JavaOuterClassnameFieldNumber = 8;
     private string javaOuterClassname_ = "";
     /// <summary>
-    ///  If set, all the classes from the .proto file are wrapped in a single
-    ///  outer class with the given name.  This applies to both Proto1
-    ///  (equivalent to the old "--one_java_file" option) and Proto2 (where
-    ///  a .proto always translates to a single class, but you may want to
-    ///  explicitly choose the class name).
+    /// If set, all the classes from the .proto file are wrapped in a single
+    /// outer class with the given name.  This applies to both Proto1
+    /// (equivalent to the old "--one_java_file" option) and Proto2 (where
+    /// a .proto always translates to a single class, but you may want to
+    /// explicitly choose the class name).
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string JavaOuterClassname {
       get { return javaOuterClassname_; }
       set {
@@ -2608,13 +3011,14 @@ namespace Google.Protobuf.Reflection {
     public const int JavaMultipleFilesFieldNumber = 10;
     private bool javaMultipleFiles_;
     /// <summary>
-    ///  If set true, then the Java code generator will generate a separate .java
-    ///  file for each top-level message, enum, and service defined in the .proto
-    ///  file.  Thus, these types will *not* be nested inside the outer class
-    ///  named by java_outer_classname.  However, the outer class will still be
-    ///  generated to contain the file's getDescriptor() method as well as any
-    ///  top-level extensions defined in the file.
+    /// If set true, then the Java code generator will generate a separate .java
+    /// file for each top-level message, enum, and service defined in the .proto
+    /// file.  Thus, these types will *not* be nested inside the outer class
+    /// named by java_outer_classname.  However, the outer class will still be
+    /// generated to contain the file's getDescriptor() method as well as any
+    /// top-level extensions defined in the file.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool JavaMultipleFiles {
       get { return javaMultipleFiles_; }
       set {
@@ -2626,19 +3030,10 @@ namespace Google.Protobuf.Reflection {
     public const int JavaGenerateEqualsAndHashFieldNumber = 20;
     private bool javaGenerateEqualsAndHash_;
     /// <summary>
-    ///  If set true, then the Java code generator will generate equals() and
-    ///  hashCode() methods for all messages defined in the .proto file.
-    ///  This increases generated code size, potentially substantially for large
-    ///  protos, which may harm a memory-constrained application.
-    ///  - In the full runtime this is a speed optimization, as the
-    ///  AbstractMessage base class includes reflection-based implementations of
-    ///  these methods.
-    ///  - In the lite runtime, setting this option changes the semantics of
-    ///  equals() and hashCode() to more closely match those of the full runtime;
-    ///  the generated methods compute their results based on field values rather
-    ///  than object identity. (Implementations should not assume that hashcodes
-    ///  will be consistent across runtimes or versions of the protocol compiler.)
+    /// This option does nothing.
     /// </summary>
+    [global::System.ObsoleteAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool JavaGenerateEqualsAndHash {
       get { return javaGenerateEqualsAndHash_; }
       set {
@@ -2650,13 +3045,14 @@ namespace Google.Protobuf.Reflection {
     public const int JavaStringCheckUtf8FieldNumber = 27;
     private bool javaStringCheckUtf8_;
     /// <summary>
-    ///  If set true, then the Java2 code generator will generate code that
-    ///  throws an exception whenever an attempt is made to assign a non-UTF-8
-    ///  byte sequence to a string field.
-    ///  Message reflection will do the same.
-    ///  However, an extension field still accepts non-UTF-8 byte sequences.
-    ///  This option has no effect on when used with the lite runtime.
+    /// If set true, then the Java2 code generator will generate code that
+    /// throws an exception whenever an attempt is made to assign a non-UTF-8
+    /// byte sequence to a string field.
+    /// Message reflection will do the same.
+    /// However, an extension field still accepts non-UTF-8 byte sequences.
+    /// This option has no effect on when used with the lite runtime.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool JavaStringCheckUtf8 {
       get { return javaStringCheckUtf8_; }
       set {
@@ -2666,7 +3062,8 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "optimize_for" field.</summary>
     public const int OptimizeForFieldNumber = 9;
-    private global::Google.Protobuf.Reflection.FileOptions.Types.OptimizeMode optimizeFor_ = global::Google.Protobuf.Reflection.FileOptions.Types.OptimizeMode.SPEED;
+    private global::Google.Protobuf.Reflection.FileOptions.Types.OptimizeMode optimizeFor_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.Reflection.FileOptions.Types.OptimizeMode OptimizeFor {
       get { return optimizeFor_; }
       set {
@@ -2678,12 +3075,13 @@ namespace Google.Protobuf.Reflection {
     public const int GoPackageFieldNumber = 11;
     private string goPackage_ = "";
     /// <summary>
-    ///  Sets the Go package where structs generated from this .proto will be
-    ///  placed. If omitted, the Go package will be derived from the following:
-    ///    - The basename of the package import path, if provided.
-    ///    - Otherwise, the package statement in the .proto file, if present.
-    ///    - Otherwise, the basename of the .proto file, without extension.
+    /// Sets the Go package where structs generated from this .proto will be
+    /// placed. If omitted, the Go package will be derived from the following:
+    ///   - The basename of the package import path, if provided.
+    ///   - Otherwise, the package statement in the .proto file, if present.
+    ///   - Otherwise, the basename of the .proto file, without extension.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string GoPackage {
       get { return goPackage_; }
       set {
@@ -2695,17 +3093,18 @@ namespace Google.Protobuf.Reflection {
     public const int CcGenericServicesFieldNumber = 16;
     private bool ccGenericServices_;
     /// <summary>
-    ///  Should generic services be generated in each language?  "Generic" services
-    ///  are not specific to any particular RPC system.  They are generated by the
-    ///  main code generators in each language (without additional plugins).
-    ///  Generic services were the only kind of service generation supported by
-    ///  early versions of google.protobuf.
+    /// Should generic services be generated in each language?  "Generic" services
+    /// are not specific to any particular RPC system.  They are generated by the
+    /// main code generators in each language (without additional plugins).
+    /// Generic services were the only kind of service generation supported by
+    /// early versions of google.protobuf.
     ///
-    ///  Generic services are now considered deprecated in favor of using plugins
-    ///  that generate code specific to your particular RPC system.  Therefore,
-    ///  these default to false.  Old code which depends on generic services should
-    ///  explicitly set them to true.
+    /// Generic services are now considered deprecated in favor of using plugins
+    /// that generate code specific to your particular RPC system.  Therefore,
+    /// these default to false.  Old code which depends on generic services should
+    /// explicitly set them to true.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool CcGenericServices {
       get { return ccGenericServices_; }
       set {
@@ -2716,6 +3115,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "java_generic_services" field.</summary>
     public const int JavaGenericServicesFieldNumber = 17;
     private bool javaGenericServices_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool JavaGenericServices {
       get { return javaGenericServices_; }
       set {
@@ -2726,6 +3126,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "py_generic_services" field.</summary>
     public const int PyGenericServicesFieldNumber = 18;
     private bool pyGenericServices_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool PyGenericServices {
       get { return pyGenericServices_; }
       set {
@@ -2733,15 +3134,27 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    /// <summary>Field number for the "php_generic_services" field.</summary>
+    public const int PhpGenericServicesFieldNumber = 19;
+    private bool phpGenericServices_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool PhpGenericServices {
+      get { return phpGenericServices_; }
+      set {
+        phpGenericServices_ = value;
+      }
+    }
+
     /// <summary>Field number for the "deprecated" field.</summary>
     public const int DeprecatedFieldNumber = 23;
     private bool deprecated_;
     /// <summary>
-    ///  Is this file deprecated?
-    ///  Depending on the target platform, this can emit Deprecated annotations
-    ///  for everything in the file, or it will be completely ignored; in the very
-    ///  least, this is a formalization for deprecating files.
+    /// Is this file deprecated?
+    /// Depending on the target platform, this can emit Deprecated annotations
+    /// for everything in the file, or it will be completely ignored; in the very
+    /// least, this is a formalization for deprecating files.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Deprecated {
       get { return deprecated_; }
       set {
@@ -2753,9 +3166,10 @@ namespace Google.Protobuf.Reflection {
     public const int CcEnableArenasFieldNumber = 31;
     private bool ccEnableArenas_;
     /// <summary>
-    ///  Enables the use of arenas for the proto messages in this file. This applies
-    ///  only to generated classes for C++.
+    /// Enables the use of arenas for the proto messages in this file. This applies
+    /// only to generated classes for C++.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool CcEnableArenas {
       get { return ccEnableArenas_; }
       set {
@@ -2767,9 +3181,10 @@ namespace Google.Protobuf.Reflection {
     public const int ObjcClassPrefixFieldNumber = 36;
     private string objcClassPrefix_ = "";
     /// <summary>
-    ///  Sets the objective c class prefix which is prepended to all objective c
-    ///  generated classes from this .proto. There is no default.
+    /// Sets the objective c class prefix which is prepended to all objective c
+    /// generated classes from this .proto. There is no default.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string ObjcClassPrefix {
       get { return objcClassPrefix_; }
       set {
@@ -2781,8 +3196,9 @@ namespace Google.Protobuf.Reflection {
     public const int CsharpNamespaceFieldNumber = 37;
     private string csharpNamespace_ = "";
     /// <summary>
-    ///  Namespace for generated classes; defaults to the package.
+    /// Namespace for generated classes; defaults to the package.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string CsharpNamespace {
       get { return csharpNamespace_; }
       set {
@@ -2790,18 +3206,51 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
-    /// <summary>Field number for the "javanano_use_deprecated_package" field.</summary>
-    public const int JavananoUseDeprecatedPackageFieldNumber = 38;
-    private bool javananoUseDeprecatedPackage_;
+    /// <summary>Field number for the "swift_prefix" field.</summary>
+    public const int SwiftPrefixFieldNumber = 39;
+    private string swiftPrefix_ = "";
     /// <summary>
-    ///  Whether the nano proto compiler should generate in the deprecated non-nano
-    ///  suffixed package.
+    /// By default Swift generators will take the proto package and CamelCase it
+    /// replacing '.' with underscore and use that to prefix the types/symbols
+    /// defined. When this options is provided, they will use this value instead
+    /// to prefix the types/symbols defined.
     /// </summary>
-    [global::System.ObsoleteAttribute()]
-    public bool JavananoUseDeprecatedPackage {
-      get { return javananoUseDeprecatedPackage_; }
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string SwiftPrefix {
+      get { return swiftPrefix_; }
       set {
-        javananoUseDeprecatedPackage_ = value;
+        swiftPrefix_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "php_class_prefix" field.</summary>
+    public const int PhpClassPrefixFieldNumber = 40;
+    private string phpClassPrefix_ = "";
+    /// <summary>
+    /// Sets the php class prefix which is prepended to all php generated classes
+    /// from this .proto. Default is empty.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PhpClassPrefix {
+      get { return phpClassPrefix_; }
+      set {
+        phpClassPrefix_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "php_namespace" field.</summary>
+    public const int PhpNamespaceFieldNumber = 41;
+    private string phpNamespace_ = "";
+    /// <summary>
+    /// Use this option to change the namespace of php generated classes. Default
+    /// is empty. When this option is empty, the package name will be used for
+    /// determining the namespace.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PhpNamespace {
+      get { return phpNamespace_; }
+      set {
+        phpNamespace_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -2811,16 +3260,19 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(7994, global::Google.Protobuf.Reflection.UninterpretedOption.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> uninterpretedOption_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption>();
     /// <summary>
-    ///  The parser stores options it doesn't recognize here. See above.
+    /// The parser stores options it doesn't recognize here. See above.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> UninterpretedOption {
       get { return uninterpretedOption_; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as FileOptions);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(FileOptions other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -2838,15 +3290,19 @@ namespace Google.Protobuf.Reflection {
       if (CcGenericServices != other.CcGenericServices) return false;
       if (JavaGenericServices != other.JavaGenericServices) return false;
       if (PyGenericServices != other.PyGenericServices) return false;
+      if (PhpGenericServices != other.PhpGenericServices) return false;
       if (Deprecated != other.Deprecated) return false;
       if (CcEnableArenas != other.CcEnableArenas) return false;
       if (ObjcClassPrefix != other.ObjcClassPrefix) return false;
       if (CsharpNamespace != other.CsharpNamespace) return false;
-      if (JavananoUseDeprecatedPackage != other.JavananoUseDeprecatedPackage) return false;
+      if (SwiftPrefix != other.SwiftPrefix) return false;
+      if (PhpClassPrefix != other.PhpClassPrefix) return false;
+      if (PhpNamespace != other.PhpNamespace) return false;
       if(!uninterpretedOption_.Equals(other.uninterpretedOption_)) return false;
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (JavaPackage.Length != 0) hash ^= JavaPackage.GetHashCode();
@@ -2854,24 +3310,29 @@ namespace Google.Protobuf.Reflection {
       if (JavaMultipleFiles != false) hash ^= JavaMultipleFiles.GetHashCode();
       if (JavaGenerateEqualsAndHash != false) hash ^= JavaGenerateEqualsAndHash.GetHashCode();
       if (JavaStringCheckUtf8 != false) hash ^= JavaStringCheckUtf8.GetHashCode();
-      if (OptimizeFor != global::Google.Protobuf.Reflection.FileOptions.Types.OptimizeMode.SPEED) hash ^= OptimizeFor.GetHashCode();
+      if (OptimizeFor != 0) hash ^= OptimizeFor.GetHashCode();
       if (GoPackage.Length != 0) hash ^= GoPackage.GetHashCode();
       if (CcGenericServices != false) hash ^= CcGenericServices.GetHashCode();
       if (JavaGenericServices != false) hash ^= JavaGenericServices.GetHashCode();
       if (PyGenericServices != false) hash ^= PyGenericServices.GetHashCode();
+      if (PhpGenericServices != false) hash ^= PhpGenericServices.GetHashCode();
       if (Deprecated != false) hash ^= Deprecated.GetHashCode();
       if (CcEnableArenas != false) hash ^= CcEnableArenas.GetHashCode();
       if (ObjcClassPrefix.Length != 0) hash ^= ObjcClassPrefix.GetHashCode();
       if (CsharpNamespace.Length != 0) hash ^= CsharpNamespace.GetHashCode();
-      if (JavananoUseDeprecatedPackage != false) hash ^= JavananoUseDeprecatedPackage.GetHashCode();
+      if (SwiftPrefix.Length != 0) hash ^= SwiftPrefix.GetHashCode();
+      if (PhpClassPrefix.Length != 0) hash ^= PhpClassPrefix.GetHashCode();
+      if (PhpNamespace.Length != 0) hash ^= PhpNamespace.GetHashCode();
       hash ^= uninterpretedOption_.GetHashCode();
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (JavaPackage.Length != 0) {
         output.WriteRawTag(10);
@@ -2881,7 +3342,7 @@ namespace Google.Protobuf.Reflection {
         output.WriteRawTag(66);
         output.WriteString(JavaOuterClassname);
       }
-      if (OptimizeFor != global::Google.Protobuf.Reflection.FileOptions.Types.OptimizeMode.SPEED) {
+      if (OptimizeFor != 0) {
         output.WriteRawTag(72);
         output.WriteEnum((int) OptimizeFor);
       }
@@ -2904,6 +3365,10 @@ namespace Google.Protobuf.Reflection {
       if (PyGenericServices != false) {
         output.WriteRawTag(144, 1);
         output.WriteBool(PyGenericServices);
+      }
+      if (PhpGenericServices != false) {
+        output.WriteRawTag(152, 1);
+        output.WriteBool(PhpGenericServices);
       }
       if (JavaGenerateEqualsAndHash != false) {
         output.WriteRawTag(160, 1);
@@ -2929,13 +3394,22 @@ namespace Google.Protobuf.Reflection {
         output.WriteRawTag(170, 2);
         output.WriteString(CsharpNamespace);
       }
-      if (JavananoUseDeprecatedPackage != false) {
-        output.WriteRawTag(176, 2);
-        output.WriteBool(JavananoUseDeprecatedPackage);
+      if (SwiftPrefix.Length != 0) {
+        output.WriteRawTag(186, 2);
+        output.WriteString(SwiftPrefix);
+      }
+      if (PhpClassPrefix.Length != 0) {
+        output.WriteRawTag(194, 2);
+        output.WriteString(PhpClassPrefix);
+      }
+      if (PhpNamespace.Length != 0) {
+        output.WriteRawTag(202, 2);
+        output.WriteString(PhpNamespace);
       }
       uninterpretedOption_.WriteTo(output, _repeated_uninterpretedOption_codec);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (JavaPackage.Length != 0) {
@@ -2953,7 +3427,7 @@ namespace Google.Protobuf.Reflection {
       if (JavaStringCheckUtf8 != false) {
         size += 2 + 1;
       }
-      if (OptimizeFor != global::Google.Protobuf.Reflection.FileOptions.Types.OptimizeMode.SPEED) {
+      if (OptimizeFor != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) OptimizeFor);
       }
       if (GoPackage.Length != 0) {
@@ -2968,6 +3442,9 @@ namespace Google.Protobuf.Reflection {
       if (PyGenericServices != false) {
         size += 2 + 1;
       }
+      if (PhpGenericServices != false) {
+        size += 2 + 1;
+      }
       if (Deprecated != false) {
         size += 2 + 1;
       }
@@ -2980,13 +3457,20 @@ namespace Google.Protobuf.Reflection {
       if (CsharpNamespace.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(CsharpNamespace);
       }
-      if (JavananoUseDeprecatedPackage != false) {
-        size += 2 + 1;
+      if (SwiftPrefix.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(SwiftPrefix);
+      }
+      if (PhpClassPrefix.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(PhpClassPrefix);
+      }
+      if (PhpNamespace.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(PhpNamespace);
       }
       size += uninterpretedOption_.CalculateSize(_repeated_uninterpretedOption_codec);
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(FileOptions other) {
       if (other == null) {
         return;
@@ -3006,7 +3490,7 @@ namespace Google.Protobuf.Reflection {
       if (other.JavaStringCheckUtf8 != false) {
         JavaStringCheckUtf8 = other.JavaStringCheckUtf8;
       }
-      if (other.OptimizeFor != global::Google.Protobuf.Reflection.FileOptions.Types.OptimizeMode.SPEED) {
+      if (other.OptimizeFor != 0) {
         OptimizeFor = other.OptimizeFor;
       }
       if (other.GoPackage.Length != 0) {
@@ -3021,6 +3505,9 @@ namespace Google.Protobuf.Reflection {
       if (other.PyGenericServices != false) {
         PyGenericServices = other.PyGenericServices;
       }
+      if (other.PhpGenericServices != false) {
+        PhpGenericServices = other.PhpGenericServices;
+      }
       if (other.Deprecated != false) {
         Deprecated = other.Deprecated;
       }
@@ -3033,18 +3520,25 @@ namespace Google.Protobuf.Reflection {
       if (other.CsharpNamespace.Length != 0) {
         CsharpNamespace = other.CsharpNamespace;
       }
-      if (other.JavananoUseDeprecatedPackage != false) {
-        JavananoUseDeprecatedPackage = other.JavananoUseDeprecatedPackage;
+      if (other.SwiftPrefix.Length != 0) {
+        SwiftPrefix = other.SwiftPrefix;
+      }
+      if (other.PhpClassPrefix.Length != 0) {
+        PhpClassPrefix = other.PhpClassPrefix;
+      }
+      if (other.PhpNamespace.Length != 0) {
+        PhpNamespace = other.PhpNamespace;
       }
       uninterpretedOption_.Add(other.uninterpretedOption_);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            input.SkipLastField();
+            CustomOptions = CustomOptions.ReadOrSkipUnknownField(input);
             break;
           case 10: {
             JavaPackage = input.ReadString();
@@ -3078,6 +3572,10 @@ namespace Google.Protobuf.Reflection {
             PyGenericServices = input.ReadBool();
             break;
           }
+          case 152: {
+            PhpGenericServices = input.ReadBool();
+            break;
+          }
           case 160: {
             JavaGenerateEqualsAndHash = input.ReadBool();
             break;
@@ -3102,8 +3600,16 @@ namespace Google.Protobuf.Reflection {
             CsharpNamespace = input.ReadString();
             break;
           }
-          case 304: {
-            JavananoUseDeprecatedPackage = input.ReadBool();
+          case 314: {
+            SwiftPrefix = input.ReadString();
+            break;
+          }
+          case 322: {
+            PhpClassPrefix = input.ReadString();
+            break;
+          }
+          case 330: {
+            PhpNamespace = input.ReadString();
             break;
           }
           case 7994: {
@@ -3116,24 +3622,24 @@ namespace Google.Protobuf.Reflection {
 
     #region Nested types
     /// <summary>Container for nested types declared in the FileOptions message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
       /// <summary>
-      ///  Generated classes can be optimized for speed or code size.
+      /// Generated classes can be optimized for speed or code size.
       /// </summary>
       internal enum OptimizeMode {
         /// <summary>
-        ///  Generate complete code for parsing, serialization,
+        /// Generate complete code for parsing, serialization,
         /// </summary>
-        SPEED = 1,
+        [pbr::OriginalName("SPEED")] Speed = 1,
         /// <summary>
-        ///  etc.
+        /// etc.
         /// </summary>
-        CODE_SIZE = 2,
+        [pbr::OriginalName("CODE_SIZE")] CodeSize = 2,
         /// <summary>
-        ///  Generate code using MessageLite and the lite runtime.
+        /// Generate code using MessageLite and the lite runtime.
         /// </summary>
-        LITE_RUNTIME = 3,
+        [pbr::OriginalName("LITE_RUNTIME")] LiteRuntime = 3,
       }
 
     }
@@ -3141,25 +3647,31 @@ namespace Google.Protobuf.Reflection {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   internal sealed partial class MessageOptions : pb::IMessage<MessageOptions> {
     private static readonly pb::MessageParser<MessageOptions> _parser = new pb::MessageParser<MessageOptions>(() => new MessageOptions());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<MessageOptions> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[10]; }
+      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[11]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    internal CustomOptions CustomOptions{ get; private set; } = CustomOptions.Empty;
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MessageOptions() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MessageOptions(MessageOptions other) : this() {
       messageSetWireFormat_ = other.messageSetWireFormat_;
       noStandardDescriptorAccessor_ = other.noStandardDescriptorAccessor_;
@@ -3168,6 +3680,7 @@ namespace Google.Protobuf.Reflection {
       uninterpretedOption_ = other.uninterpretedOption_.Clone();
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MessageOptions Clone() {
       return new MessageOptions(this);
     }
@@ -3176,25 +3689,26 @@ namespace Google.Protobuf.Reflection {
     public const int MessageSetWireFormatFieldNumber = 1;
     private bool messageSetWireFormat_;
     /// <summary>
-    ///  Set true to use the old proto1 MessageSet wire format for extensions.
-    ///  This is provided for backwards-compatibility with the MessageSet wire
-    ///  format.  You should not use this for any other reason:  It's less
-    ///  efficient, has fewer features, and is more complicated.
+    /// Set true to use the old proto1 MessageSet wire format for extensions.
+    /// This is provided for backwards-compatibility with the MessageSet wire
+    /// format.  You should not use this for any other reason:  It's less
+    /// efficient, has fewer features, and is more complicated.
     ///
-    ///  The message must be defined exactly as follows:
-    ///    message Foo {
-    ///      option message_set_wire_format = true;
-    ///      extensions 4 to max;
-    ///    }
-    ///  Note that the message cannot have any defined fields; MessageSets only
-    ///  have extensions.
+    /// The message must be defined exactly as follows:
+    ///   message Foo {
+    ///     option message_set_wire_format = true;
+    ///     extensions 4 to max;
+    ///   }
+    /// Note that the message cannot have any defined fields; MessageSets only
+    /// have extensions.
     ///
-    ///  All extensions of your type must be singular messages; e.g. they cannot
-    ///  be int32s, enums, or repeated messages.
+    /// All extensions of your type must be singular messages; e.g. they cannot
+    /// be int32s, enums, or repeated messages.
     ///
-    ///  Because this is an option, the above two restrictions are not enforced by
-    ///  the protocol compiler.
+    /// Because this is an option, the above two restrictions are not enforced by
+    /// the protocol compiler.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool MessageSetWireFormat {
       get { return messageSetWireFormat_; }
       set {
@@ -3206,10 +3720,11 @@ namespace Google.Protobuf.Reflection {
     public const int NoStandardDescriptorAccessorFieldNumber = 2;
     private bool noStandardDescriptorAccessor_;
     /// <summary>
-    ///  Disables the generation of the standard "descriptor()" accessor, which can
-    ///  conflict with a field of the same name.  This is meant to make migration
-    ///  from proto1 easier; new code should avoid fields named "descriptor".
+    /// Disables the generation of the standard "descriptor()" accessor, which can
+    /// conflict with a field of the same name.  This is meant to make migration
+    /// from proto1 easier; new code should avoid fields named "descriptor".
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool NoStandardDescriptorAccessor {
       get { return noStandardDescriptorAccessor_; }
       set {
@@ -3221,11 +3736,12 @@ namespace Google.Protobuf.Reflection {
     public const int DeprecatedFieldNumber = 3;
     private bool deprecated_;
     /// <summary>
-    ///  Is this message deprecated?
-    ///  Depending on the target platform, this can emit Deprecated annotations
-    ///  for the message, or it will be completely ignored; in the very least,
-    ///  this is a formalization for deprecating messages.
+    /// Is this message deprecated?
+    /// Depending on the target platform, this can emit Deprecated annotations
+    /// for the message, or it will be completely ignored; in the very least,
+    /// this is a formalization for deprecating messages.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Deprecated {
       get { return deprecated_; }
       set {
@@ -3237,28 +3753,29 @@ namespace Google.Protobuf.Reflection {
     public const int MapEntryFieldNumber = 7;
     private bool mapEntry_;
     /// <summary>
-    ///  Whether the message is an automatically generated map entry type for the
-    ///  maps field.
+    /// Whether the message is an automatically generated map entry type for the
+    /// maps field.
     ///
-    ///  For maps fields:
-    ///      map&lt;KeyType, ValueType> map_field = 1;
-    ///  The parsed descriptor looks like:
-    ///      message MapFieldEntry {
-    ///          option map_entry = true;
-    ///          optional KeyType key = 1;
-    ///          optional ValueType value = 2;
-    ///      }
-    ///      repeated MapFieldEntry map_field = 1;
+    /// For maps fields:
+    ///     map&lt;KeyType, ValueType> map_field = 1;
+    /// The parsed descriptor looks like:
+    ///     message MapFieldEntry {
+    ///         option map_entry = true;
+    ///         optional KeyType key = 1;
+    ///         optional ValueType value = 2;
+    ///     }
+    ///     repeated MapFieldEntry map_field = 1;
     ///
-    ///  Implementations may choose not to generate the map_entry=true message, but
-    ///  use a native map in the target language to hold the keys and values.
-    ///  The reflection APIs in such implementions still need to work as
-    ///  if the field is a repeated message field.
+    /// Implementations may choose not to generate the map_entry=true message, but
+    /// use a native map in the target language to hold the keys and values.
+    /// The reflection APIs in such implementions still need to work as
+    /// if the field is a repeated message field.
     ///
-    ///  NOTE: Do not set the option in .proto files. Always use the maps syntax
-    ///  instead. The option should only be implicitly set by the proto compiler
-    ///  parser.
+    /// NOTE: Do not set the option in .proto files. Always use the maps syntax
+    /// instead. The option should only be implicitly set by the proto compiler
+    /// parser.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool MapEntry {
       get { return mapEntry_; }
       set {
@@ -3272,16 +3789,19 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(7994, global::Google.Protobuf.Reflection.UninterpretedOption.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> uninterpretedOption_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption>();
     /// <summary>
-    ///  The parser stores options it doesn't recognize here. See above.
+    /// The parser stores options it doesn't recognize here. See above.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> UninterpretedOption {
       get { return uninterpretedOption_; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as MessageOptions);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(MessageOptions other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3297,6 +3817,7 @@ namespace Google.Protobuf.Reflection {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (MessageSetWireFormat != false) hash ^= MessageSetWireFormat.GetHashCode();
@@ -3307,10 +3828,12 @@ namespace Google.Protobuf.Reflection {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (MessageSetWireFormat != false) {
         output.WriteRawTag(8);
@@ -3331,6 +3854,7 @@ namespace Google.Protobuf.Reflection {
       uninterpretedOption_.WriteTo(output, _repeated_uninterpretedOption_codec);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (MessageSetWireFormat != false) {
@@ -3349,6 +3873,7 @@ namespace Google.Protobuf.Reflection {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(MessageOptions other) {
       if (other == null) {
         return;
@@ -3368,12 +3893,13 @@ namespace Google.Protobuf.Reflection {
       uninterpretedOption_.Add(other.uninterpretedOption_);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            input.SkipLastField();
+            CustomOptions = CustomOptions.ReadOrSkipUnknownField(input);
             break;
           case 8: {
             MessageSetWireFormat = input.ReadBool();
@@ -3401,25 +3927,31 @@ namespace Google.Protobuf.Reflection {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   internal sealed partial class FieldOptions : pb::IMessage<FieldOptions> {
     private static readonly pb::MessageParser<FieldOptions> _parser = new pb::MessageParser<FieldOptions>(() => new FieldOptions());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<FieldOptions> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[11]; }
+      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[12]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    internal CustomOptions CustomOptions{ get; private set; } = CustomOptions.Empty;
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FieldOptions() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FieldOptions(FieldOptions other) : this() {
       ctype_ = other.ctype_;
       packed_ = other.packed_;
@@ -3430,19 +3962,21 @@ namespace Google.Protobuf.Reflection {
       uninterpretedOption_ = other.uninterpretedOption_.Clone();
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public FieldOptions Clone() {
       return new FieldOptions(this);
     }
 
     /// <summary>Field number for the "ctype" field.</summary>
     public const int CtypeFieldNumber = 1;
-    private global::Google.Protobuf.Reflection.FieldOptions.Types.CType ctype_ = global::Google.Protobuf.Reflection.FieldOptions.Types.CType.STRING;
+    private global::Google.Protobuf.Reflection.FieldOptions.Types.CType ctype_ = 0;
     /// <summary>
-    ///  The ctype option instructs the C++ code generator to use a different
-    ///  representation of the field than it normally would.  See the specific
-    ///  options below.  This option is not yet implemented in the open source
-    ///  release -- sorry, we'll try to include it in a future version!
+    /// The ctype option instructs the C++ code generator to use a different
+    /// representation of the field than it normally would.  See the specific
+    /// options below.  This option is not yet implemented in the open source
+    /// release -- sorry, we'll try to include it in a future version!
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.Reflection.FieldOptions.Types.CType Ctype {
       get { return ctype_; }
       set {
@@ -3454,12 +3988,13 @@ namespace Google.Protobuf.Reflection {
     public const int PackedFieldNumber = 2;
     private bool packed_;
     /// <summary>
-    ///  The packed option can be enabled for repeated primitive fields to enable
-    ///  a more efficient representation on the wire. Rather than repeatedly
-    ///  writing the tag and type for each element, the entire array is encoded as
-    ///  a single length-delimited blob. In proto3, only explicit setting it to
-    ///  false will avoid using packed encoding.
+    /// The packed option can be enabled for repeated primitive fields to enable
+    /// a more efficient representation on the wire. Rather than repeatedly
+    /// writing the tag and type for each element, the entire array is encoded as
+    /// a single length-delimited blob. In proto3, only explicit setting it to
+    /// false will avoid using packed encoding.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Packed {
       get { return packed_; }
       set {
@@ -3469,18 +4004,21 @@ namespace Google.Protobuf.Reflection {
 
     /// <summary>Field number for the "jstype" field.</summary>
     public const int JstypeFieldNumber = 6;
-    private global::Google.Protobuf.Reflection.FieldOptions.Types.JSType jstype_ = global::Google.Protobuf.Reflection.FieldOptions.Types.JSType.JS_NORMAL;
+    private global::Google.Protobuf.Reflection.FieldOptions.Types.JSType jstype_ = 0;
     /// <summary>
-    ///  The jstype option determines the JavaScript type used for values of the
-    ///  field.  The option is permitted only for 64 bit integral and fixed types
-    ///  (int64, uint64, sint64, fixed64, sfixed64).  By default these types are
-    ///  represented as JavaScript strings.  This avoids loss of precision that can
-    ///  happen when a large value is converted to a floating point JavaScript
-    ///  numbers.  Specifying JS_NUMBER for the jstype causes the generated
-    ///  JavaScript code to use the JavaScript "number" type instead of strings.
-    ///  This option is an enum to permit additional types to be added,
-    ///  e.g. goog.math.Integer.
+    /// The jstype option determines the JavaScript type used for values of the
+    /// field.  The option is permitted only for 64 bit integral and fixed types
+    /// (int64, uint64, sint64, fixed64, sfixed64).  A field with jstype JS_STRING
+    /// is represented as JavaScript string, which avoids loss of precision that
+    /// can happen when a large value is converted to a floating point JavaScript.
+    /// Specifying JS_NUMBER for the jstype causes the generated JavaScript code to
+    /// use the JavaScript "number" type.  The behavior of the default option
+    /// JS_NORMAL is implementation dependent.
+    ///
+    /// This option is an enum to permit additional types to be added, e.g.
+    /// goog.math.Integer.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Protobuf.Reflection.FieldOptions.Types.JSType Jstype {
       get { return jstype_; }
       set {
@@ -3492,34 +4030,35 @@ namespace Google.Protobuf.Reflection {
     public const int LazyFieldNumber = 5;
     private bool lazy_;
     /// <summary>
-    ///  Should this field be parsed lazily?  Lazy applies only to message-type
-    ///  fields.  It means that when the outer message is initially parsed, the
-    ///  inner message's contents will not be parsed but instead stored in encoded
-    ///  form.  The inner message will actually be parsed when it is first accessed.
+    /// Should this field be parsed lazily?  Lazy applies only to message-type
+    /// fields.  It means that when the outer message is initially parsed, the
+    /// inner message's contents will not be parsed but instead stored in encoded
+    /// form.  The inner message will actually be parsed when it is first accessed.
     ///
-    ///  This is only a hint.  Implementations are free to choose whether to use
-    ///  eager or lazy parsing regardless of the value of this option.  However,
-    ///  setting this option true suggests that the protocol author believes that
-    ///  using lazy parsing on this field is worth the additional bookkeeping
-    ///  overhead typically needed to implement it.
+    /// This is only a hint.  Implementations are free to choose whether to use
+    /// eager or lazy parsing regardless of the value of this option.  However,
+    /// setting this option true suggests that the protocol author believes that
+    /// using lazy parsing on this field is worth the additional bookkeeping
+    /// overhead typically needed to implement it.
     ///
-    ///  This option does not affect the public interface of any generated code;
-    ///  all method signatures remain the same.  Furthermore, thread-safety of the
-    ///  interface is not affected by this option; const methods remain safe to
-    ///  call from multiple threads concurrently, while non-const methods continue
-    ///  to require exclusive access.
+    /// This option does not affect the public interface of any generated code;
+    /// all method signatures remain the same.  Furthermore, thread-safety of the
+    /// interface is not affected by this option; const methods remain safe to
+    /// call from multiple threads concurrently, while non-const methods continue
+    /// to require exclusive access.
     ///
-    ///  Note that implementations may choose not to check required fields within
-    ///  a lazy sub-message.  That is, calling IsInitialized() on the outher message
-    ///  may return true even if the inner message has missing required fields.
-    ///  This is necessary because otherwise the inner message would have to be
-    ///  parsed in order to perform the check, defeating the purpose of lazy
-    ///  parsing.  An implementation which chooses not to check required fields
-    ///  must be consistent about it.  That is, for any particular sub-message, the
-    ///  implementation must either *always* check its required fields, or *never*
-    ///  check its required fields, regardless of whether or not the message has
-    ///  been parsed.
+    /// Note that implementations may choose not to check required fields within
+    /// a lazy sub-message.  That is, calling IsInitialized() on the outer message
+    /// may return true even if the inner message has missing required fields.
+    /// This is necessary because otherwise the inner message would have to be
+    /// parsed in order to perform the check, defeating the purpose of lazy
+    /// parsing.  An implementation which chooses not to check required fields
+    /// must be consistent about it.  That is, for any particular sub-message, the
+    /// implementation must either *always* check its required fields, or *never*
+    /// check its required fields, regardless of whether or not the message has
+    /// been parsed.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Lazy {
       get { return lazy_; }
       set {
@@ -3531,11 +4070,12 @@ namespace Google.Protobuf.Reflection {
     public const int DeprecatedFieldNumber = 3;
     private bool deprecated_;
     /// <summary>
-    ///  Is this field deprecated?
-    ///  Depending on the target platform, this can emit Deprecated annotations
-    ///  for accessors, or it will be completely ignored; in the very least, this
-    ///  is a formalization for deprecating fields.
+    /// Is this field deprecated?
+    /// Depending on the target platform, this can emit Deprecated annotations
+    /// for accessors, or it will be completely ignored; in the very least, this
+    /// is a formalization for deprecating fields.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Deprecated {
       get { return deprecated_; }
       set {
@@ -3547,8 +4087,9 @@ namespace Google.Protobuf.Reflection {
     public const int WeakFieldNumber = 10;
     private bool weak_;
     /// <summary>
-    ///  For Google-internal migration only. Do not use.
+    /// For Google-internal migration only. Do not use.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Weak {
       get { return weak_; }
       set {
@@ -3562,16 +4103,19 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(7994, global::Google.Protobuf.Reflection.UninterpretedOption.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> uninterpretedOption_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption>();
     /// <summary>
-    ///  The parser stores options it doesn't recognize here. See above.
+    /// The parser stores options it doesn't recognize here. See above.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> UninterpretedOption {
       get { return uninterpretedOption_; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as FieldOptions);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(FieldOptions other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3589,11 +4133,12 @@ namespace Google.Protobuf.Reflection {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Ctype != global::Google.Protobuf.Reflection.FieldOptions.Types.CType.STRING) hash ^= Ctype.GetHashCode();
+      if (Ctype != 0) hash ^= Ctype.GetHashCode();
       if (Packed != false) hash ^= Packed.GetHashCode();
-      if (Jstype != global::Google.Protobuf.Reflection.FieldOptions.Types.JSType.JS_NORMAL) hash ^= Jstype.GetHashCode();
+      if (Jstype != 0) hash ^= Jstype.GetHashCode();
       if (Lazy != false) hash ^= Lazy.GetHashCode();
       if (Deprecated != false) hash ^= Deprecated.GetHashCode();
       if (Weak != false) hash ^= Weak.GetHashCode();
@@ -3601,12 +4146,14 @@ namespace Google.Protobuf.Reflection {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Ctype != global::Google.Protobuf.Reflection.FieldOptions.Types.CType.STRING) {
+      if (Ctype != 0) {
         output.WriteRawTag(8);
         output.WriteEnum((int) Ctype);
       }
@@ -3622,7 +4169,7 @@ namespace Google.Protobuf.Reflection {
         output.WriteRawTag(40);
         output.WriteBool(Lazy);
       }
-      if (Jstype != global::Google.Protobuf.Reflection.FieldOptions.Types.JSType.JS_NORMAL) {
+      if (Jstype != 0) {
         output.WriteRawTag(48);
         output.WriteEnum((int) Jstype);
       }
@@ -3633,15 +4180,16 @@ namespace Google.Protobuf.Reflection {
       uninterpretedOption_.WriteTo(output, _repeated_uninterpretedOption_codec);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Ctype != global::Google.Protobuf.Reflection.FieldOptions.Types.CType.STRING) {
+      if (Ctype != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Ctype);
       }
       if (Packed != false) {
         size += 1 + 1;
       }
-      if (Jstype != global::Google.Protobuf.Reflection.FieldOptions.Types.JSType.JS_NORMAL) {
+      if (Jstype != 0) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Jstype);
       }
       if (Lazy != false) {
@@ -3657,17 +4205,18 @@ namespace Google.Protobuf.Reflection {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(FieldOptions other) {
       if (other == null) {
         return;
       }
-      if (other.Ctype != global::Google.Protobuf.Reflection.FieldOptions.Types.CType.STRING) {
+      if (other.Ctype != 0) {
         Ctype = other.Ctype;
       }
       if (other.Packed != false) {
         Packed = other.Packed;
       }
-      if (other.Jstype != global::Google.Protobuf.Reflection.FieldOptions.Types.JSType.JS_NORMAL) {
+      if (other.Jstype != 0) {
         Jstype = other.Jstype;
       }
       if (other.Lazy != false) {
@@ -3682,12 +4231,13 @@ namespace Google.Protobuf.Reflection {
       uninterpretedOption_.Add(other.uninterpretedOption_);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            input.SkipLastField();
+            CustomOptions = CustomOptions.ReadOrSkipUnknownField(input);
             break;
           case 8: {
             ctype_ = (global::Google.Protobuf.Reflection.FieldOptions.Types.CType) input.ReadEnum();
@@ -3723,30 +4273,30 @@ namespace Google.Protobuf.Reflection {
 
     #region Nested types
     /// <summary>Container for nested types declared in the FieldOptions message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
       internal enum CType {
         /// <summary>
-        ///  Default mode.
+        /// Default mode.
         /// </summary>
-        STRING = 0,
-        CORD = 1,
-        STRING_PIECE = 2,
+        [pbr::OriginalName("STRING")] String = 0,
+        [pbr::OriginalName("CORD")] Cord = 1,
+        [pbr::OriginalName("STRING_PIECE")] StringPiece = 2,
       }
 
       internal enum JSType {
         /// <summary>
-        ///  Use the default type.
+        /// Use the default type.
         /// </summary>
-        JS_NORMAL = 0,
+        [pbr::OriginalName("JS_NORMAL")] JsNormal = 0,
         /// <summary>
-        ///  Use JavaScript strings.
+        /// Use JavaScript strings.
         /// </summary>
-        JS_STRING = 1,
+        [pbr::OriginalName("JS_STRING")] JsString = 1,
         /// <summary>
-        ///  Use JavaScript numbers.
+        /// Use JavaScript numbers.
         /// </summary>
-        JS_NUMBER = 2,
+        [pbr::OriginalName("JS_NUMBER")] JsNumber = 2,
       }
 
     }
@@ -3754,31 +4304,152 @@ namespace Google.Protobuf.Reflection {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-  internal sealed partial class EnumOptions : pb::IMessage<EnumOptions> {
-    private static readonly pb::MessageParser<EnumOptions> _parser = new pb::MessageParser<EnumOptions>(() => new EnumOptions());
-    public static pb::MessageParser<EnumOptions> Parser { get { return _parser; } }
+  internal sealed partial class OneofOptions : pb::IMessage<OneofOptions> {
+    private static readonly pb::MessageParser<OneofOptions> _parser = new pb::MessageParser<OneofOptions>(() => new OneofOptions());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<OneofOptions> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[12]; }
+      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[13]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    internal CustomOptions CustomOptions{ get; private set; } = CustomOptions.Empty;
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public OneofOptions() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public OneofOptions(OneofOptions other) : this() {
+      uninterpretedOption_ = other.uninterpretedOption_.Clone();
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public OneofOptions Clone() {
+      return new OneofOptions(this);
+    }
+
+    /// <summary>Field number for the "uninterpreted_option" field.</summary>
+    public const int UninterpretedOptionFieldNumber = 999;
+    private static readonly pb::FieldCodec<global::Google.Protobuf.Reflection.UninterpretedOption> _repeated_uninterpretedOption_codec
+        = pb::FieldCodec.ForMessage(7994, global::Google.Protobuf.Reflection.UninterpretedOption.Parser);
+    private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> uninterpretedOption_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption>();
+    /// <summary>
+    /// The parser stores options it doesn't recognize here. See above.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> UninterpretedOption {
+      get { return uninterpretedOption_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as OneofOptions);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(OneofOptions other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!uninterpretedOption_.Equals(other.uninterpretedOption_)) return false;
+      return true;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= uninterpretedOption_.GetHashCode();
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      uninterpretedOption_.WriteTo(output, _repeated_uninterpretedOption_codec);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += uninterpretedOption_.CalculateSize(_repeated_uninterpretedOption_codec);
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(OneofOptions other) {
+      if (other == null) {
+        return;
+      }
+      uninterpretedOption_.Add(other.uninterpretedOption_);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            CustomOptions = CustomOptions.ReadOrSkipUnknownField(input);
+            break;
+          case 7994: {
+            uninterpretedOption_.AddEntriesFrom(input, _repeated_uninterpretedOption_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  internal sealed partial class EnumOptions : pb::IMessage<EnumOptions> {
+    private static readonly pb::MessageParser<EnumOptions> _parser = new pb::MessageParser<EnumOptions>(() => new EnumOptions());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<EnumOptions> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[14]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    internal CustomOptions CustomOptions{ get; private set; } = CustomOptions.Empty;
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EnumOptions() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EnumOptions(EnumOptions other) : this() {
       allowAlias_ = other.allowAlias_;
       deprecated_ = other.deprecated_;
       uninterpretedOption_ = other.uninterpretedOption_.Clone();
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EnumOptions Clone() {
       return new EnumOptions(this);
     }
@@ -3787,9 +4458,10 @@ namespace Google.Protobuf.Reflection {
     public const int AllowAliasFieldNumber = 2;
     private bool allowAlias_;
     /// <summary>
-    ///  Set this option to true to allow mapping different tag names to the same
-    ///  value.
+    /// Set this option to true to allow mapping different tag names to the same
+    /// value.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool AllowAlias {
       get { return allowAlias_; }
       set {
@@ -3801,11 +4473,12 @@ namespace Google.Protobuf.Reflection {
     public const int DeprecatedFieldNumber = 3;
     private bool deprecated_;
     /// <summary>
-    ///  Is this enum deprecated?
-    ///  Depending on the target platform, this can emit Deprecated annotations
-    ///  for the enum, or it will be completely ignored; in the very least, this
-    ///  is a formalization for deprecating enums.
+    /// Is this enum deprecated?
+    /// Depending on the target platform, this can emit Deprecated annotations
+    /// for the enum, or it will be completely ignored; in the very least, this
+    /// is a formalization for deprecating enums.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Deprecated {
       get { return deprecated_; }
       set {
@@ -3819,16 +4492,19 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(7994, global::Google.Protobuf.Reflection.UninterpretedOption.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> uninterpretedOption_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption>();
     /// <summary>
-    ///  The parser stores options it doesn't recognize here. See above.
+    /// The parser stores options it doesn't recognize here. See above.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> UninterpretedOption {
       get { return uninterpretedOption_; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EnumOptions);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(EnumOptions other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3842,6 +4518,7 @@ namespace Google.Protobuf.Reflection {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (AllowAlias != false) hash ^= AllowAlias.GetHashCode();
@@ -3850,10 +4527,12 @@ namespace Google.Protobuf.Reflection {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (AllowAlias != false) {
         output.WriteRawTag(16);
@@ -3866,6 +4545,7 @@ namespace Google.Protobuf.Reflection {
       uninterpretedOption_.WriteTo(output, _repeated_uninterpretedOption_codec);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (AllowAlias != false) {
@@ -3878,6 +4558,7 @@ namespace Google.Protobuf.Reflection {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(EnumOptions other) {
       if (other == null) {
         return;
@@ -3891,12 +4572,13 @@ namespace Google.Protobuf.Reflection {
       uninterpretedOption_.Add(other.uninterpretedOption_);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            input.SkipLastField();
+            CustomOptions = CustomOptions.ReadOrSkipUnknownField(input);
             break;
           case 16: {
             AllowAlias = input.ReadBool();
@@ -3916,30 +4598,37 @@ namespace Google.Protobuf.Reflection {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   internal sealed partial class EnumValueOptions : pb::IMessage<EnumValueOptions> {
     private static readonly pb::MessageParser<EnumValueOptions> _parser = new pb::MessageParser<EnumValueOptions>(() => new EnumValueOptions());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<EnumValueOptions> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[13]; }
+      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[15]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    internal CustomOptions CustomOptions{ get; private set; } = CustomOptions.Empty;
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EnumValueOptions() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EnumValueOptions(EnumValueOptions other) : this() {
       deprecated_ = other.deprecated_;
       uninterpretedOption_ = other.uninterpretedOption_.Clone();
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public EnumValueOptions Clone() {
       return new EnumValueOptions(this);
     }
@@ -3948,11 +4637,12 @@ namespace Google.Protobuf.Reflection {
     public const int DeprecatedFieldNumber = 1;
     private bool deprecated_;
     /// <summary>
-    ///  Is this enum value deprecated?
-    ///  Depending on the target platform, this can emit Deprecated annotations
-    ///  for the enum value, or it will be completely ignored; in the very least,
-    ///  this is a formalization for deprecating enum values.
+    /// Is this enum value deprecated?
+    /// Depending on the target platform, this can emit Deprecated annotations
+    /// for the enum value, or it will be completely ignored; in the very least,
+    /// this is a formalization for deprecating enum values.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Deprecated {
       get { return deprecated_; }
       set {
@@ -3966,16 +4656,19 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(7994, global::Google.Protobuf.Reflection.UninterpretedOption.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> uninterpretedOption_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption>();
     /// <summary>
-    ///  The parser stores options it doesn't recognize here. See above.
+    /// The parser stores options it doesn't recognize here. See above.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> UninterpretedOption {
       get { return uninterpretedOption_; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as EnumValueOptions);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(EnumValueOptions other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -3988,6 +4681,7 @@ namespace Google.Protobuf.Reflection {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Deprecated != false) hash ^= Deprecated.GetHashCode();
@@ -3995,10 +4689,12 @@ namespace Google.Protobuf.Reflection {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Deprecated != false) {
         output.WriteRawTag(8);
@@ -4007,6 +4703,7 @@ namespace Google.Protobuf.Reflection {
       uninterpretedOption_.WriteTo(output, _repeated_uninterpretedOption_codec);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Deprecated != false) {
@@ -4016,6 +4713,7 @@ namespace Google.Protobuf.Reflection {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(EnumValueOptions other) {
       if (other == null) {
         return;
@@ -4026,12 +4724,13 @@ namespace Google.Protobuf.Reflection {
       uninterpretedOption_.Add(other.uninterpretedOption_);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            input.SkipLastField();
+            CustomOptions = CustomOptions.ReadOrSkipUnknownField(input);
             break;
           case 8: {
             Deprecated = input.ReadBool();
@@ -4047,30 +4746,37 @@ namespace Google.Protobuf.Reflection {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   internal sealed partial class ServiceOptions : pb::IMessage<ServiceOptions> {
     private static readonly pb::MessageParser<ServiceOptions> _parser = new pb::MessageParser<ServiceOptions>(() => new ServiceOptions());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<ServiceOptions> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[14]; }
+      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[16]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    internal CustomOptions CustomOptions{ get; private set; } = CustomOptions.Empty;
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ServiceOptions() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ServiceOptions(ServiceOptions other) : this() {
       deprecated_ = other.deprecated_;
       uninterpretedOption_ = other.uninterpretedOption_.Clone();
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ServiceOptions Clone() {
       return new ServiceOptions(this);
     }
@@ -4079,11 +4785,12 @@ namespace Google.Protobuf.Reflection {
     public const int DeprecatedFieldNumber = 33;
     private bool deprecated_;
     /// <summary>
-    ///  Is this service deprecated?
-    ///  Depending on the target platform, this can emit Deprecated annotations
-    ///  for the service, or it will be completely ignored; in the very least,
-    ///  this is a formalization for deprecating services.
+    /// Is this service deprecated?
+    /// Depending on the target platform, this can emit Deprecated annotations
+    /// for the service, or it will be completely ignored; in the very least,
+    /// this is a formalization for deprecating services.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Deprecated {
       get { return deprecated_; }
       set {
@@ -4097,16 +4804,19 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(7994, global::Google.Protobuf.Reflection.UninterpretedOption.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> uninterpretedOption_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption>();
     /// <summary>
-    ///  The parser stores options it doesn't recognize here. See above.
+    /// The parser stores options it doesn't recognize here. See above.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> UninterpretedOption {
       get { return uninterpretedOption_; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as ServiceOptions);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(ServiceOptions other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4119,6 +4829,7 @@ namespace Google.Protobuf.Reflection {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Deprecated != false) hash ^= Deprecated.GetHashCode();
@@ -4126,10 +4837,12 @@ namespace Google.Protobuf.Reflection {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Deprecated != false) {
         output.WriteRawTag(136, 2);
@@ -4138,6 +4851,7 @@ namespace Google.Protobuf.Reflection {
       uninterpretedOption_.WriteTo(output, _repeated_uninterpretedOption_codec);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Deprecated != false) {
@@ -4147,6 +4861,7 @@ namespace Google.Protobuf.Reflection {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(ServiceOptions other) {
       if (other == null) {
         return;
@@ -4157,12 +4872,13 @@ namespace Google.Protobuf.Reflection {
       uninterpretedOption_.Add(other.uninterpretedOption_);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            input.SkipLastField();
+            CustomOptions = CustomOptions.ReadOrSkipUnknownField(input);
             break;
           case 264: {
             Deprecated = input.ReadBool();
@@ -4178,30 +4894,38 @@ namespace Google.Protobuf.Reflection {
 
   }
 
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   internal sealed partial class MethodOptions : pb::IMessage<MethodOptions> {
     private static readonly pb::MessageParser<MethodOptions> _parser = new pb::MessageParser<MethodOptions>(() => new MethodOptions());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<MethodOptions> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[15]; }
+      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[17]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    internal CustomOptions CustomOptions{ get; private set; } = CustomOptions.Empty;
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MethodOptions() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MethodOptions(MethodOptions other) : this() {
       deprecated_ = other.deprecated_;
+      idempotencyLevel_ = other.idempotencyLevel_;
       uninterpretedOption_ = other.uninterpretedOption_.Clone();
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public MethodOptions Clone() {
       return new MethodOptions(this);
     }
@@ -4210,15 +4934,27 @@ namespace Google.Protobuf.Reflection {
     public const int DeprecatedFieldNumber = 33;
     private bool deprecated_;
     /// <summary>
-    ///  Is this method deprecated?
-    ///  Depending on the target platform, this can emit Deprecated annotations
-    ///  for the method, or it will be completely ignored; in the very least,
-    ///  this is a formalization for deprecating methods.
+    /// Is this method deprecated?
+    /// Depending on the target platform, this can emit Deprecated annotations
+    /// for the method, or it will be completely ignored; in the very least,
+    /// this is a formalization for deprecating methods.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Deprecated {
       get { return deprecated_; }
       set {
         deprecated_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "idempotency_level" field.</summary>
+    public const int IdempotencyLevelFieldNumber = 34;
+    private global::Google.Protobuf.Reflection.MethodOptions.Types.IdempotencyLevel idempotencyLevel_ = 0;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.Reflection.MethodOptions.Types.IdempotencyLevel IdempotencyLevel {
+      get { return idempotencyLevel_; }
+      set {
+        idempotencyLevel_ = value;
       }
     }
 
@@ -4228,16 +4964,19 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(7994, global::Google.Protobuf.Reflection.UninterpretedOption.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> uninterpretedOption_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption>();
     /// <summary>
-    ///  The parser stores options it doesn't recognize here. See above.
+    /// The parser stores options it doesn't recognize here. See above.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption> UninterpretedOption {
       get { return uninterpretedOption_; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as MethodOptions);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(MethodOptions other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4246,38 +4985,52 @@ namespace Google.Protobuf.Reflection {
         return true;
       }
       if (Deprecated != other.Deprecated) return false;
+      if (IdempotencyLevel != other.IdempotencyLevel) return false;
       if(!uninterpretedOption_.Equals(other.uninterpretedOption_)) return false;
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       if (Deprecated != false) hash ^= Deprecated.GetHashCode();
+      if (IdempotencyLevel != 0) hash ^= IdempotencyLevel.GetHashCode();
       hash ^= uninterpretedOption_.GetHashCode();
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Deprecated != false) {
         output.WriteRawTag(136, 2);
         output.WriteBool(Deprecated);
       }
+      if (IdempotencyLevel != 0) {
+        output.WriteRawTag(144, 2);
+        output.WriteEnum((int) IdempotencyLevel);
+      }
       uninterpretedOption_.WriteTo(output, _repeated_uninterpretedOption_codec);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       if (Deprecated != false) {
         size += 2 + 1;
       }
+      if (IdempotencyLevel != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeEnumSize((int) IdempotencyLevel);
+      }
       size += uninterpretedOption_.CalculateSize(_repeated_uninterpretedOption_codec);
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(MethodOptions other) {
       if (other == null) {
         return;
@@ -4285,18 +5038,26 @@ namespace Google.Protobuf.Reflection {
       if (other.Deprecated != false) {
         Deprecated = other.Deprecated;
       }
+      if (other.IdempotencyLevel != 0) {
+        IdempotencyLevel = other.IdempotencyLevel;
+      }
       uninterpretedOption_.Add(other.uninterpretedOption_);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
         switch(tag) {
           default:
-            input.SkipLastField();
+            CustomOptions = CustomOptions.ReadOrSkipUnknownField(input);
             break;
           case 264: {
             Deprecated = input.ReadBool();
+            break;
+          }
+          case 272: {
+            idempotencyLevel_ = (global::Google.Protobuf.Reflection.MethodOptions.Types.IdempotencyLevel) input.ReadEnum();
             break;
           }
           case 7994: {
@@ -4307,35 +5068,63 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    #region Nested types
+    /// <summary>Container for nested types declared in the MethodOptions message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static partial class Types {
+      /// <summary>
+      /// Is this method side-effect-free (or safe in HTTP parlance), or idempotent,
+      /// or neither? HTTP based RPC implementation may choose GET verb for safe
+      /// methods, and PUT verb for idempotent methods instead of the default POST.
+      /// </summary>
+      internal enum IdempotencyLevel {
+        [pbr::OriginalName("IDEMPOTENCY_UNKNOWN")] IdempotencyUnknown = 0,
+        /// <summary>
+        /// implies idempotent
+        /// </summary>
+        [pbr::OriginalName("NO_SIDE_EFFECTS")] NoSideEffects = 1,
+        /// <summary>
+        /// idempotent, but may have side effects
+        /// </summary>
+        [pbr::OriginalName("IDEMPOTENT")] Idempotent = 2,
+      }
+
+    }
+    #endregion
+
   }
 
   /// <summary>
-  ///  A message representing a option the parser does not recognize. This only
-  ///  appears in options protos created by the compiler::Parser class.
-  ///  DescriptorPool resolves these when building Descriptor objects. Therefore,
-  ///  options protos in descriptor objects (e.g. returned by Descriptor::options(),
-  ///  or produced by Descriptor::CopyTo()) will never have UninterpretedOptions
-  ///  in them.
+  /// A message representing a option the parser does not recognize. This only
+  /// appears in options protos created by the compiler::Parser class.
+  /// DescriptorPool resolves these when building Descriptor objects. Therefore,
+  /// options protos in descriptor objects (e.g. returned by Descriptor::options(),
+  /// or produced by Descriptor::CopyTo()) will never have UninterpretedOptions
+  /// in them.
   /// </summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   internal sealed partial class UninterpretedOption : pb::IMessage<UninterpretedOption> {
     private static readonly pb::MessageParser<UninterpretedOption> _parser = new pb::MessageParser<UninterpretedOption>(() => new UninterpretedOption());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<UninterpretedOption> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[16]; }
+      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[18]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UninterpretedOption() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UninterpretedOption(UninterpretedOption other) : this() {
       name_ = other.name_.Clone();
       identifierValue_ = other.identifierValue_;
@@ -4346,6 +5135,7 @@ namespace Google.Protobuf.Reflection {
       aggregateValue_ = other.aggregateValue_;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UninterpretedOption Clone() {
       return new UninterpretedOption(this);
     }
@@ -4355,6 +5145,7 @@ namespace Google.Protobuf.Reflection {
     private static readonly pb::FieldCodec<global::Google.Protobuf.Reflection.UninterpretedOption.Types.NamePart> _repeated_name_codec
         = pb::FieldCodec.ForMessage(18, global::Google.Protobuf.Reflection.UninterpretedOption.Types.NamePart.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption.Types.NamePart> name_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption.Types.NamePart>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.UninterpretedOption.Types.NamePart> Name {
       get { return name_; }
     }
@@ -4363,9 +5154,10 @@ namespace Google.Protobuf.Reflection {
     public const int IdentifierValueFieldNumber = 3;
     private string identifierValue_ = "";
     /// <summary>
-    ///  The value of the uninterpreted option, in whatever type the tokenizer
-    ///  identified it as during parsing. Exactly one of these should be set.
+    /// The value of the uninterpreted option, in whatever type the tokenizer
+    /// identified it as during parsing. Exactly one of these should be set.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string IdentifierValue {
       get { return identifierValue_; }
       set {
@@ -4376,6 +5168,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "positive_int_value" field.</summary>
     public const int PositiveIntValueFieldNumber = 4;
     private ulong positiveIntValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public ulong PositiveIntValue {
       get { return positiveIntValue_; }
       set {
@@ -4386,6 +5179,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "negative_int_value" field.</summary>
     public const int NegativeIntValueFieldNumber = 5;
     private long negativeIntValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public long NegativeIntValue {
       get { return negativeIntValue_; }
       set {
@@ -4396,6 +5190,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "double_value" field.</summary>
     public const int DoubleValueFieldNumber = 6;
     private double doubleValue_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public double DoubleValue {
       get { return doubleValue_; }
       set {
@@ -4406,6 +5201,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "string_value" field.</summary>
     public const int StringValueFieldNumber = 7;
     private pb::ByteString stringValue_ = pb::ByteString.Empty;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pb::ByteString StringValue {
       get { return stringValue_; }
       set {
@@ -4416,6 +5212,7 @@ namespace Google.Protobuf.Reflection {
     /// <summary>Field number for the "aggregate_value" field.</summary>
     public const int AggregateValueFieldNumber = 8;
     private string aggregateValue_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string AggregateValue {
       get { return aggregateValue_; }
       set {
@@ -4423,10 +5220,12 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as UninterpretedOption);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(UninterpretedOption other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4444,6 +5243,7 @@ namespace Google.Protobuf.Reflection {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= name_.GetHashCode();
@@ -4456,10 +5256,12 @@ namespace Google.Protobuf.Reflection {
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       name_.WriteTo(output, _repeated_name_codec);
       if (IdentifierValue.Length != 0) {
@@ -4488,6 +5290,7 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       size += name_.CalculateSize(_repeated_name_codec);
@@ -4512,6 +5315,7 @@ namespace Google.Protobuf.Reflection {
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(UninterpretedOption other) {
       if (other == null) {
         return;
@@ -4537,6 +5341,7 @@ namespace Google.Protobuf.Reflection {
       }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -4578,39 +5383,44 @@ namespace Google.Protobuf.Reflection {
 
     #region Nested types
     /// <summary>Container for nested types declared in the UninterpretedOption message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
       /// <summary>
-      ///  The name of the uninterpreted option.  Each string represents a segment in
-      ///  a dot-separated name.  is_extension is true iff a segment represents an
-      ///  extension (denoted with parentheses in options specs in .proto files).
-      ///  E.g.,{ ["foo", false], ["bar.baz", true], ["qux", false] } represents
-      ///  "foo.(bar.baz).qux".
+      /// The name of the uninterpreted option.  Each string represents a segment in
+      /// a dot-separated name.  is_extension is true iff a segment represents an
+      /// extension (denoted with parentheses in options specs in .proto files).
+      /// E.g.,{ ["foo", false], ["bar.baz", true], ["qux", false] } represents
+      /// "foo.(bar.baz).qux".
       /// </summary>
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
       internal sealed partial class NamePart : pb::IMessage<NamePart> {
         private static readonly pb::MessageParser<NamePart> _parser = new pb::MessageParser<NamePart>(() => new NamePart());
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pb::MessageParser<NamePart> Parser { get { return _parser; } }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Protobuf.Reflection.UninterpretedOption.Descriptor.NestedTypes[0]; }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public NamePart() {
           OnConstruction();
         }
 
         partial void OnConstruction();
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public NamePart(NamePart other) : this() {
           namePart_ = other.namePart_;
           isExtension_ = other.isExtension_;
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public NamePart Clone() {
           return new NamePart(this);
         }
@@ -4618,6 +5428,7 @@ namespace Google.Protobuf.Reflection {
         /// <summary>Field number for the "name_part" field.</summary>
         public const int NamePart_FieldNumber = 1;
         private string namePart_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public string NamePart_ {
           get { return namePart_; }
           set {
@@ -4628,6 +5439,7 @@ namespace Google.Protobuf.Reflection {
         /// <summary>Field number for the "is_extension" field.</summary>
         public const int IsExtensionFieldNumber = 2;
         private bool isExtension_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool IsExtension {
           get { return isExtension_; }
           set {
@@ -4635,10 +5447,12 @@ namespace Google.Protobuf.Reflection {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
           return Equals(other as NamePart);
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool Equals(NamePart other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -4651,6 +5465,7 @@ namespace Google.Protobuf.Reflection {
           return true;
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
           if (NamePart_.Length != 0) hash ^= NamePart_.GetHashCode();
@@ -4658,10 +5473,12 @@ namespace Google.Protobuf.Reflection {
           return hash;
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
           if (NamePart_.Length != 0) {
             output.WriteRawTag(10);
@@ -4673,6 +5490,7 @@ namespace Google.Protobuf.Reflection {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
           int size = 0;
           if (NamePart_.Length != 0) {
@@ -4684,6 +5502,7 @@ namespace Google.Protobuf.Reflection {
           return size;
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(NamePart other) {
           if (other == null) {
             return;
@@ -4696,6 +5515,7 @@ namespace Google.Protobuf.Reflection {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -4723,32 +5543,37 @@ namespace Google.Protobuf.Reflection {
   }
 
   /// <summary>
-  ///  Encapsulates information about the original source file from which a
-  ///  FileDescriptorProto was generated.
+  /// Encapsulates information about the original source file from which a
+  /// FileDescriptorProto was generated.
   /// </summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   internal sealed partial class SourceCodeInfo : pb::IMessage<SourceCodeInfo> {
     private static readonly pb::MessageParser<SourceCodeInfo> _parser = new pb::MessageParser<SourceCodeInfo>(() => new SourceCodeInfo());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<SourceCodeInfo> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[17]; }
+      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[19]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SourceCodeInfo() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SourceCodeInfo(SourceCodeInfo other) : this() {
       location_ = other.location_.Clone();
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public SourceCodeInfo Clone() {
       return new SourceCodeInfo(this);
     }
@@ -4759,58 +5584,61 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(10, global::Google.Protobuf.Reflection.SourceCodeInfo.Types.Location.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.SourceCodeInfo.Types.Location> location_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.SourceCodeInfo.Types.Location>();
     /// <summary>
-    ///  A Location identifies a piece of source code in a .proto file which
-    ///  corresponds to a particular definition.  This information is intended
-    ///  to be useful to IDEs, code indexers, documentation generators, and similar
-    ///  tools.
+    /// A Location identifies a piece of source code in a .proto file which
+    /// corresponds to a particular definition.  This information is intended
+    /// to be useful to IDEs, code indexers, documentation generators, and similar
+    /// tools.
     ///
-    ///  For example, say we have a file like:
-    ///    message Foo {
-    ///      optional string foo = 1;
-    ///    }
-    ///  Let's look at just the field definition:
-    ///    optional string foo = 1;
-    ///    ^       ^^     ^^  ^  ^^^
-    ///    a       bc     de  f  ghi
-    ///  We have the following locations:
-    ///    span   path               represents
-    ///    [a,i)  [ 4, 0, 2, 0 ]     The whole field definition.
-    ///    [a,b)  [ 4, 0, 2, 0, 4 ]  The label (optional).
-    ///    [c,d)  [ 4, 0, 2, 0, 5 ]  The type (string).
-    ///    [e,f)  [ 4, 0, 2, 0, 1 ]  The name (foo).
-    ///    [g,h)  [ 4, 0, 2, 0, 3 ]  The number (1).
+    /// For example, say we have a file like:
+    ///   message Foo {
+    ///     optional string foo = 1;
+    ///   }
+    /// Let's look at just the field definition:
+    ///   optional string foo = 1;
+    ///   ^       ^^     ^^  ^  ^^^
+    ///   a       bc     de  f  ghi
+    /// We have the following locations:
+    ///   span   path               represents
+    ///   [a,i)  [ 4, 0, 2, 0 ]     The whole field definition.
+    ///   [a,b)  [ 4, 0, 2, 0, 4 ]  The label (optional).
+    ///   [c,d)  [ 4, 0, 2, 0, 5 ]  The type (string).
+    ///   [e,f)  [ 4, 0, 2, 0, 1 ]  The name (foo).
+    ///   [g,h)  [ 4, 0, 2, 0, 3 ]  The number (1).
     ///
-    ///  Notes:
-    ///  - A location may refer to a repeated field itself (i.e. not to any
-    ///    particular index within it).  This is used whenever a set of elements are
-    ///    logically enclosed in a single code segment.  For example, an entire
-    ///    extend block (possibly containing multiple extension definitions) will
-    ///    have an outer location whose path refers to the "extensions" repeated
-    ///    field without an index.
-    ///  - Multiple locations may have the same path.  This happens when a single
-    ///    logical declaration is spread out across multiple places.  The most
-    ///    obvious example is the "extend" block again -- there may be multiple
-    ///    extend blocks in the same scope, each of which will have the same path.
-    ///  - A location's span is not always a subset of its parent's span.  For
-    ///    example, the "extendee" of an extension declaration appears at the
-    ///    beginning of the "extend" block and is shared by all extensions within
-    ///    the block.
-    ///  - Just because a location's span is a subset of some other location's span
-    ///    does not mean that it is a descendent.  For example, a "group" defines
-    ///    both a type and a field in a single declaration.  Thus, the locations
-    ///    corresponding to the type and field and their components will overlap.
-    ///  - Code which tries to interpret locations should probably be designed to
-    ///    ignore those that it doesn't understand, as more types of locations could
-    ///    be recorded in the future.
+    /// Notes:
+    /// - A location may refer to a repeated field itself (i.e. not to any
+    ///   particular index within it).  This is used whenever a set of elements are
+    ///   logically enclosed in a single code segment.  For example, an entire
+    ///   extend block (possibly containing multiple extension definitions) will
+    ///   have an outer location whose path refers to the "extensions" repeated
+    ///   field without an index.
+    /// - Multiple locations may have the same path.  This happens when a single
+    ///   logical declaration is spread out across multiple places.  The most
+    ///   obvious example is the "extend" block again -- there may be multiple
+    ///   extend blocks in the same scope, each of which will have the same path.
+    /// - A location's span is not always a subset of its parent's span.  For
+    ///   example, the "extendee" of an extension declaration appears at the
+    ///   beginning of the "extend" block and is shared by all extensions within
+    ///   the block.
+    /// - Just because a location's span is a subset of some other location's span
+    ///   does not mean that it is a descendent.  For example, a "group" defines
+    ///   both a type and a field in a single declaration.  Thus, the locations
+    ///   corresponding to the type and field and their components will overlap.
+    /// - Code which tries to interpret locations should probably be designed to
+    ///   ignore those that it doesn't understand, as more types of locations could
+    ///   be recorded in the future.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.SourceCodeInfo.Types.Location> Location {
       get { return location_; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as SourceCodeInfo);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(SourceCodeInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -4822,26 +5650,31 @@ namespace Google.Protobuf.Reflection {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= location_.GetHashCode();
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       location_.WriteTo(output, _repeated_location_codec);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       size += location_.CalculateSize(_repeated_location_codec);
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(SourceCodeInfo other) {
       if (other == null) {
         return;
@@ -4849,6 +5682,7 @@ namespace Google.Protobuf.Reflection {
       location_.Add(other.location_);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -4866,27 +5700,31 @@ namespace Google.Protobuf.Reflection {
 
     #region Nested types
     /// <summary>Container for nested types declared in the SourceCodeInfo message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
       internal sealed partial class Location : pb::IMessage<Location> {
         private static readonly pb::MessageParser<Location> _parser = new pb::MessageParser<Location>(() => new Location());
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pb::MessageParser<Location> Parser { get { return _parser; } }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Protobuf.Reflection.SourceCodeInfo.Descriptor.NestedTypes[0]; }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public Location() {
           OnConstruction();
         }
 
         partial void OnConstruction();
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public Location(Location other) : this() {
           path_ = other.path_.Clone();
           span_ = other.span_.Clone();
@@ -4895,6 +5733,7 @@ namespace Google.Protobuf.Reflection {
           leadingDetachedComments_ = other.leadingDetachedComments_.Clone();
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public Location Clone() {
           return new Location(this);
         }
@@ -4905,30 +5744,31 @@ namespace Google.Protobuf.Reflection {
             = pb::FieldCodec.ForInt32(10);
         private readonly pbc::RepeatedField<int> path_ = new pbc::RepeatedField<int>();
         /// <summary>
-        ///  Identifies which part of the FileDescriptorProto was defined at this
-        ///  location.
+        /// Identifies which part of the FileDescriptorProto was defined at this
+        /// location.
         ///
-        ///  Each element is a field number or an index.  They form a path from
-        ///  the root FileDescriptorProto to the place where the definition.  For
-        ///  example, this path:
-        ///    [ 4, 3, 2, 7, 1 ]
-        ///  refers to:
-        ///    file.message_type(3)  // 4, 3
-        ///        .field(7)         // 2, 7
-        ///        .name()           // 1
-        ///  This is because FileDescriptorProto.message_type has field number 4:
-        ///    repeated DescriptorProto message_type = 4;
-        ///  and DescriptorProto.field has field number 2:
-        ///    repeated FieldDescriptorProto field = 2;
-        ///  and FieldDescriptorProto.name has field number 1:
-        ///    optional string name = 1;
+        /// Each element is a field number or an index.  They form a path from
+        /// the root FileDescriptorProto to the place where the definition.  For
+        /// example, this path:
+        ///   [ 4, 3, 2, 7, 1 ]
+        /// refers to:
+        ///   file.message_type(3)  // 4, 3
+        ///       .field(7)         // 2, 7
+        ///       .name()           // 1
+        /// This is because FileDescriptorProto.message_type has field number 4:
+        ///   repeated DescriptorProto message_type = 4;
+        /// and DescriptorProto.field has field number 2:
+        ///   repeated FieldDescriptorProto field = 2;
+        /// and FieldDescriptorProto.name has field number 1:
+        ///   optional string name = 1;
         ///
-        ///  Thus, the above path gives the location of a field name.  If we removed
-        ///  the last element:
-        ///    [ 4, 3, 2, 7 ]
-        ///  this path refers to the whole field declaration (from the beginning
-        ///  of the label to the terminating semicolon).
+        /// Thus, the above path gives the location of a field name.  If we removed
+        /// the last element:
+        ///   [ 4, 3, 2, 7 ]
+        /// this path refers to the whole field declaration (from the beginning
+        /// of the label to the terminating semicolon).
         /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public pbc::RepeatedField<int> Path {
           get { return path_; }
         }
@@ -4939,12 +5779,13 @@ namespace Google.Protobuf.Reflection {
             = pb::FieldCodec.ForInt32(18);
         private readonly pbc::RepeatedField<int> span_ = new pbc::RepeatedField<int>();
         /// <summary>
-        ///  Always has exactly three or four elements: start line, start column,
-        ///  end line (optional, otherwise assumed same as start line), end column.
-        ///  These are packed into a single field for efficiency.  Note that line
-        ///  and column numbers are zero-based -- typically you will want to add
-        ///  1 to each before displaying to a user.
+        /// Always has exactly three or four elements: start line, start column,
+        /// end line (optional, otherwise assumed same as start line), end column.
+        /// These are packed into a single field for efficiency.  Note that line
+        /// and column numbers are zero-based -- typically you will want to add
+        /// 1 to each before displaying to a user.
         /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public pbc::RepeatedField<int> Span {
           get { return span_; }
         }
@@ -4953,54 +5794,55 @@ namespace Google.Protobuf.Reflection {
         public const int LeadingCommentsFieldNumber = 3;
         private string leadingComments_ = "";
         /// <summary>
-        ///  If this SourceCodeInfo represents a complete declaration, these are any
-        ///  comments appearing before and after the declaration which appear to be
-        ///  attached to the declaration.
+        /// If this SourceCodeInfo represents a complete declaration, these are any
+        /// comments appearing before and after the declaration which appear to be
+        /// attached to the declaration.
         ///
-        ///  A series of line comments appearing on consecutive lines, with no other
-        ///  tokens appearing on those lines, will be treated as a single comment.
+        /// A series of line comments appearing on consecutive lines, with no other
+        /// tokens appearing on those lines, will be treated as a single comment.
         ///
-        ///  leading_detached_comments will keep paragraphs of comments that appear
-        ///  before (but not connected to) the current element. Each paragraph,
-        ///  separated by empty lines, will be one comment element in the repeated
-        ///  field.
+        /// leading_detached_comments will keep paragraphs of comments that appear
+        /// before (but not connected to) the current element. Each paragraph,
+        /// separated by empty lines, will be one comment element in the repeated
+        /// field.
         ///
-        ///  Only the comment content is provided; comment markers (e.g. //) are
-        ///  stripped out.  For block comments, leading whitespace and an asterisk
-        ///  will be stripped from the beginning of each line other than the first.
-        ///  Newlines are included in the output.
+        /// Only the comment content is provided; comment markers (e.g. //) are
+        /// stripped out.  For block comments, leading whitespace and an asterisk
+        /// will be stripped from the beginning of each line other than the first.
+        /// Newlines are included in the output.
         ///
-        ///  Examples:
+        /// Examples:
         ///
-        ///    optional int32 foo = 1;  // Comment attached to foo.
-        ///    // Comment attached to bar.
-        ///    optional int32 bar = 2;
+        ///   optional int32 foo = 1;  // Comment attached to foo.
+        ///   // Comment attached to bar.
+        ///   optional int32 bar = 2;
         ///
-        ///    optional string baz = 3;
-        ///    // Comment attached to baz.
-        ///    // Another line attached to baz.
+        ///   optional string baz = 3;
+        ///   // Comment attached to baz.
+        ///   // Another line attached to baz.
         ///
-        ///    // Comment attached to qux.
-        ///    //
-        ///    // Another line attached to qux.
-        ///    optional double qux = 4;
+        ///   // Comment attached to qux.
+        ///   //
+        ///   // Another line attached to qux.
+        ///   optional double qux = 4;
         ///
-        ///    // Detached comment for corge. This is not leading or trailing comments
-        ///    // to qux or corge because there are blank lines separating it from
-        ///    // both.
+        ///   // Detached comment for corge. This is not leading or trailing comments
+        ///   // to qux or corge because there are blank lines separating it from
+        ///   // both.
         ///
-        ///    // Detached comment for corge paragraph 2.
+        ///   // Detached comment for corge paragraph 2.
         ///
-        ///    optional string corge = 5;
-        ///    /* Block comment attached
-        ///     * to corge.  Leading asterisks
-        ///     * will be removed. */
-        ///    /* Block comment attached to
-        ///     * grault. */
-        ///    optional int32 grault = 6;
+        ///   optional string corge = 5;
+        ///   /* Block comment attached
+        ///    * to corge.  Leading asterisks
+        ///    * will be removed. */
+        ///   /* Block comment attached to
+        ///    * grault. */
+        ///   optional int32 grault = 6;
         ///
-        ///    // ignored detached comments.
+        ///   // ignored detached comments.
         /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public string LeadingComments {
           get { return leadingComments_; }
           set {
@@ -5011,6 +5853,7 @@ namespace Google.Protobuf.Reflection {
         /// <summary>Field number for the "trailing_comments" field.</summary>
         public const int TrailingCommentsFieldNumber = 4;
         private string trailingComments_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public string TrailingComments {
           get { return trailingComments_; }
           set {
@@ -5023,14 +5866,17 @@ namespace Google.Protobuf.Reflection {
         private static readonly pb::FieldCodec<string> _repeated_leadingDetachedComments_codec
             = pb::FieldCodec.ForString(50);
         private readonly pbc::RepeatedField<string> leadingDetachedComments_ = new pbc::RepeatedField<string>();
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public pbc::RepeatedField<string> LeadingDetachedComments {
           get { return leadingDetachedComments_; }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
           return Equals(other as Location);
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool Equals(Location other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -5046,6 +5892,7 @@ namespace Google.Protobuf.Reflection {
           return true;
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
           hash ^= path_.GetHashCode();
@@ -5056,10 +5903,12 @@ namespace Google.Protobuf.Reflection {
           return hash;
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
           path_.WriteTo(output, _repeated_path_codec);
           span_.WriteTo(output, _repeated_span_codec);
@@ -5074,6 +5923,7 @@ namespace Google.Protobuf.Reflection {
           leadingDetachedComments_.WriteTo(output, _repeated_leadingDetachedComments_codec);
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
           int size = 0;
           size += path_.CalculateSize(_repeated_path_codec);
@@ -5088,6 +5938,7 @@ namespace Google.Protobuf.Reflection {
           return size;
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(Location other) {
           if (other == null) {
             return;
@@ -5103,6 +5954,7 @@ namespace Google.Protobuf.Reflection {
           leadingDetachedComments_.Add(other.leadingDetachedComments_);
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
@@ -5144,33 +5996,38 @@ namespace Google.Protobuf.Reflection {
   }
 
   /// <summary>
-  ///  Describes the relationship between generated code and its original source
-  ///  file. A GeneratedCodeInfo message is associated with only one generated
-  ///  source file, but may contain references to different source .proto files.
+  /// Describes the relationship between generated code and its original source
+  /// file. A GeneratedCodeInfo message is associated with only one generated
+  /// source file, but may contain references to different source .proto files.
   /// </summary>
-  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
   internal sealed partial class GeneratedCodeInfo : pb::IMessage<GeneratedCodeInfo> {
     private static readonly pb::MessageParser<GeneratedCodeInfo> _parser = new pb::MessageParser<GeneratedCodeInfo>(() => new GeneratedCodeInfo());
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<GeneratedCodeInfo> Parser { get { return _parser; } }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[18]; }
+      get { return global::Google.Protobuf.Reflection.DescriptorReflection.Descriptor.MessageTypes[20]; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     pbr::MessageDescriptor pb::IMessage.Descriptor {
       get { return Descriptor; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GeneratedCodeInfo() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GeneratedCodeInfo(GeneratedCodeInfo other) : this() {
       annotation_ = other.annotation_.Clone();
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public GeneratedCodeInfo Clone() {
       return new GeneratedCodeInfo(this);
     }
@@ -5181,17 +6038,20 @@ namespace Google.Protobuf.Reflection {
         = pb::FieldCodec.ForMessage(10, global::Google.Protobuf.Reflection.GeneratedCodeInfo.Types.Annotation.Parser);
     private readonly pbc::RepeatedField<global::Google.Protobuf.Reflection.GeneratedCodeInfo.Types.Annotation> annotation_ = new pbc::RepeatedField<global::Google.Protobuf.Reflection.GeneratedCodeInfo.Types.Annotation>();
     /// <summary>
-    ///  An Annotation connects some span of text in generated code to an element
-    ///  of its generating .proto file.
+    /// An Annotation connects some span of text in generated code to an element
+    /// of its generating .proto file.
     /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<global::Google.Protobuf.Reflection.GeneratedCodeInfo.Types.Annotation> Annotation {
       get { return annotation_; }
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as GeneratedCodeInfo);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool Equals(GeneratedCodeInfo other) {
       if (ReferenceEquals(other, null)) {
         return false;
@@ -5203,26 +6063,31 @@ namespace Google.Protobuf.Reflection {
       return true;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
       hash ^= annotation_.GetHashCode();
       return hash;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override string ToString() {
       return pb::JsonFormatter.ToDiagnosticString(this);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       annotation_.WriteTo(output, _repeated_annotation_codec);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
       size += annotation_.CalculateSize(_repeated_annotation_codec);
       return size;
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(GeneratedCodeInfo other) {
       if (other == null) {
         return;
@@ -5230,6 +6095,7 @@ namespace Google.Protobuf.Reflection {
       annotation_.Add(other.annotation_);
     }
 
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void MergeFrom(pb::CodedInputStream input) {
       uint tag;
       while ((tag = input.ReadTag()) != 0) {
@@ -5247,27 +6113,31 @@ namespace Google.Protobuf.Reflection {
 
     #region Nested types
     /// <summary>Container for nested types declared in the GeneratedCodeInfo message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static partial class Types {
-      [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
       internal sealed partial class Annotation : pb::IMessage<Annotation> {
         private static readonly pb::MessageParser<Annotation> _parser = new pb::MessageParser<Annotation>(() => new Annotation());
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pb::MessageParser<Annotation> Parser { get { return _parser; } }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
           get { return global::Google.Protobuf.Reflection.GeneratedCodeInfo.Descriptor.NestedTypes[0]; }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         pbr::MessageDescriptor pb::IMessage.Descriptor {
           get { return Descriptor; }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public Annotation() {
           OnConstruction();
         }
 
         partial void OnConstruction();
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public Annotation(Annotation other) : this() {
           path_ = other.path_.Clone();
           sourceFile_ = other.sourceFile_;
@@ -5275,6 +6145,7 @@ namespace Google.Protobuf.Reflection {
           end_ = other.end_;
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public Annotation Clone() {
           return new Annotation(this);
         }
@@ -5285,9 +6156,10 @@ namespace Google.Protobuf.Reflection {
             = pb::FieldCodec.ForInt32(10);
         private readonly pbc::RepeatedField<int> path_ = new pbc::RepeatedField<int>();
         /// <summary>
-        ///  Identifies the element in the original source .proto file. This field
-        ///  is formatted the same as SourceCodeInfo.Location.path.
+        /// Identifies the element in the original source .proto file. This field
+        /// is formatted the same as SourceCodeInfo.Location.path.
         /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public pbc::RepeatedField<int> Path {
           get { return path_; }
         }
@@ -5296,8 +6168,9 @@ namespace Google.Protobuf.Reflection {
         public const int SourceFileFieldNumber = 2;
         private string sourceFile_ = "";
         /// <summary>
-        ///  Identifies the filesystem path to the original source .proto.
+        /// Identifies the filesystem path to the original source .proto.
         /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public string SourceFile {
           get { return sourceFile_; }
           set {
@@ -5309,9 +6182,10 @@ namespace Google.Protobuf.Reflection {
         public const int BeginFieldNumber = 3;
         private int begin_;
         /// <summary>
-        ///  Identifies the starting offset in bytes in the generated code
-        ///  that relates to the identified object.
+        /// Identifies the starting offset in bytes in the generated code
+        /// that relates to the identified object.
         /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int Begin {
           get { return begin_; }
           set {
@@ -5323,10 +6197,11 @@ namespace Google.Protobuf.Reflection {
         public const int EndFieldNumber = 4;
         private int end_;
         /// <summary>
-        ///  Identifies the ending offset in bytes in the generated code that
-        ///  relates to the identified offset. The end offset should be one past
-        ///  the last relevant byte (so the length of the text = end - begin).
+        /// Identifies the ending offset in bytes in the generated code that
+        /// relates to the identified offset. The end offset should be one past
+        /// the last relevant byte (so the length of the text = end - begin).
         /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int End {
           get { return end_; }
           set {
@@ -5334,10 +6209,12 @@ namespace Google.Protobuf.Reflection {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
           return Equals(other as Annotation);
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public bool Equals(Annotation other) {
           if (ReferenceEquals(other, null)) {
             return false;
@@ -5352,6 +6229,7 @@ namespace Google.Protobuf.Reflection {
           return true;
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
           hash ^= path_.GetHashCode();
@@ -5361,10 +6239,12 @@ namespace Google.Protobuf.Reflection {
           return hash;
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override string ToString() {
           return pb::JsonFormatter.ToDiagnosticString(this);
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void WriteTo(pb::CodedOutputStream output) {
           path_.WriteTo(output, _repeated_path_codec);
           if (SourceFile.Length != 0) {
@@ -5381,6 +6261,7 @@ namespace Google.Protobuf.Reflection {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
           int size = 0;
           size += path_.CalculateSize(_repeated_path_codec);
@@ -5396,6 +6277,7 @@ namespace Google.Protobuf.Reflection {
           return size;
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(Annotation other) {
           if (other == null) {
             return;
@@ -5412,6 +6294,7 @@ namespace Google.Protobuf.Reflection {
           }
         }
 
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public void MergeFrom(pb::CodedInputStream input) {
           uint tag;
           while ((tag = input.ReadTag()) != 0) {
